@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ShoppingBag, Check, Plus } from "lucide-react";
+import { ArrowRight, ShoppingBag, Check } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
 import { formatCurrency } from "@/lib/utils";
 import { useCartStore } from "@/stores/cartStore";
