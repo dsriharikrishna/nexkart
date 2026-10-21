@@ -13,7 +13,7 @@ export function CheckoutDeliveryForm({ register, errors }: CheckoutDeliveryFormP
         1. Delivery &amp; Contact Details
       </h2>
       <div className="space-y-3">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div>
             <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
               Email Address *
@@ -44,7 +44,7 @@ export function CheckoutDeliveryForm({ register, errors }: CheckoutDeliveryFormP
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div>
             <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
               First Name *
@@ -87,7 +87,7 @@ export function CheckoutDeliveryForm({ register, errors }: CheckoutDeliveryFormP
           )}
         </div>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
               City *

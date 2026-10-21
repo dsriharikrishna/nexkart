@@ -74,22 +74,22 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         />
 
         {/* Badges: Fast Delivery + Discount + New In */}
-        <div className="absolute left-3 top-3 z-10 flex flex-col items-start gap-1.5">
+        <div className="absolute left-2 top-2 z-10 flex flex-col items-start gap-1 sm:left-3 sm:top-3 sm:gap-1.5">
           {product.isFastDeliveryEligible && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-[#FFD629] shadow-xs">
-              <Zap className="h-2.5 w-2.5 fill-[#FFD629] text-[#FFD629]" />
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-wider text-[#FFD629] shadow-xs sm:px-2.5 sm:text-[9.5px]">
+              <Zap className="h-2 w-2 fill-[#FFD629] text-[#FFD629] sm:h-2.5 sm:w-2.5" />
               {product.estimatedDeliveryTime || "60 mins"}
             </span>
           )}
 
           {product.isNew && (
-            <span className="inline-flex rounded-full bg-[#FFD629] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.16em] text-[#171717] shadow-xs">
+            <span className="inline-flex rounded-full bg-[#FFD629] px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.16em] text-[#171717] shadow-xs sm:px-2.5 sm:text-[9px]">
               NEW
             </span>
           )}
 
           {discountText && (
-            <span className="inline-flex rounded-full bg-[#FFF9D6] border border-[#FFD629]/40 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#171717] shadow-xs">
+            <span className="inline-flex rounded-full bg-[#FFF9D6] border border-[#FFD629]/40 px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wider text-[#171717] shadow-xs sm:px-2 sm:text-[9px]">
               {discountText}
             </span>
           )}
@@ -98,14 +98,14 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         {/* Wishlist Toggle Button */}
         <button
           onClick={handleWishlistToggle}
-          className={`absolute right-3 top-3 z-10 rounded-full p-2 transition-all duration-200 ${
+          className={`absolute right-2 top-2 z-10 rounded-full p-1.5 transition-all duration-200 sm:right-3 sm:top-3 sm:p-2 ${
             isInWishlist
               ? "bg-[#FFD629] text-[#171717] shadow-xs"
               : "border border-neutral-200 bg-white/90 text-neutral-700 backdrop-blur-xs hover:border-[#FFD629] hover:bg-white hover:text-black"
           }`}
           aria-label={isInWishlist ? "Remove from saved items" : "Save item"}
         >
-          <Heart className={`h-3.5 w-3.5 ${isInWishlist ? "fill-[#171717]" : ""}`} />
+          <Heart className={`h-3 w-3 sm:h-3.5 sm:w-3.5 ${isInWishlist ? "fill-[#171717]" : ""}`} />
         </button>
 
         {/* Quick Add Overlay on Desktop Hover */}
@@ -132,7 +132,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </Link>
 
       {/* Product Details Block */}
-      <div className="flex flex-1 flex-col justify-between p-4">
+      <div className="flex flex-1 flex-col justify-between p-2.5 sm:p-4">
         <div>
           {/* Colors palette dots */}
           <div className="mb-2 flex items-center gap-1.5">
