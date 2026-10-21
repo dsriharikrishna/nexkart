@@ -34,13 +34,19 @@ export interface Product {
     | "trousers"
     | "dresses"
     | "accessories"
-    | "footwear";
+    | "footwear"
+    | "jewelry"
+    | "beauty"
+    | "gifts";
   collection:
     | "atelier-autumn"
     | "minimalist-capsule"
     | "resort-modern"
     | "monochrome-series"
-    | "evening-luxe";
+    | "evening-luxe"
+    | "gifts-and-living"
+    | "beauty-wellness"
+    | "fine-jewelry";
   gender: "men" | "women" | "unisex" | "all";
   price: number;
   compareAtPrice?: number;
@@ -52,6 +58,8 @@ export interface Product {
   isFeatured?: boolean;
   isBestseller?: boolean;
   isAvailable: boolean;
+  isFastDeliveryEligible?: boolean;
+  estimatedDeliveryTime?: string;
   tags: string[];
   details: ProductDetailItem[];
   careInstructions: string[];

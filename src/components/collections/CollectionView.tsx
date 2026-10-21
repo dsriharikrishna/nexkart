@@ -170,7 +170,7 @@ export function CollectionView({
 
       {/* Results Count & Product Grid */}
       <div className="mb-4 text-xs font-medium uppercase tracking-wider text-neutral-500">
-        Showing {filteredProducts.length} curated pieces
+        Showing {filteredProducts.length} items
       </div>
 
       <ProductGrid products={filteredProducts} columns={4} priorityCount={4} />

@@ -17,7 +17,7 @@ export default function AccountPage() {
   const handleDemoLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (emailInput) {
-      login(emailInput, nameInput || "Alexander Vance");
+      login(emailInput, nameInput || "Aditya Reddy");
     }
   };
 
@@ -31,10 +31,10 @@ export default function AccountPage() {
       >
         <div className="shadow-xs border border-neutral-200 bg-white p-8">
           <span className="mb-2 block text-center text-[10px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-            MAISON NEXKART CLIENT PORTAL
+            NEXKART ACCOUNT
           </span>
           <h1 className="mb-6 text-center font-heading text-2xl font-bold tracking-tight text-neutral-950">
-            Sign In to Atelier Account
+            Sign In to Your Account
           </h1>
 
           <form onSubmit={handleDemoLogin} className="space-y-4">
@@ -46,19 +46,19 @@ export default function AccountPage() {
                 type="text"
                 value={nameInput}
                 onChange={(e) => setNameInput(e.target.value)}
-                placeholder="e.g. Alexander Vance"
+                placeholder="e.g. Aditya Reddy"
                 className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
               />
             </div>
             <div>
               <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                Concierge Email
+                Email Address
               </label>
               <input
                 type="email"
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
-                placeholder="alexander@domain.com"
+                placeholder="aditya@example.com"
                 required
                 className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
               />
@@ -66,14 +66,14 @@ export default function AccountPage() {
 
             <button
               type="submit"
-              className="mt-2 w-full bg-neutral-950 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#9E643C]"
+              className="mt-2 w-full bg-neutral-950 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-neutral-800"
             >
-              Access Member Profile
+              Sign In (Demo)
             </button>
           </form>
 
           <p className="mt-6 text-center text-[10px] text-neutral-400">
-            Phase 1 simulated client authentication. No actual credentials stored.
+            This is a simulated demo login. No password or real account is required.
           </p>
         </div>
       </motion.div>
@@ -92,14 +92,14 @@ export default function AccountPage() {
         <div>
           <div className="mb-1 flex items-center gap-2">
             <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-              MEMBER TIER: {user.memberTier}
+              MEMBER: {user.memberTier}
             </span>
           </div>
           <h1 className="font-heading text-3xl font-bold tracking-tight text-neutral-950">
-            Welcome, {user.name}
+            Welcome back, {user.name}
           </h1>
           <p className="mt-1 text-xs font-light text-neutral-500">
-            Client ID: {user.email} • Atelier Member Since {user.joinedDate}
+            Email: {user.email} • Member Since {user.joinedDate}
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function AccountPage() {
               : "text-neutral-500 hover:text-neutral-950"
           }`}
         >
-          Order History ({orders.length})
+          My Orders ({orders.length})
           {activeTab === "orders" && (
             <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-950" />
           )}
@@ -134,7 +134,7 @@ export default function AccountPage() {
               : "text-neutral-500 hover:text-neutral-950"
           }`}
         >
-          Client Profile
+          My Profile
           {activeTab === "profile" && (
             <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-950" />
           )}
@@ -147,7 +147,7 @@ export default function AccountPage() {
               : "text-neutral-500 hover:text-neutral-950"
           }`}
         >
-          Saved Destinations
+          Saved Addresses
           {activeTab === "addresses" && (
             <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-950" />
           )}
@@ -161,7 +161,7 @@ export default function AccountPage() {
             <div className="border border-neutral-200 bg-white py-16 text-center">
               <Package className="mx-auto mb-3 h-10 w-10 text-neutral-300" />
               <p className="text-xs uppercase tracking-wider text-neutral-500">
-                No orders cataloged yet
+                You haven&apos;t placed any orders yet
               </p>
             </div>
           ) : (
@@ -181,7 +181,7 @@ export default function AccountPage() {
                     <span className="text-neutral-300">•</span>
                     <span className="text-neutral-500">{order.date}</span>
                     <span className="inline-flex items-center gap-1 rounded-full border border-[#D4AF62]/40 bg-[#D4AF62]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#101010]">
-                      <Clock className="h-2.5 w-2.5 text-[#8A6A3B]" /> 60-Min Wardrobe
+                      <Clock className="h-2.5 w-2.5 text-[#8A6A3B]" /> Fast Delivery
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ export default function AccountPage() {
                     <Link
                       href={`/account/orders/${order.id}`}
                       className="ml-2 rounded-full p-1 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-black"
-                      title="View order dossier"
+                      title="View order details"
                     >
                       <ChevronRight className="h-4 w-4" />
                     </Link>
@@ -227,12 +227,12 @@ export default function AccountPage() {
                 </Link>
 
                 <div className="flex items-center justify-between border-t border-neutral-100 pt-3 text-[11px] text-neutral-500">
-                  <span>Destination: {order.shippingAddress}</span>
+                  <span>Delivery Address: {order.shippingAddress}</span>
                   <Link
                     href={`/account/orders/${order.id}`}
                     className="font-medium text-[#9E643C] hover:underline"
                   >
-                    View Shipment Dossier →
+                    View Order Details →
                   </Link>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function AccountPage() {
       {activeTab === "profile" && (
         <div className="max-w-xl space-y-4 border border-neutral-200 bg-white p-6">
           <h3 className="border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-wider text-neutral-900">
-            Maison Atelier Member Credentials
+            Account Information
           </h3>
           <div className="space-y-3 text-xs">
             <div className="flex justify-between border-b border-neutral-50 py-1">
@@ -253,16 +253,16 @@ export default function AccountPage() {
               <span className="font-semibold">{user.name}</span>
             </div>
             <div className="flex justify-between border-b border-neutral-50 py-1">
-              <span className="text-neutral-500">Client Email</span>
+              <span className="text-neutral-500">Email Address</span>
               <span className="font-semibold">{user.email}</span>
             </div>
             <div className="flex justify-between border-b border-neutral-50 py-1">
-              <span className="text-neutral-500">Member Status</span>
+              <span className="text-neutral-500">Membership Tier</span>
               <span className="font-semibold text-[#9E643C]">{user.memberTier}</span>
             </div>
             <div className="flex justify-between py-1">
-              <span className="text-neutral-500">Dedicated Concierge</span>
-              <span className="font-semibold">concierge-india@nexkart.com</span>
+              <span className="text-neutral-500">Support Email</span>
+              <span className="font-semibold">support@nexkart.com</span>
             </div>
           </div>
         </div>
@@ -273,20 +273,20 @@ export default function AccountPage() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative border border-neutral-200 bg-white p-6">
             <span className="absolute right-6 top-6 bg-neutral-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-neutral-800">
-              Default Destination
+              Default Address
             </span>
             <MapPin className="mb-3 h-5 w-5 text-neutral-800" />
             <h4 className="mb-1 font-heading text-xs font-bold uppercase tracking-wider text-neutral-950">
-              Residence & Studio
+              Home Address
             </h4>
             <p className="text-xs leading-relaxed text-neutral-600">
-              Alexander Vance
+              Aditya Reddy
               <br />
-              742 Evergreen Terrace
+              Plot 42, Road No. 36, Jubilee Hills
               <br />
-              New York, NY 10021
+              Hyderabad, Telangana 500034
               <br />
-              United States
+              India
             </p>
           </div>
         </div>

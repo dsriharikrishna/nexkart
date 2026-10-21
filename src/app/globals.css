@@ -6,50 +6,48 @@
   :root {
     --font-heading: "Sora", sans-serif;
     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    /* === BRAND THEME: BLACK & CHAMPAGNE GOLD (Default) === */
-    --background: #f7f3ea; /* Warm Ivory primary content background */
-    --foreground: #101010; /* Obsidian Black text */
+
+    /* === BRAND THEME: ELECTRIC YELLOW GRADIENT === */
+    --background: #ffffff; /* Pure White crisp fashion canvas */
+    --foreground: #171717; /* Ink Black typography */
     
-    --card: #fcfaf6;
-    --card-foreground: #101010;
+    --card: #ffffff;
+    --card-foreground: #171717;
     
     --popover: #ffffff;
-    --popover-foreground: #101010;
+    --popover-foreground: #171717;
     
-    /* Primary: Champagne Gold with dark obsidian text */
-    --primary: #d4af62;
-    --primary-foreground: #101010;
-    --primary-light: #eed8a1;
-    --primary-dark: #c89b48;
+    /* Primary: Electric Yellow with Ink Black contrast */
+    --primary: #ffd629;
+    --primary-foreground: #171717;
+    --primary-light: #fff9d6;
+    --primary-dark: #ffb800;
     
-    /* Secondary: Obsidian Black */
-    --secondary: #101010;
-    --secondary-foreground: #f7f3ea;
+    /* Secondary: Ink Black */
+    --secondary: #171717;
+    --secondary-foreground: #ffffff;
     
-    /* Muted: Warm beige/cream surfaces */
-    --muted: #efe9dc;
-    --muted-foreground: #6b6355;
+    /* Muted: Soft cream & neutral surfaces */
+    --muted: #fff9d6;
+    --muted-foreground: #707070;
     
-    /* Accent: Antique Gold selective highlight */
-    --accent: #8a6a3b;
-    --accent-foreground: #ffffff;
+    /* Accent: Golden Yellow */
+    --accent: #ffb800;
+    --accent-foreground: #171717;
     
-    --destructive: #9e2a2b;
+    --destructive: #ef4444;
     --destructive-foreground: #ffffff;
     
-    --border: #e6dfcf;
-    --input: #e6dfcf;
-    --ring: #d4af62;
+    --border: #eaeaea;
+    --input: #eaeaea;
+    --ring: #ffd629;
     
-    --radius: 9999px; /* Pill-shaped luxury controls */
+    --radius: 9999px; /* Pill-shaped modern quick-commerce controls */
 
-    /* Extended theme tokens */
-    --surface: #ffffff;
-    --surface-muted: #efe9dc;
-    --border-dark: #101010;
-    --accent-antique: #8a6a3b;
-    --accent-gold: #d4af62;
-    --card-bg: #fcfaf6;
+    /* Extended Electric Yellow gradient tokens */
+    --gradient-campaign: linear-gradient(115deg, #fff9d6 0%, #ffeb80 35%, #ffd629 70%, #ffb800 100%);
+    --gradient-cta: linear-gradient(100deg, #ffd629 0%, #ffc400 55%, #ffb800 100%);
+    --gradient-surface: linear-gradient(135deg, #ffffff 0%, #fff9d6 65%, #fff1b8 100%);
   }
 
   /* 

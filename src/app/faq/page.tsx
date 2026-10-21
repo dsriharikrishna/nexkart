@@ -1,32 +1,36 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Atelier FAQ — NEXKART ATELIER",
+  title: "Frequently Asked Questions — NEXKART",
   description:
-    "Frequently asked questions regarding international courier transit, returns, textile care, and sizing.",
+    "Common questions about fast delivery, doorstep try-on, size swaps, returns, and payment options.",
 };
 
 export default function FAQPage() {
   const faqs = [
     {
-      q: "Where are NEXKART garments crafted?",
-      a: "Our tailoring and overcoats are designed at our Mumbai flagship atelier and handcrafted in collaboration with master artisanal weavers across India, Kashmir, and historic textile centers in Biella and Okayama.",
+      q: "How fast is delivery?",
+      a: "Eligible orders in supported areas are delivered in 45 to 60 minutes from our nearest local fulfillment hubs. Orders to other areas usually arrive within 1 to 2 business days.",
     },
     {
-      q: "What is your complimentary courier policy?",
-      a: "All orders exceeding ₹5,000 receive complimentary express courier service (via Blue Dart & DHL Express) across all pincodes in India with door-to-door tracking. All GST is inclusive.",
+      q: "How much does delivery cost?",
+      a: "Fast delivery is completely free on all orders over ₹2,500. For orders under ₹2,500, a small flat fee of ₹150 applies at checkout.",
     },
     {
-      q: "How do returns and size exchanges function?",
-      a: "We offer a 30-day return window from receipt. A pre-paid return label is included in every package, and doorstep courier pickup can be requested directly through your client account.",
+      q: "How does doorstep try-on and size exchange work?",
+      a: "When your delivery arrives, you can try on your clothes to check the fit. If you need a different size, you can swap it right away or request an exchange within 30 days directly from your account.",
     },
     {
-      q: "How should I care for my cashmere and silk pieces?",
-      a: "Pure cashmere and artisanal silk are self-cleaning natural fibers that benefit from resting between wears. We advise washing sparingly by hand in cold water with pH-neutral shampoo, then drying flat on a towel.",
+      q: "How do returns and refunds work?",
+      a: "We offer a simple 30-day return policy. If you are not satisfied with an item, request a pickup from your account page, and our courier will collect it from your doorstep. Refunds are processed quickly to your original payment method.",
     },
     {
-      q: "Can I try garments on in person?",
-      a: "Our private Mumbai flagship showroom in the Kala Ghoda Arts District welcomes clients by appointment. You can request a private appointment with a client styling advisor via concierge@nexkart.com or WhatsApp.",
+      q: "What payment methods do you accept?",
+      a: "We accept UPI (Google Pay, PhonePe, Paytm, CRED), Cash on Delivery, credit and debit cards, and net banking from major Indian banks.",
+    },
+    {
+      q: "How do I choose the right size?",
+      a: "Check our detailed Size Guide for chest, waist, and hip measurements. If you are in between sizes, we recommend choosing your regular size for standard fits or checking the fit notes on each product page.",
     },
   ];
 
@@ -34,20 +38,19 @@ export default function FAQPage() {
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto mb-14 max-w-xl text-center">
         <span className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.3em] text-[#C5A059]">
-          CLIENT KNOWLEDGE BASE
+          HELP &amp; SUPPORT
         </span>
         <h1 className="mb-3 font-heading text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
-          Frequently Asked Inquiries
+          Frequently Asked Questions
         </h1>
         <p className="text-xs font-light text-neutral-500 sm:text-sm">
-          Essential details regarding global courier transit, sizing, fabric care, and atelier
-          appointments.
+          Everything you need to know about delivery, size exchanges, returns, and payments.
         </p>
       </div>
 
       <div className="space-y-4">
         {faqs.map((faq, idx) => (
-          <div key={idx} className="border border-neutral-200 bg-white p-6">
+          <div key={idx} className="border border-neutral-200 bg-white p-6 rounded-xl shadow-xs">
             <h3 className="mb-2 flex items-center gap-2 font-heading text-sm font-semibold text-neutral-950">
               <span className="text-[#9E643C]">0{idx + 1}.</span> {faq.q}
             </h3>
@@ -57,9 +60,9 @@ export default function FAQPage() {
       </div>
 
       <div className="mt-12 text-center text-xs text-neutral-500">
-        Still require sartorial assistance?{" "}
+        Still have questions?{" "}
         <Link href="/contact" className="font-semibold text-black underline underline-offset-4">
-          Speak with our Private Concierge
+          Contact our customer support team
         </Link>
       </div>
     </div>

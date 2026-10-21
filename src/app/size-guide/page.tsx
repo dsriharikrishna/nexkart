@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Sartorial Size Guide — NEXKART ATELIER",
+  title: "Size Guide — NEXKART",
   description:
-    "Comprehensive sizing proportions and conversion matrices for mens and womens tailoring.",
+    "Find your perfect fit with our clear size charts for men and women.",
 };
 
 export default function SizeGuidePage() {
@@ -9,14 +9,13 @@ export default function SizeGuidePage() {
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto mb-14 max-w-xl text-center">
         <span className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.3em] text-[#C5A059]">
-          PRECISION TAILORING
+          FIND YOUR FIT
         </span>
         <h1 className="mb-3 font-heading text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
-          Sartorial Size Matrix
+          Size Guide
         </h1>
         <p className="text-xs font-light text-neutral-500 sm:text-sm">
-          All measurements reflect actual body dimensions in centimeters. Our silhouettes follow
-          contemporary architectural ease.
+          All measurements are in centimeters (cm). Use a measuring tape to find your closest size.
         </p>
       </div>
 
@@ -24,15 +23,15 @@ export default function SizeGuidePage() {
         {/* Menswear */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8">
           <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-950">
-            Menswear & Unisex Tailoring (CM)
+            Men&apos;s Clothing (CM)
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
                 <tr className="border-b border-neutral-200 font-semibold uppercase text-neutral-500">
-                  <th className="py-2.5">Atelier Size</th>
-                  <th className="py-2.5">IT / EU</th>
-                  <th className="py-2.5">UK / US</th>
+                  <th className="py-2.5">Size</th>
+                  <th className="py-2.5">EU Size</th>
+                  <th className="py-2.5">India / UK Size</th>
                   <th className="py-2.5">Chest</th>
                   <th className="py-2.5">Waist</th>
                   <th className="py-2.5">Sleeve Length</th>
@@ -87,18 +86,18 @@ export default function SizeGuidePage() {
         {/* Womenswear */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8">
           <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-950">
-            Womenswear Tailoring & Dresses (CM)
+            Women&apos;s Clothing &amp; Dresses (CM)
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
                 <tr className="border-b border-neutral-200 font-semibold uppercase text-neutral-500">
-                  <th className="py-2.5">Atelier Size</th>
-                  <th className="py-2.5">IT / FR</th>
-                  <th className="py-2.5">UK</th>
+                  <th className="py-2.5">Size</th>
+                  <th className="py-2.5">EU Size</th>
+                  <th className="py-2.5">India / UK Size</th>
                   <th className="py-2.5">Bust</th>
-                  <th className="py-2.5">Natural Waist</th>
-                  <th className="py-2.5">Low Hip</th>
+                  <th className="py-2.5">Waist</th>
+                  <th className="py-2.5">Hips</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100 text-neutral-700">

@@ -25,58 +25,49 @@ export default function CheckoutFailedPage() {
       </div>
 
       <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-rose-700">
-        AUTHORIZATION INTERRUPTED • DEMO GATEWAY
+        PAYMENT NOT COMPLETED • DEMO TEST
       </span>
       <h1 className="mb-3 font-heading text-3xl font-bold tracking-tight text-neutral-950">
-        Transaction Could Not Be Completed
+        Payment Failed
       </h1>
       <p className="mx-auto mb-8 max-w-md text-xs font-light text-neutral-600 sm:text-sm">
-        Your financial institution was unable to authenticate this payment attempt. No charges were
-        made to your account, and your bag remains saved.
+        We could not complete your payment. No money was charged, and your items are still saved in your cart.
       </p>
 
-      {/* Failure Diagnostic Card */}
-      <div className="mx-auto mb-10 max-w-lg border border-neutral-200 bg-white p-6 text-left">
+      {/* Failure Details Card */}
+      <div className="mx-auto mb-10 max-w-lg rounded-xl border border-neutral-200 bg-white p-6 text-left shadow-xs">
         <h3 className="border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-wider text-neutral-900">
-          Diagnostic Details
+          Payment Details
         </h3>
         <div className="divide-y divide-neutral-100 text-xs">
           <div className="flex justify-between py-2.5">
-            <span className="text-neutral-500">Error Code:</span>
-            <span className="font-mono font-semibold text-neutral-900">
-              ERR_3DS_SECURITY_TIMEOUT
-            </span>
-          </div>
-          <div className="flex justify-between py-2.5">
-            <span className="text-neutral-500">Gateway Response:</span>
+            <span className="text-neutral-500">Reason:</span>
             <span className="text-neutral-800">
-              Card issuer 3D Secure verification window expired
+              Payment session timed out or was cancelled
             </span>
           </div>
           <div className="flex justify-between py-2.5">
-            <span className="text-neutral-500">Pending Bag Total:</span>
+            <span className="text-neutral-500">Cart Total:</span>
             <span className="font-bold text-neutral-950">{formatCurrency(total)}</span>
           </div>
           <div className="flex justify-between py-2.5">
-            <span className="text-neutral-500">Bag Items Saved:</span>
+            <span className="text-neutral-500">Saved Items:</span>
             <span className="text-neutral-800">
-              {items.reduce((acc, i) => acc + i.quantity, 0)} pieces
+              {items.reduce((acc, i) => acc + i.quantity, 0)} items
             </span>
           </div>
         </div>
       </div>
 
-      {/* Recommended Recovery Steps */}
-      <div className="mx-auto mb-10 max-w-lg space-y-2.5 border border-neutral-200 bg-neutral-50 p-5 text-left text-xs">
+      {/* Recommended Steps */}
+      <div className="mx-auto mb-10 max-w-lg space-y-2.5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 text-left text-xs">
         <p className="font-heading font-semibold uppercase tracking-wider text-neutral-900">
-          Suggested Actions:
+          What you can do:
         </p>
         <ul className="list-inside list-disc space-y-1.5 text-neutral-600">
-          <li>Verify your billing address matches your card issuer records.</li>
-          <li>Select an alternative payment method (e.g. Apple Pay or Atelier VIP balance).</li>
-          <li>
-            Contact your issuing bank if international commerce transactions require authorization.
-          </li>
+          <li>Try paying again using UPI (Google Pay, PhonePe, or Paytm).</li>
+          <li>Choose Cash on Delivery to pay when your order arrives.</li>
+          <li>Check that your card details or UPI ID are entered correctly.</li>
         </ul>
       </div>
 
@@ -84,21 +75,21 @@ export default function CheckoutFailedPage() {
       <div className="flex flex-col justify-center gap-3 sm:flex-row">
         <Link
           href="/checkout"
-          className="inline-flex items-center justify-center gap-2 bg-neutral-950 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#9E643C]"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] px-8 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#171717] transition-all hover:brightness-105"
         >
-          <RotateCcw className="h-4 w-4" /> Re-attempt Authorization
+          <RotateCcw className="h-4 w-4" /> Try Checkout Again
         </Link>
         <Link
           href="/cart"
-          className="inline-flex items-center justify-center gap-2 border border-neutral-300 bg-white px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-800 transition-colors hover:border-black"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-800 transition-colors hover:border-black"
         >
-          Modify Shopping Bag
+          View Cart
         </Link>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-1.5 border border-transparent px-4 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600 transition-colors hover:text-black"
+          className="inline-flex items-center justify-center gap-1.5 rounded-full border border-transparent px-4 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600 transition-colors hover:text-black"
         >
-          Client Concierge <HelpCircle className="h-3.5 w-3.5" />
+          <HelpCircle className="h-4 w-4" /> Need Help?
         </Link>
       </div>
     </div>

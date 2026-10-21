@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, ShoppingBag, Check } from "lucide-react";
+import { Heart, ShoppingBag, Check, Zap } from "lucide-react";
 import { Product } from "@/types";
 import { formatCurrency, formatDiscount } from "@/lib/utils";
 import { useWishlistStore } from "@/stores/wishlistStore";
@@ -32,7 +32,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
     if (defaultVariant) {
       addItem(product, defaultVariant.color, defaultVariant.size, 1);
       setAddedNotice(true);
-      setTimeout(() => setAddedNotice(false), 2000);
+      setTimeout(() => setAddedNotice(false), 1800);
     }
   };
 
@@ -45,10 +45,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <motion.div
       variants={fadeUpVariants}
-      whileHover={{ y: -5, transition: { duration: 0.25, ease: "easeOut" } }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200/80 bg-white transition-all duration-300 hover:border-[#D4AF62]/50 hover:shadow-lg"
+      whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#EAEAEA] bg-white transition-all duration-300 hover:border-[#FFD629] hover:shadow-md"
     >
-      {/* Image Container with Editorial Aspect Ratio (4:5) */}
+      {/* Image Container with Editorial Fashion Aspect Ratio (4:5) */}
       <Link
         href={`/products/${product.slug}`}
         className="relative block aspect-[4/5] overflow-hidden rounded-t-2xl bg-neutral-100"
@@ -62,10 +62,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         <img
           src={product.images[currentImageIndex] || product.images[0]}
           alt={product.name}
-          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
           loading={priority ? "eager" : "lazy"}
           onError={(e) => {
-            // Graceful fallback to high quality editorial luxury placeholder
             const target = e.currentTarget;
             if (!target.src.includes("1539571696357")) {
               target.src =
@@ -74,50 +73,58 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           }}
         />
 
-        {/* Badges (Champagne Gold & Antique Gold Pill Design) */}
-        <div className="absolute left-3 top-3 z-10 flex flex-col gap-1.5">
-          {product.isNew && (
-            <span className="shadow-xs rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[#101010]">
-              NEW IN
+        {/* Badges: Fast Delivery + Discount + New In */}
+        <div className="absolute left-3 top-3 z-10 flex flex-col items-start gap-1.5">
+          {product.isFastDeliveryEligible && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-[#FFD629] shadow-xs">
+              <Zap className="h-2.5 w-2.5 fill-[#FFD629] text-[#FFD629]" />
+              {product.estimatedDeliveryTime || "60 mins"}
             </span>
           )}
+
+          {product.isNew && (
+            <span className="inline-flex rounded-full bg-[#FFD629] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.16em] text-[#171717] shadow-xs">
+              NEW
+            </span>
+          )}
+
           {discountText && (
-            <span className="shadow-xs rounded-full border border-[#8A6A3B]/30 bg-[#8A6A3B] px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#F7F3EA]">
+            <span className="inline-flex rounded-full bg-[#FFF9D6] border border-[#FFD629]/40 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#171717] shadow-xs">
               {discountText}
             </span>
           )}
         </div>
 
-        {/* Wishlist Toggle Button (Rounded Minimalist Control) */}
+        {/* Wishlist Toggle Button */}
         <button
           onClick={handleWishlistToggle}
           className={`absolute right-3 top-3 z-10 rounded-full p-2 transition-all duration-200 ${
             isInWishlist
-              ? "bg-[#D4AF62] text-[#101010] shadow-sm"
-              : "backdrop-blur-xs border border-neutral-200/80 bg-white/85 text-neutral-800 hover:border-[#D4AF62] hover:bg-white hover:text-black"
+              ? "bg-[#FFD629] text-[#171717] shadow-xs"
+              : "border border-neutral-200 bg-white/90 text-neutral-700 backdrop-blur-xs hover:border-[#FFD629] hover:bg-white hover:text-black"
           }`}
-          aria-label={isInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+          aria-label={isInWishlist ? "Remove from saved items" : "Save item"}
         >
-          <Heart className={`h-3.5 w-3.5 ${isInWishlist ? "fill-[#101010]" : ""}`} />
+          <Heart className={`h-3.5 w-3.5 ${isInWishlist ? "fill-[#171717]" : ""}`} />
         </button>
 
-        {/* Quick Add Overlay on Desktop Hover (Pill-shaped Champagne Gold Primary Button) */}
+        {/* Quick Add Overlay on Desktop Hover */}
         <div className="absolute inset-x-3 bottom-3 z-10 hidden gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 lg:flex">
           <button
             onClick={handleQuickAdd}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] shadow-md transition-all active:scale-[0.98] ${
+            className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
               addedNotice
-                ? "border border-[#101010] bg-[#101010] text-[#D4AF62]"
-                : "bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] text-[#101010] hover:opacity-95 hover:shadow-lg"
+                ? "border border-[#171717] bg-[#171717] text-[#FFD629]"
+                : "bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] text-[#171717] hover:brightness-105 hover:shadow-lg"
             }`}
           >
             {addedNotice ? (
               <>
-                <Check className="h-3.5 w-3.5" /> ADDED TO BAG
+                <Check className="h-3.5 w-3.5" /> ADDED TO CART
               </>
             ) : (
               <>
-                <ShoppingBag className="h-3.5 w-3.5" /> QUICK ADD ({defaultVariant?.size})
+                <ShoppingBag className="h-3.5 w-3.5" /> ADD TO CART ({defaultVariant?.size})
               </>
             )}
           </button>
@@ -138,24 +145,24 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
               />
             ))}
             {product.colors.length > 4 && (
-              <span className="text-[10px] text-neutral-400">+{product.colors.length - 4}</span>
+              <span className="text-[10px] text-[#707070]">+{product.colors.length - 4}</span>
             )}
           </div>
 
-          <h3 className="line-clamp-1 font-heading text-xs font-semibold tracking-wide text-neutral-900 transition-colors group-hover:text-[#8A6A3B]">
+          <h3 className="line-clamp-1 font-heading text-xs font-semibold tracking-wide text-[#171717] transition-colors group-hover:text-black">
             <Link href={`/products/${product.slug}`}>{product.name}</Link>
           </h3>
-          <p className="mt-0.5 line-clamp-1 text-[11px] text-neutral-500">{product.subtitle}</p>
+          <p className="mt-0.5 line-clamp-1 text-[11px] text-[#707070]">{product.subtitle}</p>
         </div>
 
         {/* Price & Mobile Add */}
-        <div className="mt-3 flex items-center justify-between border-t border-neutral-100 pt-3">
+        <div className="mt-3 flex items-center justify-between border-t border-[#EAEAEA] pt-3">
           <div className="flex items-baseline gap-2">
-            <span className="text-xs font-semibold text-neutral-950">
+            <span className="text-xs font-bold text-[#171717]">
               {formatCurrency(product.price)}
             </span>
             {product.compareAtPrice && product.compareAtPrice > product.price && (
-              <span className="text-[11px] text-neutral-400 line-through">
+              <span className="text-[11px] text-[#707070] line-through">
                 {formatCurrency(product.compareAtPrice)}
               </span>
             )}
@@ -163,10 +170,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
           <button
             onClick={handleQuickAdd}
-            className="p-1.5 text-neutral-700 hover:text-neutral-950 lg:hidden"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF9D6] text-[#171717] hover:bg-[#FFD629] lg:hidden"
             aria-label="Quick add"
           >
-            <ShoppingBag className="h-4 w-4" />
+            <ShoppingBag className="h-3.5 w-3.5" />
           </button>
         </div>
       </div>

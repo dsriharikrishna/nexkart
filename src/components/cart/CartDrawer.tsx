@@ -42,7 +42,7 @@ export function CartDrawer() {
             <div className="flex items-center gap-2">
               <ShoppingBag className="h-4 w-4 text-neutral-900" />
               <h2 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-neutral-950">
-                Shopping Bag ({items.reduce((acc, i) => acc + i.quantity, 0)})
+                Your Cart ({items.reduce((acc, i) => acc + i.quantity, 0)})
               </h2>
             </div>
             <button
@@ -60,22 +60,22 @@ export function CartDrawer() {
               <div className="flex flex-col items-center justify-center py-20 text-center">
                 <ShoppingBag className="mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
                 <p className="mb-1 font-heading text-sm font-semibold uppercase tracking-wider text-neutral-800">
-                  Your Bag is Currently Empty
+                  Your cart is empty
                 </p>
                 <p className="mb-6 max-w-xs text-xs text-neutral-500">
-                  Explore our modern tailoring, Italian outerwear, and pure cashmere capsules.
+                  Find clothes you love and add them to your cart.
                 </p>
                 <button
                   onClick={closeCart}
-                  className="bg-neutral-950 px-6 py-3 text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-neutral-800"
+                  className="rounded-full bg-neutral-950 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-neutral-800"
                 >
-                  Explore Collections
+                  Start Shopping
                 </button>
               </div>
             ) : (
               items.map((item) => (
                 <div key={item.id} className="flex gap-4 border-b border-neutral-100 pb-6">
-                  <div className="h-24 w-20 shrink-0 overflow-hidden border border-neutral-200 bg-neutral-100">
+                  <div className="h-24 w-20 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
                     <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                   </div>
 
@@ -85,7 +85,7 @@ export function CartDrawer() {
                         <Link
                           href={`/products/${item.productSlug}`}
                           onClick={closeCart}
-                          className="line-clamp-1 font-heading text-xs font-semibold text-neutral-900 hover:text-[#9E643C]"
+                          className="line-clamp-1 font-heading text-xs font-semibold text-neutral-900 hover:text-[#FFB800]"
                         >
                           {item.name}
                         </Link>
@@ -106,7 +106,7 @@ export function CartDrawer() {
 
                     <div className="mt-3 flex items-center justify-between">
                       {/* Quantity controls */}
-                      <div className="flex items-center border border-neutral-200">
+                      <div className="flex items-center rounded-lg border border-neutral-200">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="px-2 py-0.5 text-xs text-neutral-600 hover:text-black"
@@ -143,21 +143,20 @@ export function CartDrawer() {
                   <span className="font-semibold text-neutral-900">{formatCurrency(subtotal)}</span>
                 </div>
                 <div className="flex justify-between text-neutral-600">
-                  <span>Priority Courier (India)</span>
+                  <span>Delivery Fee</span>
                   <span className="font-semibold text-neutral-900">
-                    {shipping === 0 ? "Complimentary" : formatCurrency(shipping)}
+                    {shipping === 0 ? "Free" : formatCurrency(shipping)}
                   </span>
                 </div>
                 <div className="flex justify-between border-t border-neutral-200/80 pt-2 text-sm font-bold text-neutral-950">
-                  <span>Estimated Total</span>
-                  <span className="text-[#0A0A0A]">{formatCurrency(total)}</span>
+                  <span>Total Amount</span>
+                  <span className="text-[#171717]">{formatCurrency(total)}</span>
                 </div>
               </div>
 
               {shipping > 0 && (
                 <p className="text-center text-[10px] text-neutral-500">
-                  Add {formatCurrency(5000 - subtotal)} more for complimentary express courier
-                  across India.
+                  Add {formatCurrency(2500 - subtotal)} more for free fast delivery.
                 </p>
               )}
 
@@ -165,22 +164,22 @@ export function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] px-4 py-3.5 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#101010] shadow-md transition-all hover:opacity-95 hover:shadow-lg active:scale-[0.99]"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] px-4 py-3.5 text-center text-xs font-bold uppercase tracking-wider text-[#171717] shadow-md transition-all hover:brightness-105 active:scale-[0.99]"
                 >
-                  Proceed to Checkout <ArrowRight className="h-3.5 w-3.5" />
+                  Go to Checkout <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link
                   href="/cart"
                   onClick={closeCart}
-                  className="w-full rounded-full border border-neutral-300 bg-white px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-neutral-900 transition-colors hover:border-black hover:bg-neutral-50"
+                  className="w-full rounded-full border border-neutral-300 bg-white px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider text-neutral-900 transition-colors hover:border-black hover:bg-neutral-50"
                 >
-                  View Full Cart & Review
+                  View Full Cart
                 </Link>
               </div>
 
               <div className="flex items-center justify-center gap-2 pt-1 text-[10px] text-neutral-500">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#D4AF62]" />
-                <span>Pan-India Courier • 30-Day Returns</span>
+                <ShieldCheck className="h-3.5 w-3.5 text-[#FFB800]" />
+                <span>Fast Delivery • Easy Size Swaps at Doorstep</span>
               </div>
             </div>
           )}

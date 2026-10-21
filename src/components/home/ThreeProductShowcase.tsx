@@ -193,15 +193,15 @@ export function ThreeProductShowcase() {
     <div className="relative flex h-[380px] w-full items-center justify-center overflow-hidden border border-neutral-800 bg-[#111111] md:h-[480px]">
       <div ref={mountRef} className="h-full w-full cursor-grab active:cursor-grabbing" />
 
-      {/* Editorial 3D Badge & Interactive Controls */}
+      {/* 3D Badge & Interactive Controls */}
       <div className="pointer-events-none absolute left-4 top-4 z-10">
         <span className="block text-[10px] font-medium uppercase tracking-[0.25em] text-[#C5A059]">
-          3D ATELIER ARTIFACT
+          3D PRODUCT VIEW
         </span>
         <h4 className="mt-0.5 font-heading text-sm font-semibold tracking-wide text-white">
-          Arc Cuff & Topaz Core
+          Silver Cuff Bracelet
         </h4>
-        <p className="text-[11px] text-neutral-400">Interactive 360° tactile render</p>
+        <p className="text-[11px] text-neutral-400">Drag to rotate 360°</p>
       </div>
 
       <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2">
@@ -212,7 +212,7 @@ export function ThreeProductShowcase() {
           {isRotating ? "Pause Spin" : "Auto Spin"}
         </button>
         <span className="hidden text-[10px] uppercase tracking-[0.15em] text-neutral-400 sm:inline">
-          Drag to inspect
+          Drag to look around
         </span>
       </div>
     </div>

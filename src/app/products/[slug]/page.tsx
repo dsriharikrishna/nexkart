@@ -14,13 +14,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const product = PRODUCTS.find((p) => p.slug === slug);
-  if (!product) return { title: "Piece Not Found — NEXKART ATELIER" };
+  if (!product) return { title: "Item Not Found — NEXKART" };
 
   return {
-    title: `${product.name} — NEXKART ATELIER`,
+    title: `${product.name} — NEXKART`,
     description: product.description,
     openGraph: {
-      title: `${product.name} — NEXKART ATELIER`,
+      title: `${product.name} — NEXKART`,
       description: product.subtitle,
       images: [{ url: product.images[0] }],
     },

@@ -11,9 +11,9 @@ interface ProductGridProps {
 export function ProductGrid({ products, columns = 4, priorityCount = 4 }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="border border-dashed border-neutral-200 py-16 text-center">
-        <p className="text-sm uppercase tracking-widest text-neutral-500">
-          No pieces found in this selection
+      <div className="rounded-2xl border border-dashed border-neutral-300 py-16 text-center">
+        <p className="text-sm font-medium text-neutral-600">
+          No products found. Try changing your filters.
         </p>
       </div>
     );

@@ -21,9 +21,9 @@ export default async function CollectionDetailPage({
     return (
       <CollectionView
         initialProducts={womenProducts}
-        title="Womenswear Collection"
-        subtitle="AUTUMN / WINTER SARTORIAL"
-        description="Sculptural silhouettes, liquid silk column gowns, and architectural double-face cashmere coats."
+        title="Women's Collection"
+        subtitle="SHOP WOMEN'S FASHION"
+        description="Explore silk dresses, warm cashmere coats, soft knitwear, and everyday essentials."
         heroImage="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85"
         defaultGender="women"
       />
@@ -35,9 +35,9 @@ export default async function CollectionDetailPage({
     return (
       <CollectionView
         initialProducts={menProducts}
-        title="Menswear Collection"
-        subtitle="PRECISION & RESTRAINT"
-        description="High-twist tropical wool tailoring, heavy Melton overcoats, and Japanese shuttle-loomed selvedge."
+        title="Men's Collection"
+        subtitle="SHOP MEN'S FASHION"
+        description="Explore classic wool overcoats, lightweight blazers, cotton shirts, and durable denim jeans."
         heroImage="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1800&q=85"
         defaultGender="men"
       />

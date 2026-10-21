@@ -23,36 +23,42 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NEXKART ATELIER — Contemporary Haute Fashion",
+  title: "NEXKART — Fast Fashion Quick Commerce",
   description:
-    "Curated architectural menswear and womenswear defined by sculptural cuts, exceptional Italian fabrics, and uncompromising minimalist elegance.",
+    "Shop stylish clothes, jackets, shirts, dresses, and shoes delivered to your door in 45-60 minutes.",
   keywords: [
     "fashion",
-    "luxury",
-    "atelier",
-    "cashmere",
-    "tailoring",
-    "designer clothing",
-    "minimalist fashion",
+    "quick commerce",
+    "online shopping",
+    "shirts",
+    "dresses",
+    "jackets",
+    "shoes",
+    "fast delivery",
   ],
   openGraph: {
-    title: "NEXKART ATELIER — Contemporary Haute Fashion",
+    title: "NEXKART — Fast Fashion Quick Commerce",
     description:
-      "Architectural volume meets raw tactility. Discover curated menswear, womenswear, and artisanal accessories.",
+      "Find clothes for every day. Fast delivery to your doorstep in minutes.",
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
   },
 };
+
+import { TopCategoryCircleBar } from "@/components/navigation/TopCategoryCircleBar";
+import { MobileBottomBar } from "@/components/navigation/MobileBottomBar";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
-      <body className="flex min-h-screen flex-col bg-[#FAFAFA] text-[#111111] antialiased">
+      <body className="flex min-h-screen flex-col bg-white text-[#171717] antialiased pb-16 lg:pb-0">
         <Providers>
           <AnnouncementBar />
           <SiteHeader />
+          <TopCategoryCircleBar />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <MobileBottomBar />
           <CartDrawer />
           <SearchModal />
         </Providers>

@@ -35,28 +35,28 @@ export default function CartPage() {
       className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
     >
       <div className="mb-10 border-b border-neutral-200 pb-6">
-        <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9E643C]">
-          BAG REVIEW
+        <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#FFB800]">
+          YOUR CART
         </span>
         <h1 className="font-heading text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
-          Shopping Bag ({items.reduce((acc, i) => acc + i.quantity, 0)})
+          Shopping Cart ({items.reduce((acc, i) => acc + i.quantity, 0)})
         </h1>
       </div>
 
       {items.length === 0 ? (
-        <div className="mx-auto max-w-lg border border-neutral-200 bg-white p-8 py-24 text-center">
+        <div className="mx-auto max-w-lg rounded-2xl border border-neutral-200 bg-white p-8 py-24 text-center">
           <ShoppingBag className="mx-auto mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
           <h2 className="mb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-900">
-            Your Bag is Empty
+            Your cart is empty
           </h2>
           <p className="mx-auto mb-8 max-w-sm text-xs leading-relaxed text-neutral-500">
-            Discover our curated capsules of outerwear, modern tailoring, and Italian knitwear.
+            Find something you like and add it to your cart.
           </p>
           <Link
             href="/collections"
-            className="inline-block bg-neutral-950 px-8 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-neutral-800"
+            className="inline-block rounded-full bg-neutral-950 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-neutral-800"
           >
-            Explore Collections
+            Start Shopping
           </Link>
         </div>
       ) : (
@@ -75,7 +75,7 @@ export default function CartPage() {
                       <div className="flex items-start justify-between">
                         <Link
                           href={`/products/${item.productSlug}`}
-                          className="font-heading text-sm font-semibold text-neutral-900 hover:text-[#8A6A3B]"
+                          className="font-heading text-sm font-semibold text-neutral-900 hover:text-[#FFB800]"
                         >
                           {item.name}
                         </Link>
@@ -91,7 +91,7 @@ export default function CartPage() {
                       <div className="mt-2 flex gap-4 text-xs text-neutral-500">
                         <span>Color: {item.color}</span>
                         <span>Size: {item.size}</span>
-                        <span>Unit: {formatCurrency(item.price)}</span>
+                        <span>Price: {formatCurrency(item.price)}</span>
                       </div>
                     </div>
 
@@ -125,62 +125,57 @@ export default function CartPage() {
 
             <Link
               href="/collections"
-              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-neutral-700 hover:text-black"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-700 hover:text-black"
             >
-              ← Continue Exploring The Atelier
+              ← Continue Shopping
             </Link>
           </div>
 
           {/* Order Summary Card */}
           <div className="lg:col-span-4">
             <div className="sticky top-28 space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs">
-              <h2 className="border-b border-neutral-200 pb-3 font-heading text-sm font-bold uppercase tracking-[0.2em] text-neutral-950">
+              <h2 className="border-b border-neutral-200 pb-3 font-heading text-sm font-bold uppercase tracking-wider text-neutral-950">
                 Order Summary
               </h2>
 
               <div className="space-y-3 text-xs">
                 <div className="flex justify-between text-neutral-600">
-                  <span>Bag Subtotal</span>
+                  <span>Subtotal</span>
                   <span className="font-semibold text-neutral-900">{formatCurrency(subtotal)}</span>
                 </div>
                 <div className="flex justify-between text-neutral-600">
-                  <span>Global Express Courier</span>
+                  <span>Delivery Fee</span>
                   <span className="font-semibold text-neutral-900">
-                    {shipping === 0 ? "Complimentary" : formatCurrency(shipping)}
+                    {shipping === 0 ? "Free" : formatCurrency(shipping)}
                   </span>
                 </div>
-                <div className="flex justify-between text-neutral-600">
-                  <span>Duties & Import Fees</span>
-                  <span className="text-neutral-500">Calculated at checkout</span>
-                </div>
                 <div className="flex justify-between border-t border-neutral-200 pt-3 text-base font-bold text-neutral-950">
-                  <span>Estimated Total</span>
+                  <span>Total Amount</span>
                   <span>{formatCurrency(total)}</span>
                 </div>
               </div>
 
               {shipping > 0 && (
-                <div className="rounded-xl border border-[#E8DCC8] bg-[#FAF7F2] p-3 text-[11px] text-[#8A6A3B]">
-                  Spend {formatCurrency(5000 - subtotal)} more to qualify for complimentary express
-                  global transit.
+                <div className="rounded-xl border border-[#FFD629]/40 bg-[#FFF9D6] p-3 text-[11px] text-[#171717]">
+                  Add {formatCurrency(2500 - subtotal)} more to get free fast delivery!
                 </div>
               )}
 
               <Link
                 href="/checkout"
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] py-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#101010] shadow-md transition-all hover:opacity-95"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] py-4 text-center text-xs font-bold uppercase tracking-wider text-[#171717] shadow-md transition-all hover:brightness-105"
               >
-                Proceed to Checkout <ArrowRight className="h-3.5 w-3.5" />
+                Go to Checkout <ArrowRight className="h-3.5 w-3.5" />
               </Link>
 
               <div className="space-y-2 border-t border-neutral-100 pt-2 text-[11px] text-neutral-500">
                 <div className="flex items-center gap-2">
                   <Truck className="h-3.5 w-3.5 text-neutral-400" />
-                  <span>Complimentary returns within 30 days</span>
+                  <span>Doorstep size swap and easy returns</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="h-3.5 w-3.5 text-neutral-400" />
-                  <span>Encrypted 256-bit checkout simulation</span>
+                  <span>Safe and secure simulated checkout</span>
                 </div>
               </div>
             </div>

@@ -31,12 +31,12 @@ export function SearchModal() {
       : [];
 
   const suggestedTerms = [
-    "Cashmere",
-    "Wool Overcoat",
-    "Tailored Blazer",
-    "Silk Gown",
-    "Lug Sole Loafer",
-    "Selvedge Denim",
+    "Warm Coats",
+    "Blazers",
+    "Cotton Shirts",
+    "Festive Dresses",
+    "Leather Shoes",
+    "Pants",
   ];
 
   return (
@@ -56,7 +56,7 @@ export function SearchModal() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search our atelier catalogue (e.g., Cashmere, Coat, Tailoring)..."
+            placeholder="Search shirts, kurtas, jackets, dresses, shoes..."
             className="focus:outline-hidden w-full bg-transparent text-sm text-neutral-900 placeholder-neutral-400 sm:text-base"
             autoFocus
           />
@@ -70,7 +70,7 @@ export function SearchModal() {
           )}
           <button
             onClick={closeSearch}
-            className="ml-2 rounded-full border border-neutral-200 bg-neutral-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-neutral-600 hover:bg-[#D4AF62] hover:text-black"
+            className="ml-2 rounded-full border border-neutral-200 bg-neutral-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-neutral-600 hover:bg-[#FFD629] hover:text-black"
           >
             Esc
           </button>
@@ -80,15 +80,15 @@ export function SearchModal() {
         <div className="max-h-[60vh] overflow-y-auto p-6">
           {query.trim().length <= 1 ? (
             <div>
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8A6A3B]">
-                CURATED SARTORIAL SEARCHES
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#171717]">
+                POPULAR SEARCHES
               </p>
               <div className="flex flex-wrap gap-2">
                 {suggestedTerms.map((term) => (
                   <button
                     key={term}
                     onClick={() => setQuery(term)}
-                    className="hover:shadow-xs rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-800 transition-all hover:border-[#D4AF62] hover:bg-[#D4AF62]/20 hover:text-black"
+                    className="hover:shadow-xs rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-800 transition-all hover:border-[#FFD629] hover:bg-[#FFF9D6] hover:text-black"
                   >
                     {term}
                   </button>
@@ -98,17 +98,16 @@ export function SearchModal() {
           ) : results.length === 0 ? (
             <div className="py-12 text-center">
               <p className="font-heading text-sm font-semibold text-neutral-800">
-                No matching pieces found for &ldquo;{query}&rdquo;
+                No products found for &ldquo;{query}&rdquo;
               </p>
               <p className="mt-1 text-xs text-neutral-500">
-                Try searching for broader terms like &ldquo;Wool&rdquo;, &ldquo;Dress&rdquo;, or
-                &ldquo;Trousers&rdquo;.
+                Try searching for simpler words like &ldquo;Shirt&rdquo;, &ldquo;Dress&rdquo;, or &ldquo;Pants&rdquo;.
               </p>
             </div>
           ) : (
             <div className="space-y-4">
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
-                MATCHING PIECES ({results.length})
+                SEARCH RESULTS ({results.length})
               </p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {results.slice(0, 6).map((item) => (

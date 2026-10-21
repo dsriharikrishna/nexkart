@@ -4,10 +4,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-outerwear",
     slug: "outerwear",
-    title: "Outerwear & Coats",
-    subtitle: "Architectural silhouettes & tailored warmth",
+    title: "Jackets & Coats",
+    subtitle: "Warm layers and everyday jackets",
     description:
-      "Impeccably constructed wool coats, structural trenches, and technical parkas designed for modern climate transitions.",
+      "Comfortable wool coats, trenches, and light jackets to keep you warm and looking great in any weather.",
     image:
       "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -15,10 +15,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-tailoring",
     slug: "tailoring",
-    title: "Modern Tailoring",
-    subtitle: "Precision cuts with relaxed structure",
+    title: "Blazers & Suits",
+    subtitle: "Smart blazers and matching pants",
     description:
-      "Deconstructed blazers, drape pleated trousers, and modular suiting that redefine boardroom authority with effortless ease.",
+      "Easy-to-wear blazers and trousers designed for work, dinners, or special occasions.",
     image:
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -26,10 +26,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-knitwear",
     slug: "knitwear",
-    title: "Sculptural Knitwear",
-    subtitle: "Grade-A Mongolian Cashmere & Fine Merinos",
+    title: "Sweaters & Knits",
+    subtitle: "Soft sweaters and cozy cardigans",
     description:
-      "Cloud-soft rib-knits, roll necks, and draped cardigans woven from ethically sourced extrafine staple yarns.",
+      "Super soft knit sweaters and cardigans made from pure wool and soft cotton for daily comfort.",
     image:
       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -37,10 +37,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-shirts",
     slug: "shirts",
-    title: "Crisp Shirting",
-    subtitle: "Egyptian cotton & mulberry silk weaves",
+    title: "Shirts & Tops",
+    subtitle: "Everyday cotton and silk shirts",
     description:
-      "Oversized poplins, spread collars, and fluid silk button-downs crafted for enduring tactile satisfaction.",
+      "Crisp cotton button-downs and relaxed everyday tops that feel soft and look clean.",
     image:
       "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -48,10 +48,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-dresses",
     slug: "dresses",
-    title: "Dresses & Gowns",
-    subtitle: "Sensual minimalism & fluid silhouettes",
+    title: "Dresses & Outfits",
+    subtitle: "Casual and party dresses",
     description:
-      "Floor-sweeping bias slips, structured sheath dresses, and evening creations honoring feminine strength.",
+      "Simple, stylish dresses and outfits ready for day outings, parties, or festive events.",
     image:
       "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1200&q=85",
     gender: "women",
@@ -59,10 +59,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-trousers",
     slug: "trousers",
-    title: "Trousers & Bottoms",
-    subtitle: "Defined drape & timeless proportions",
+    title: "Pants & Trousers",
+    subtitle: "Comfortable pants, chinos, and jeans",
     description:
-      "Wide-leg virgin wool trousers, refined tailored denims, and high-rise pleated chinos.",
+      "Well-fitted everyday trousers, relaxed wide-leg pants, and premium jeans.",
     image:
       "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -70,10 +70,10 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-accessories",
     slug: "accessories",
-    title: "Bags & Leather Accessories",
-    subtitle: "Full-grain calfskin and sculptural metalwork",
+    title: "Bags & Accessories",
+    subtitle: "Leather bags, belts, and jewelry",
     description:
-      "Geometric tote bags, minimal crossbodies, handcrafted belts, and palladium-finished accents.",
+      "Everyday tote bags, neat crossbodies, classic belts, and clean jewelry pieces.",
     image:
       "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
@@ -81,12 +81,45 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: "cat-footwear",
     slug: "footwear",
-    title: "Artisanal Footwear",
-    subtitle: "Goodyear welted & sculpted Italian leathers",
+    title: "Shoes & Footwear",
+    subtitle: "Comfortable loafers, boots, and heels",
     description:
-      "Chunky lug-sole loafers, architectural Chelsea boots, and minimalist lambskin mules.",
+      "Handcrafted leather shoes, easy loafers, and boots made for walking and comfort.",
     image:
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=85",
+    gender: "all",
+  },
+  {
+    id: "cat-jewelry",
+    slug: "jewelry",
+    title: "Fine Jewelry",
+    subtitle: "Solid silver, gold vermeil, and modern cuffs",
+    description:
+      "Handcrafted solid sterling silver cuffs, signet rings, and timeless minimalist jewelry designed for everyday wear.",
+    image:
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85",
+    gender: "all",
+  },
+  {
+    id: "cat-beauty",
+    slug: "beauty",
+    title: "Beauty & Grooming",
+    subtitle: "Luxury fragrance, botanicals, and skincare",
+    description:
+      "Artisanal Eau de Parfum, botanical facial oils, and clean nourishing body care essentials.",
+    image:
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85",
+    gender: "all",
+  },
+  {
+    id: "cat-gifts",
+    slug: "gifts",
+    title: "Curated Gifts",
+    subtitle: "Luxury sets, fragrant candles, and curated gift boxes",
+    description:
+      "Thoughtfully boxed gifts, scented soy wax candles, and handpicked premium lifestyle sets.",
+    image:
+      "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?auto=format&fit=crop&w=1200&q=85",
     gender: "all",
   },
 ];
@@ -95,61 +128,61 @@ export const COLLECTIONS: CollectionMeta[] = [
   {
     id: "col-atelier-autumn",
     slug: "atelier-autumn",
-    title: "Atelier Autumn / Winter",
-    season: "FW 2026/27",
-    headline: "Architectural Volume Meets Raw Tactility",
+    title: "Autumn & Winter Collection",
+    season: "New Season",
+    headline: "Warm Layers and Comfortable Everyday Fits",
     description:
-      "An inquiry into modern garment geometry: double-faced cashmere overcoats, oversized tailoring, and brushed alpaca layers designed in our Mumbai studio.",
+      "Discover soft warm coats, neat blazers, and easy knit layers designed for everyday wear.",
     heroImage:
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85",
-    editorialQuote: "Structure without rigidity; softness with undeniable presence.",
+    editorialQuote: "Simple, warm, and easy to wear every day.",
   },
   {
     id: "col-minimalist-capsule",
     slug: "minimalist-capsule",
-    title: "The Uniform Capsule",
-    season: "Permanent Core",
-    headline: "Ten Foundational Wardrobe Pillars",
+    title: "Everyday Essentials",
+    season: "All-Year Basics",
+    headline: "Essential Outfits That Always Match",
     description:
-      "Curated for the intentional dresser. Rigorously tested proportions that interface seamlessly from morning meetings to nocturnal engagements.",
+      "Clean basic pieces you can wear to work, dinners, or casual weekends without thinking twice.",
     heroImage:
       "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1800&q=85",
-    editorialQuote: "Simplicity is the final achievement of intense artistic refinement.",
+    editorialQuote: "Good clothes that match everything in your closet.",
   },
   {
     id: "col-resort-modern",
     slug: "resort-modern",
-    title: "Resort & Riviera",
-    season: "Pre-Spring 2026",
-    headline: "Unstructured Sunlit Sophistication",
+    title: "Holiday & Summer Wear",
+    season: "Summer Edit",
+    headline: "Breezy Linens and Light Cotton Clothes",
     description:
-      "Lightweight Irish linens, crisp cotton voile, and ventilated knit polos tailored for warm sea breezes and Mediterranean horizons.",
+      "Light linen shirts, easy summer pants, and soft cotton tops perfect for warm days and sunny trips.",
     heroImage:
       "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85",
-    editorialQuote: "Dressed for the journey, wherever the coastline leads.",
+    editorialQuote: "Light, cool clothes made for warm sunny days.",
   },
   {
     id: "col-monochrome-series",
     slug: "monochrome-series",
-    title: "Monochrome Study",
-    season: "Special Edition",
-    headline: "The Expressive Power of Pure Contrast",
+    title: "Black & White Edit",
+    season: "Classic Fits",
+    headline: "Classic Black, White, and Grey Outfits",
     description:
-      "Deep obsidian wools, optic chalk whites, and tonal charcoal tweeds that celebrate line, shadow, and silhouette above all else.",
+      "Simple black coats, crisp white tops, and grey pants that give you a clean, sharp look.",
     heroImage:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85",
-    editorialQuote: "Color distracts; form and texture reveal identity.",
+    editorialQuote: "Clean black and white styles that never go out of style.",
   },
   {
     id: "col-evening-luxe",
     slug: "evening-luxe",
-    title: "Nocturne Gala & Evening",
-    season: "Evening Capsule",
-    headline: "Opulence Rendered with Quiet Restraint",
+    title: "Party & Evening Wear",
+    season: "Celebration Edit",
+    headline: "Special Outfits for Parties and Events",
     description:
-      "Heavy silk duchess satin, micro-sequin column skirts, and bespoke peak-lapel tuxedo suiting tailored for memorable entrances.",
+      "Silk dresses, clean party jackets, and neat celebration wear made for dinners and festive gatherings.",
     heroImage:
       "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1800&q=85",
-    editorialQuote: "True luxury never shouts; it commands the room in silence.",
+    editorialQuote: "Look your best for dinner and celebrations.",
   },
 ];

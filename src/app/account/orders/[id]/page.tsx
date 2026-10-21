@@ -36,10 +36,10 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Package className="mx-auto mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
         <h1 className="mb-2 font-heading text-xl font-bold uppercase tracking-wider text-neutral-900">
-          Order Reference Not Located
+          Order Not Found
         </h1>
         <p className="mb-8 text-xs text-neutral-500">
-          We could not find an atelier order with identifier &ldquo;{id}&rdquo;.
+          We could not find an order with number &ldquo;{id}&rdquo;.
         </p>
         <Link
           href="/account"
@@ -63,7 +63,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
           onClick={() => router.push("/account")}
           className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 transition-colors hover:text-black"
         >
-          <ArrowLeft className="h-3.5 w-3.5" /> Back to Account & Orders
+          <ArrowLeft className="h-3.5 w-3.5" /> Back to My Orders
         </button>
       </div>
 
@@ -72,7 +72,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
         <div>
           <div className="mb-2 flex items-center gap-3">
             <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-              ATELIER ORDER DOSSIER
+              ORDER DETAILS
             </span>
             <span className="inline-flex items-center gap-1 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">
               <CheckCircle2 className="h-3 w-3" /> {order.status}
@@ -83,7 +83,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
           </h1>
           <p className="mt-1 flex items-center gap-2 text-xs font-light text-neutral-500">
             <Calendar className="h-3.5 w-3.5 text-neutral-400" />
-            Placed on {order.date} • Reference ID: {order.id}
+            Placed on {order.date} • Order ID: {order.id}
           </p>
         </div>
 
@@ -97,13 +97,11 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
         </div>
       </div>
 
-
-
       {/* Shipment Tracking Progress Bar */}
       <div className="mb-8 rounded-3xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-xs">
         <h2 className="mb-6 flex items-center justify-between font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-          <span>Consignment Journey</span>
-          <span className="font-normal text-neutral-500">Valet Concierge: White-Glove Direct</span>
+          <span>Order Status</span>
+          <span className="font-normal text-neutral-500">Fast Delivery by Courier</span>
         </h2>
 
         <div className="relative mx-auto flex max-w-2xl items-center justify-between py-2">
@@ -115,18 +113,18 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
             }`}
           />
 
-          {/* Stage 1: Order Cataloged */}
+          {/* Stage 1: Confirmed */}
           <div className="relative z-10 flex flex-col items-center">
             <div className="shadow-xs flex h-8 w-8 items-center justify-center rounded-full bg-neutral-950 text-xs text-white">
               <CheckCircle2 className="h-4 w-4" />
             </div>
             <span className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-neutral-900">
-              Cataloged
+              Order Placed
             </span>
             <span className="text-[10px] text-neutral-400">{order.date}</span>
           </div>
 
-          {/* Stage 2: Dispatched from Mumbai */}
+          {/* Stage 2: Dispatched */}
           <div className="relative z-10 flex flex-col items-center">
             <div
               className={`shadow-xs flex h-8 w-8 items-center justify-center rounded-full text-xs ${
@@ -140,9 +138,9 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                 isDispatched ? "text-neutral-900" : "text-neutral-400"
               }`}
             >
-              Dispatched
+              On The Way
             </span>
-            <span className="text-[10px] text-neutral-400">Mumbai Hub</span>
+            <span className="text-[10px] text-neutral-400">Local Hub</span>
           </div>
 
           {/* Stage 3: Delivered */}
@@ -162,7 +160,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
               Delivered
             </span>
             <span className="text-[10px] text-neutral-400">
-              {isDelivered ? "Signed For" : "Estimated 2-3 Days"}
+              {isDelivered ? "Completed" : "Estimated in 45-60 mins"}
             </span>
           </div>
         </div>
@@ -173,7 +171,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
         {/* Ordered Pieces */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8 lg:col-span-8">
           <h2 className="mb-6 border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-            Ordered Atelier Pieces ({order.items.reduce((acc, i) => acc + i.quantity, 0)})
+            Items in This Order ({order.items.reduce((acc, i) => acc + i.quantity, 0)})
           </h2>
 
           <div className="space-y-4 divide-y divide-neutral-100">
@@ -192,7 +190,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                     <span>Qty: {item.quantity}</span>
                   </div>
                   <span className="mt-2 block text-xs font-semibold text-neutral-900">
-                    Unit Price: {formatCurrency(item.price)}
+                    Price: {formatCurrency(item.price)}
                   </span>
                 </div>
                 <div className="text-right">
@@ -212,11 +210,11 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
               </span>
             </div>
             <div className="flex justify-between text-neutral-600">
-              <span>Express Courier Transit</span>
-              <span className="font-medium text-emerald-800">Complimentary Global Priority</span>
+              <span>Delivery</span>
+              <span className="font-medium text-emerald-800">Free Fast Delivery</span>
             </div>
             <div className="flex justify-between border-t border-neutral-200 pt-2 text-base font-bold text-neutral-950">
-              <span>Total Payment</span>
+              <span>Total Amount</span>
               <span>{formatCurrency(order.total)}</span>
             </div>
           </div>
@@ -229,7 +227,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
             <div className="mb-3 flex items-center gap-2 text-neutral-950">
               <MapPin className="h-4 w-4 text-[#9E643C]" />
               <h3 className="font-heading text-xs font-bold uppercase tracking-wider">
-                Consignment Address
+                Delivery Address
               </h3>
             </div>
             <p className="text-xs font-light leading-relaxed text-neutral-600">
@@ -237,23 +235,22 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
             </p>
           </div>
 
-          {/* Concierge Support Box */}
+          {/* Support Box */}
           <div className="space-y-3 border border-neutral-200 bg-white p-6">
             <div className="flex items-center gap-2 text-neutral-950">
               <ShieldCheck className="h-4 w-4 text-[#C5A059]" />
               <h3 className="font-heading text-xs font-bold uppercase tracking-wider">
-                Atelier Concierge Care
+                Easy Returns &amp; Exchanges
               </h3>
             </div>
             <p className="text-xs font-light leading-relaxed text-neutral-500">
-              Complimentary returns, exchanges, and private fit adjustments are available within 30
-              days of parcel receipt.
+              Free returns and easy size swaps are available within 30 days of delivery.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-1.5 pt-2 text-xs font-semibold text-[#9E643C] hover:underline"
             >
-              Inquire with Atelier Concierge <ExternalLink className="h-3 w-3" />
+              Contact Support <ExternalLink className="h-3 w-3" />
             </Link>
           </div>
         </div>

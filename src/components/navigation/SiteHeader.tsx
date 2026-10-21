@@ -3,17 +3,32 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, ShoppingBag, Heart, User, Menu, X } from "lucide-react";
+import {
+  Search,
+  ShoppingBag,
+  Heart,
+  User,
+  Compass,
+  Grid,
+  MapPin,
+  ChevronDown,
+  X,
+  CheckCircle2,
+} from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useSearchOverlayStore } from "@/stores/searchOverlayStore";
-import { motion, AnimatePresence } from "framer-motion";
+import { checkPincodeServiceability } from "@/data/pincodes";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [locationModalOpen, setLocationModalOpen] = useState(false);
+  const [selectedPinCode, setSelectedPinCode] = useState("500081");
+  const [selectedCity, setSelectedCity] = useState("Hyderabad (HITEC City)");
+  const [deliveryTime, setDeliveryTime] = useState("45 mins");
+  const [tempPin, setTempPin] = useState("");
+  const [pinFeedback, setPinFeedback] = useState<string | null>(null);
 
   const cartItemCount = useCartStore((state) => state.getItemCount());
   const openCart = useCartStore((state) => state.openCart);
@@ -22,228 +37,255 @@ export function SiteHeader() {
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile drawer on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
-  const navLinks = [
-    { label: "WOMEN", href: "/collections/women" },
-    { label: "MEN", href: "/collections/men" },
-    { label: "NEW ARRIVALS", href: "/new-arrivals" },
-    { label: "COLLECTIONS", href: "/collections" },
-    { label: "THE ATELIER", href: "/about" },
-  ];
+  const handleSavePin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (tempPin.trim().length === 6) {
+      const result = checkPincodeServiceability(tempPin);
+      setSelectedPinCode(result.pincode);
+      setSelectedCity(result.city);
+      setDeliveryTime(result.deliveryTime);
+      if (result.isServiceable) {
+        setPinFeedback(`Delivery available! Arrives in ${result.deliveryTime} from our ${result.hubName}.`);
+        setTimeout(() => {
+          setLocationModalOpen(false);
+          setPinFeedback(null);
+        }, 1200);
+      } else {
+        setPinFeedback("Standard courier delivery in 2 to 4 days for this PIN code.");
+        setTimeout(() => {
+          setLocationModalOpen(false);
+          setPinFeedback(null);
+        }, 1800);
+      }
+    }
+  };
 
   return (
     <>
-      <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-          isScrolled
-            ? "shadow-xs border-b border-[#E8E3D8]/80 bg-[#FBF9F4]/85 py-3 backdrop-blur-md"
-            : "backdrop-blur-xs border-b border-neutral-200/40 bg-[#FBF9F4]/70 py-4"
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Mobile hamburger */}
-          <div className="flex items-center lg:hidden">
+      <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white shadow-2xs">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
+          {/* Left: Brand Logo & Pin Code Delivery Selector */}
+          <div className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-1.5">
+              <span className="font-heading text-2xl font-black uppercase tracking-tight text-[#171717] sm:text-3xl">
+                NEXKART
+              </span>
+              <span className="flex h-2 w-2 rounded-full bg-[#FFD629]" />
+            </Link>
+
+            {/* Delivery Location Pill: Telangana / AP Regional First */}
             <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="-ml-2 rounded-full p-2 text-neutral-900 transition-colors hover:bg-[#D4AF62]/20"
-              aria-label="Open mobile navigation"
+              onClick={() => setLocationModalOpen(true)}
+              className="hidden items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-left text-xs transition-colors hover:border-[#FFD629] hover:bg-[#FFF9D6]/40 sm:flex"
             >
-              <Menu className="h-5 w-5" />
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FFD629] text-[#171717]">
+                <MapPin className="h-3 w-3" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-medium leading-none text-[#707070]">
+                  ⚡ Delivery in {deliveryTime}
+                </span>
+                <span className="font-heading text-[11px] font-bold leading-tight text-[#171717]">
+                  {selectedCity} • {selectedPinCode}
+                </span>
+              </div>
+              <ChevronDown className="h-3 w-3 text-neutral-400" />
             </button>
           </div>
 
-          {/* Desktop Left Navigation */}
-          <nav className="hidden items-center gap-7 lg:flex">
-            {navLinks.slice(0, 3).map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`group relative py-1 text-[12px] font-semibold uppercase tracking-[0.2em] transition-colors ${
-                    isActive ? "text-[#101010]" : "text-neutral-700 hover:text-[#101010]"
-                  }`}
-                >
-                  {link.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#D4AF62] transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Brand Logo / Wordmark - BLACK & CHAMPAGNE GOLD */}
-          <div className="flex-1 text-center lg:flex-none">
-            <Link href="/" className="group inline-block">
-              <div className="flex items-center justify-center gap-2">
-                <span className="block font-heading text-2xl font-black uppercase tracking-[0.22em] text-[#101010] sm:text-3xl">
-                  NEXKART
-                </span>
-                <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF62] ring-2 ring-[#101010]" />
-              </div>
-              <span className="-mt-0.5 block text-[8px] font-semibold uppercase tracking-[0.5em] text-[#8A6A3B] transition-colors group-hover:text-[#D4AF62]">
-                ATELIER INDIA
-              </span>
-            </Link>
-          </div>
-
-          {/* Desktop Right Navigation & Actions */}
-          <div className="flex items-center gap-3.5 sm:gap-4">
-            <div className="mr-2 hidden items-center gap-7 lg:flex">
-              {navLinks.slice(3).map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`group relative py-1 text-[12px] font-semibold uppercase tracking-[0.2em] transition-colors ${
-                      isActive ? "text-[#101010]" : "text-neutral-700 hover:text-[#101010]"
-                    }`}
-                  >
-                    {link.label}
-                    <span
-                      className={`absolute bottom-0 left-0 h-[2px] bg-[#D4AF62] transition-all duration-300 ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* Action Icons - Rounded Minimalist Controls */}
+          {/* Center: Search Bar */}
+          <div className="flex flex-1 max-w-xl">
             <button
               onClick={openSearch}
-              className="backdrop-blur-xs rounded-full border border-[#E6DFCF] bg-white/80 p-2 text-neutral-800 transition-all hover:border-[#101010] hover:bg-white hover:text-black"
-              aria-label="Search catalog"
+              className="relative flex w-full items-center gap-2.5 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-left text-xs text-neutral-400 transition-colors hover:border-[#FFD629] hover:bg-white"
             >
-              <Search className="h-4 w-4" />
+              <Search className="h-4 w-4 text-neutral-400" />
+              <span className="line-clamp-1">Search shirts, kurtas, dresses, shoes, and pants...</span>
             </button>
+          </div>
+
+          {/* Right: Quick Links & Actions */}
+          <div className="flex items-center gap-2 sm:gap-4 text-xs font-semibold text-[#171717]">
+            <Link
+              href="/categories"
+              className="hidden items-center gap-1.5 transition-colors hover:text-[#FFB800] lg:flex"
+            >
+              <Grid className="h-4 w-4" />
+              <span>Categories</span>
+            </Link>
 
             <Link
-              href="/account"
-              className="backdrop-blur-xs hidden rounded-full border border-[#E6DFCF] bg-white/80 p-2 text-neutral-800 transition-all hover:border-[#101010] hover:bg-white hover:text-black sm:block"
-              aria-label="Client Account"
+              href="/collections"
+              className="hidden items-center gap-1.5 transition-colors hover:text-[#FFB800] lg:flex"
             >
-              <User className="h-4 w-4" />
+              <Compass className="h-4 w-4" />
+              <span>Collections</span>
             </Link>
 
             <Link
               href="/wishlist"
-              className="backdrop-blur-xs relative rounded-full border border-[#E6DFCF] bg-white/80 p-2 text-neutral-800 transition-all hover:border-[#101010] hover:bg-white hover:text-black"
+              className="relative flex items-center gap-1.5 p-2 transition-colors hover:text-[#FFB800]"
               aria-label="Wishlist"
             >
               <Heart className="h-4 w-4" />
+              <span className="hidden md:inline">Saved</span>
               {mounted && wishlistCount > 0 && (
-                <span className="shadow-xs absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#8A6A3B] text-[9px] font-bold text-white">
+                <span className="absolute -top-0.5 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#FFD629] text-[9px] font-bold text-[#171717]">
                   {wishlistCount}
                 </span>
               )}
             </Link>
 
-            {/* Shopping Bag Button with Champagne Gold Accent */}
             <button
               onClick={openCart}
-              className="relative flex items-center gap-2 rounded-full border border-[#101010] bg-[#101010] px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#D4AF62] hover:text-[#101010]"
+              className="relative flex items-center gap-1.5 rounded-full bg-[#171717] px-3.5 py-2 text-xs font-bold text-white transition-all hover:bg-[#FFD629] hover:text-[#171717]"
               aria-label="Shopping bag"
             >
               <ShoppingBag className="h-3.5 w-3.5" />
-              <span className="hidden text-[11px] uppercase tracking-wider sm:inline">Bag</span>
+              <span>Cart</span>
               {mounted && cartItemCount > 0 && (
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#D4AF62] text-[9px] font-extrabold text-[#101010]">
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#FFD629] text-[9px] font-extrabold text-[#171717]">
                   {cartItemCount}
                 </span>
               )}
             </button>
+
+            <Link
+              href="/account"
+              className="flex items-center gap-1.5 p-1.5 hover:text-[#FFB800]"
+              aria-label="User Account"
+            >
+              <User className="h-4 w-4" />
+              <span className="hidden md:inline">Account</span>
+            </Link>
           </div>
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 lg:hidden">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileMenuOpen(false)}
-              className="backdrop-blur-xs fixed inset-0 bg-black/40"
-            />
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed inset-y-0 left-0 z-10 flex w-full max-w-xs flex-col justify-between bg-white p-6 shadow-xl"
-            >
-              <div>
-                <div className="flex items-center justify-between border-b border-neutral-100 pb-6">
-                  <span className="font-heading text-lg font-bold tracking-[0.2em]">NEXKART</span>
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 text-neutral-500 hover:text-neutral-900"
-                    aria-label="Close menu"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                </div>
-
-                <div className="mt-8 flex flex-col gap-5">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="py-1 text-sm font-medium uppercase tracking-[0.15em] text-neutral-800 hover:text-neutral-950"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                  <div className="flex flex-col gap-3 border-t border-neutral-100 pt-4">
-                    <Link
-                      href="/account"
-                      className="text-xs uppercase tracking-[0.15em] text-neutral-600 hover:text-neutral-900"
-                    >
-                      My Account & Orders
-                    </Link>
-                    <Link
-                      href="/wishlist"
-                      className="text-xs uppercase tracking-[0.15em] text-neutral-600 hover:text-neutral-900"
-                    >
-                      Saved Items ({mounted ? wishlistCount : 0})
-                    </Link>
-                    <Link
-                      href="/cart"
-                      className="text-xs uppercase tracking-[0.15em] text-neutral-600 hover:text-neutral-900"
-                    >
-                      Shopping Bag ({mounted ? cartItemCount : 0})
-                    </Link>
-                  </div>
-                </div>
+      {/* Pincode Serviceability Selector Modal */}
+      {locationModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-2xs">
+          <div className="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-[#FFB800]" />
+                <h3 className="font-heading text-sm font-bold text-[#171717]">
+                  Check Delivery by PIN Code
+                </h3>
               </div>
+              <button
+                onClick={() => setLocationModalOpen(false)}
+                className="rounded-full p-1 text-neutral-400 hover:text-black"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
 
-              <div className="border-t border-neutral-100 pt-6 text-xs text-neutral-400">
-                <p>NEXKART ATELIER INDIA</p>
-                <p className="mt-1">Customer Concierge: concierge-india@nexkart.com</p>
+            <p className="mt-3 text-xs text-[#707070]">
+              Fast 45-60 minute delivery is active in <strong className="text-neutral-900">Telangana &amp; Andhra Pradesh</strong>. Enter your 6-digit PIN code:
+            </p>
+
+            <form onSubmit={handleSavePin} className="mt-4 flex gap-2">
+              <input
+                type="text"
+                placeholder="Enter 6-digit PIN code"
+                maxLength={6}
+                value={tempPin}
+                onChange={(e) => setTempPin(e.target.value.replace(/\D/g, ""))}
+                className="flex-1 rounded-full border border-neutral-300 px-4 py-2 text-xs font-semibold focus:border-[#FFD629] focus:outline-hidden"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-[#171717] px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#FFD629] hover:bg-[#FFD629] hover:text-[#171717]"
+              >
+                Check
+              </button>
+            </form>
+
+            {pinFeedback && (
+              <div className="mt-3 flex items-center gap-2 rounded-xl bg-[#FFF9D6] p-2 text-xs font-medium text-neutral-800">
+                <CheckCircle2 className="h-4 w-4 text-[#FFB800]" />
+                <span>{pinFeedback}</span>
               </div>
-            </motion.div>
+            )}
+
+            {/* Quick Regional Picks */}
+            <div className="mt-5 space-y-2">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">
+                Popular Cities:
+              </p>
+              <div className="flex flex-wrap gap-2 text-[11px]">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedPinCode("500081");
+                    setSelectedCity("Hyderabad (HITEC City)");
+                    setDeliveryTime("45 mins");
+                    setLocationModalOpen(false);
+                  }}
+                  className="rounded-full border border-[#FFD629] bg-[#FFF9D6] px-3 py-1 font-semibold text-[#171717] hover:bg-[#FFD629]"
+                >
+                  ⚡ Hyderabad HITEC (500081) • 45m
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedPinCode("500034");
+                    setSelectedCity("Hyderabad (Banjara Hills)");
+                    setDeliveryTime("45 mins");
+                    setLocationModalOpen(false);
+                  }}
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 font-semibold text-[#171717] hover:border-[#FFD629] hover:bg-[#FFF9D6]"
+                >
+                  ⚡ Banjara Hills (500034) • 45m
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedPinCode("530001");
+                    setSelectedCity("Visakhapatnam");
+                    setDeliveryTime("60 mins");
+                    setLocationModalOpen(false);
+                  }}
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 font-semibold text-[#171717] hover:border-[#FFD629] hover:bg-[#FFF9D6]"
+                >
+                  ⚡ Vizag Port (530001) • 60m
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedPinCode("520001");
+                    setSelectedCity("Vijayawada");
+                    setDeliveryTime("60 mins");
+                    setLocationModalOpen(false);
+                  }}
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 font-semibold text-[#171717] hover:border-[#FFD629] hover:bg-[#FFF9D6]"
+                >
+                  ⚡ Vijayawada (520001) • 60m
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedPinCode("560001");
+                    setSelectedCity("Bengaluru");
+                    setDeliveryTime("60 mins");
+                    setLocationModalOpen(false);
+                  }}
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 font-semibold text-[#171717] hover:border-[#FFD629] hover:bg-[#FFF9D6]"
+                >
+                  Bengaluru (560001)
+                </button>
+              </div>
+            </div>
           </div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </>
   );
 }

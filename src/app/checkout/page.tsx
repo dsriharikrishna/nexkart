@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useForm, useWatch } from "react-hook-form";
 import { motion } from "framer-motion";
 import { Lock, ArrowRight } from "lucide-react";
@@ -11,24 +10,13 @@ import { useCartStore } from "@/stores/cartStore";
 import { useAccountStore, MockOrder } from "@/stores/accountStore";
 import { formatCurrency } from "@/lib/utils";
 import { luxuryTransition } from "@/components/ui/motion";
-
-interface CheckoutFormData {
-  email: string;
-  firstName: string;
-  lastName: string;
-  address: string;
-  apartment?: string;
-  city: string;
-  postalCode: string;
-  country: string;
-  paymentMethod: "upi" | "card" | "netbanking" | "apple_pay" | "atelier_credit";
-  cardNumber?: string;
-  cardExpiry?: string;
-  cardCvc?: string;
-}
+import { CheckoutFormData } from "@/components/checkout/checkout-types";
+import { CheckoutDeliveryForm } from "@/components/checkout/CheckoutDeliveryForm";
+import { CheckoutPaymentSection } from "@/components/checkout/CheckoutPaymentSection";
+import { CheckoutOrderSummary } from "@/components/checkout/CheckoutOrderSummary";
+import { CheckoutSuccessView } from "@/components/checkout/CheckoutSuccessView";
 
 export default function CheckoutPage() {
-  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderComplete, setOrderComplete] = useState<MockOrder | null>(null);
@@ -47,12 +35,14 @@ export default function CheckoutPage() {
     formState: { errors },
   } = useForm<CheckoutFormData>({
     defaultValues: {
-      email: "aditya.sharma@atelier-india.com",
+      email: "aditya.reddy@nexkart-express.com",
+      phone: "9849012345",
       firstName: "Aditya",
-      lastName: "Sharma",
-      address: "Flat 14B, Altamount Road, Cumballa Hill",
-      city: "Mumbai",
-      postalCode: "400026",
+      lastName: "Reddy",
+      address: "Plot 42, Road No. 36, Jubilee Hills",
+      city: "Hyderabad",
+      state: "Telangana",
+      postalCode: "500034",
       country: "India",
       paymentMethod: "upi",
     },
@@ -70,16 +60,16 @@ export default function CheckoutPage() {
     return (
       <div className="mx-auto max-w-md px-4 py-24 text-center">
         <h2 className="mb-2 font-heading text-lg font-bold uppercase tracking-wider">
-          Your Bag is Empty
+          Your Cart is Empty
         </h2>
         <p className="mb-6 text-xs text-neutral-500">
-          You need items in your bag before accessing checkout.
+          Your cart is empty. Find something you like and add it to your cart.
         </p>
         <Link
           href="/collections"
           className="inline-block bg-black px-6 py-3 text-xs uppercase tracking-wider text-white"
         >
-          Explore Pieces
+          Start Shopping
         </Link>
       </div>
     );
@@ -115,7 +105,6 @@ export default function CheckoutPage() {
       setOrderComplete(newOrder);
       setIsSubmitting(false);
 
-      // Trigger celebratory confetti effect
       try {
         confetti({
           particleCount: 80,
@@ -129,92 +118,8 @@ export default function CheckoutPage() {
     }, 1000);
   };
 
-  // SUCCESS CONFIRMATION VIEW WITH 60-MIN WARDROBE EXPERIENCE
   if (orderComplete) {
-    return (
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-800">
-            <Lock className="h-7 w-7" />
-          </div>
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#8A6A3B]">
-            Consignment Confirmed
-          </span>
-          <h1 className="mt-2 font-heading text-3xl font-extrabold uppercase tracking-tight text-neutral-900 sm:text-4xl">
-            Thank you for your order
-          </h1>
-          <p className="mt-3 text-sm text-neutral-600">
-            Order Reference: <strong className="font-bold text-neutral-900">{orderComplete.orderNumber}</strong>. We
-            have dispatched confirmation to your email.
-          </p>
-        </div>
-
-        {/* Order Details Dossier Below */}
-        <div className="mx-auto mt-12 max-w-3xl space-y-6 text-center">
-          <div className="rounded-3xl border border-neutral-200/80 bg-white p-6 text-left shadow-xs sm:p-8">
-            <div className="flex items-center justify-between border-b border-neutral-100 pb-4">
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A6A3B]">
-                  CONSIGNMENT DOSSIER
-                </span>
-                <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-neutral-900">
-                  Order Breakdown ({orderComplete.orderNumber})
-                </h3>
-              </div>
-              <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-800">
-                Dispatched via Mumbai Flagship
-              </span>
-            </div>
-
-            <div className="divide-y divide-neutral-100 text-xs">
-              {orderComplete.items.map((i, idx) => (
-                <div key={idx} className="flex items-center justify-between py-3.5">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={i.image}
-                      alt={i.name}
-                      className="h-12 w-10 rounded-lg object-cover"
-                    />
-                    <div>
-                      <span className="font-semibold text-neutral-900">{i.name}</span>
-                      <p className="text-[11px] text-neutral-500">
-                        Qty: {i.quantity} • {i.color} / {i.size}
-                      </p>
-                    </div>
-                  </div>
-                  <span className="font-heading font-semibold text-neutral-950">
-                    {formatCurrency(i.price * i.quantity)}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex justify-between border-t border-neutral-200 pt-4 text-sm font-bold text-neutral-950">
-              <span>Total Guaranteed Delivery</span>
-              <span className="font-heading text-base">{formatCurrency(orderComplete.total)}</span>
-            </div>
-            <p className="pt-2 text-[11px] text-neutral-500">
-              Valet Drop Location: {orderComplete.shippingAddress}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href={`/account/orders/${orderComplete.id}`}
-              className="rounded-full bg-neutral-950 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-all hover:bg-neutral-800"
-            >
-              Inspect Order Dossier
-            </Link>
-            <Link
-              href="/account"
-              className="rounded-full border border-neutral-300 bg-white px-8 py-3.5 text-xs font-medium uppercase tracking-[0.18em] text-neutral-800 transition-all hover:border-black"
-            >
-              My Account &amp; Orders
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
+    return <CheckoutSuccessView order={orderComplete} />;
   }
 
   return (
@@ -226,13 +131,13 @@ export default function CheckoutPage() {
     >
       <div className="mx-auto mb-10 max-w-2xl text-center">
         <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-          NEXKART CONCIERGE DESK
+          QUICK &amp; EASY CHECKOUT
         </span>
         <h1 className="font-heading text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
-          Simulated Checkout
+          Demo Checkout
         </h1>
         <p className="mt-1 text-xs font-light text-neutral-500">
-          Complete your simulated dispatch reservation. No real payment processing occurs.
+          This is a simulated demo checkout. No real money or card is charged.
         </p>
       </div>
 
@@ -243,298 +148,39 @@ export default function CheckoutPage() {
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-8 border border-neutral-200 bg-white p-6 sm:p-8"
           >
-            {/* Contact Details */}
-            <div>
-              <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-                1. Contact & Dispatch Details
-              </h2>
-              <div className="space-y-3">
-                <div>
-                  <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                    Email Address *
-                  </label>
-                  <input
-                    {...register("email", { required: true })}
-                    type="email"
-                    className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                  />
-                  {errors.email && (
-                    <span className="text-[10px] text-rose-600">Email is required</span>
-                  )}
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                      First Name *
-                    </label>
-                    <input
-                      {...register("firstName", { required: true })}
-                      type="text"
-                      className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                      Last Name *
-                    </label>
-                    <input
-                      {...register("lastName", { required: true })}
-                      type="text"
-                      className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                    Street Address *
-                  </label>
-                  <input
-                    {...register("address", { required: true })}
-                    type="text"
-                    className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                  />
-                </div>
-
-                <div className="grid grid-cols-3 gap-3">
-                  <div>
-                    <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                      City *
-                    </label>
-                    <input
-                      {...register("city", { required: true })}
-                      type="text"
-                      className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                      Postal Code *
-                    </label>
-                    <input
-                      {...register("postalCode", { required: true })}
-                      type="text"
-                      className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-1 block text-[11px] uppercase tracking-wider text-neutral-600">
-                      Country *
-                    </label>
-                    <input
-                      {...register("country", { required: true })}
-                      type="text"
-                      className="focus:outline-hidden w-full border border-neutral-300 px-3 py-2 text-xs focus:border-black"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Simulated Payment Option */}
-            <div>
-              <h2 className="mb-4 flex items-center justify-between border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-                <span>2. Simulated Payment Method</span>
-                <span className="bg-emerald-50 px-2 py-0.5 text-[10px] font-normal text-emerald-700">
-                  Sandbox Active
-                </span>
-              </h2>
-
-              <div className="space-y-2">
-                <label className="flex cursor-pointer items-center gap-3 border border-neutral-200 p-3 hover:border-black">
-                  <input
-                    {...register("paymentMethod")}
-                    type="radio"
-                    value="upi"
-                    className="accent-black"
-                  />
-                  <div className="flex flex-1 items-center justify-between">
-                    <span className="text-xs font-medium">
-                      UPI Instant Transfer (GPay / PhonePe / Paytm)
-                    </span>
-                    <span className="rounded-xs bg-[#FBF8F4] px-1.5 py-0.5 text-[9px] font-bold text-[#9E643C]">
-                      Popular
-                    </span>
-                  </div>
-                </label>
-                <label className="flex cursor-pointer items-center gap-3 border border-neutral-200 p-3 hover:border-black">
-                  <input
-                    {...register("paymentMethod")}
-                    type="radio"
-                    value="card"
-                    className="accent-black"
-                  />
-                  <span className="text-xs font-medium">Credit / Debit Card / RuPay (Sandbox)</span>
-                </label>
-                <label className="flex cursor-pointer items-center gap-3 border border-neutral-200 p-3 hover:border-black">
-                  <input
-                    {...register("paymentMethod")}
-                    type="radio"
-                    value="netbanking"
-                    className="accent-black"
-                  />
-                  <span className="text-xs font-medium">Net Banking (HDFC, ICICI, SBI, Axis)</span>
-                </label>
-                <label className="flex cursor-pointer items-center gap-3 border border-neutral-200 p-3 hover:border-black">
-                  <input
-                    {...register("paymentMethod")}
-                    type="radio"
-                    value="atelier_credit"
-                    className="accent-black"
-                  />
-                  <span className="text-xs font-medium">
-                    Private Atelier VIP Account Balance (₹1,50,000)
-                  </span>
-                </label>
-              </div>
-
-              {selectedPayment === "upi" && (
-                <div className="mt-4 space-y-3 border border-neutral-200 bg-[#FAF7F2] p-4">
-                  <div>
-                    <label className="mb-1 block text-[10px] uppercase tracking-wider text-neutral-600">
-                      Virtual Payment Address (UPI ID)
-                    </label>
-                    <input
-                      type="text"
-                      defaultValue="aditya.sharma@okaxis"
-                      className="w-full border border-neutral-300 bg-white px-3 py-2 text-xs text-neutral-800"
-                    />
-                    <p className="mt-1 text-[10px] text-neutral-400">
-                      Supports Google Pay, PhonePe, Paytm, BHIM, CRED UPI. Instant verification.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {selectedPayment === "netbanking" && (
-                <div className="mt-4 space-y-3 border border-neutral-200 bg-neutral-50 p-4">
-                  <div>
-                    <label className="mb-1 block text-[10px] uppercase tracking-wider text-neutral-600">
-                      Select Primary Banking Partner
-                    </label>
-                    <select
-                      defaultValue="hdfc"
-                      className="w-full border border-neutral-300 bg-white px-3 py-2 text-xs text-neutral-800"
-                    >
-                      <option value="hdfc">HDFC Bank (Instant NEFT / RTGS / IMPS)</option>
-                      <option value="icici">ICICI Bank</option>
-                      <option value="sbi">State Bank of India (SBI)</option>
-                      <option value="axis">Axis Bank</option>
-                      <option value="kotak">Kotak Mahindra Bank</option>
-                    </select>
-                  </div>
-                </div>
-              )}
-
-              {selectedPayment === "card" && (
-                <div className="mt-4 space-y-3 border border-neutral-200 bg-neutral-50 p-4">
-                  <div>
-                    <label className="mb-1 block text-[10px] uppercase tracking-wider text-neutral-500">
-                      Demo Card / RuPay Number
-                    </label>
-                    <input
-                      type="text"
-                      defaultValue="•••• •••• •••• 4242"
-                      disabled
-                      className="w-full border border-neutral-300 bg-white px-3 py-2 text-xs text-neutral-500"
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="mb-1 block text-[10px] uppercase tracking-wider text-neutral-500">
-                        Expiry Date
-                      </label>
-                      <input
-                        type="text"
-                        defaultValue="12 / 28"
-                        disabled
-                        className="w-full border border-neutral-300 bg-white px-3 py-2 text-xs text-neutral-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1 block text-[10px] uppercase tracking-wider text-neutral-500">
-                        CVC
-                      </label>
-                      <input
-                        type="text"
-                        defaultValue="888"
-                        disabled
-                        className="w-full border border-neutral-300 bg-white px-3 py-2 text-xs text-neutral-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <CheckoutDeliveryForm register={register} errors={errors} />
+            <CheckoutPaymentSection register={register} selectedPayment={selectedPayment} />
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex w-full items-center justify-center gap-2 bg-neutral-950 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#9E643C]"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] py-4 text-xs font-black uppercase tracking-[0.16em] text-[#171717] shadow-md transition-all hover:brightness-105 active:scale-[0.99]"
             >
               {isSubmitting ? (
-                "Simulating Authorization..."
+                "Placing Your Demo Order..."
               ) : (
                 <>
-                  Complete Demo Order ({formatCurrency(total)}){" "}
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  Place Demo Order ({formatCurrency(total)}){" "}
+                  <ArrowRight className="h-4 w-4" />
                 </>
               )}
             </button>
 
             <div className="flex items-center justify-center gap-2 text-[10px] text-neutral-400">
               <Lock className="h-3.5 w-3.5 text-neutral-500" />
-              <span>Simulated encrypted checkout session • No real card charged</span>
+              <span>Simulated demo checkout • No payment is processed</span>
             </div>
           </form>
         </div>
 
         {/* Order Summary Column */}
         <div className="lg:col-span-5">
-          <div className="space-y-6 border border-neutral-200 bg-white p-6">
-            <h2 className="border-b border-neutral-100 pb-3 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-              Order Review ({items.reduce((acc, i) => acc + i.quantity, 0)} Items)
-            </h2>
-
-            <div className="max-h-72 space-y-4 divide-y divide-neutral-100 overflow-y-auto">
-              {items.map((item) => (
-                <div key={item.id} className="flex gap-3 pt-3">
-                  <div className="h-18 w-14 shrink-0 border border-neutral-200 bg-neutral-100">
-                    <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="flex flex-1 flex-col justify-between">
-                    <div>
-                      <h4 className="line-clamp-1 font-heading text-xs font-semibold text-neutral-900">
-                        {item.name}
-                      </h4>
-                      <p className="text-[11px] text-neutral-500">
-                        {item.color} / {item.size} • Qty {item.quantity}
-                      </p>
-                    </div>
-                    <span className="text-xs font-bold text-neutral-900">
-                      {formatCurrency(item.price * item.quantity)}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="space-y-2 border-t border-neutral-200 pt-4 text-xs">
-              <div className="flex justify-between text-neutral-600">
-                <span>Subtotal</span>
-                <span>{formatCurrency(subtotal)}</span>
-              </div>
-              <div className="flex justify-between text-neutral-600">
-                <span>Express Courier</span>
-                <span>{shipping === 0 ? "Complimentary" : formatCurrency(shipping)}</span>
-              </div>
-              <div className="flex justify-between border-t border-neutral-200 pt-2 text-sm font-bold text-neutral-950">
-                <span>Total</span>
-                <span>{formatCurrency(total)}</span>
-              </div>
-            </div>
-          </div>
+          <CheckoutOrderSummary
+            items={items}
+            subtotal={subtotal}
+            shipping={shipping}
+            total={total}
+          />
         </div>
       </div>
     </motion.div>

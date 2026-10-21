@@ -29,32 +29,31 @@ export default function WishlistPage() {
       className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
     >
       <div className="mb-10 border-b border-neutral-200 pb-6">
-        <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9E643C]">
-          PERSONAL ATELIER CURATION
+        <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#FFB800]">
+          YOUR SAVED ITEMS
         </span>
         <h1 className="font-heading text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
           Saved Items ({items.length})
         </h1>
         <p className="mt-1 text-xs font-light text-neutral-500 sm:text-sm">
-          Your private selection of archival pieces and wishlist edits saved across visits.
+          Clothes and accessories you saved to shop later.
         </p>
       </div>
 
       {items.length === 0 ? (
-        <div className="mx-auto max-w-lg border border-neutral-200 bg-white p-8 py-24 text-center">
+        <div className="mx-auto max-w-lg rounded-2xl border border-neutral-200 bg-white p-8 py-24 text-center">
           <Heart className="mx-auto mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
           <h2 className="mb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-900">
-            Your Wishlist is Empty
+            You haven&apos;t saved any items yet
           </h2>
           <p className="mx-auto mb-8 max-w-sm text-xs leading-relaxed text-neutral-500">
-            Click the heart icon on any garment or accessory across the atelier to assemble your
-            private lookbook.
+            Tap the heart icon on any outfit you like to save it here.
           </p>
           <Link
             href="/collections"
-            className="inline-block bg-neutral-950 px-8 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-neutral-800"
+            className="inline-block rounded-full bg-neutral-950 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-neutral-800"
           >
-            Explore Collections
+            Start Browsing
           </Link>
         </div>
       ) : (
@@ -101,9 +100,9 @@ export default function WishlistPage() {
                           addItem(product, defaultVariant.color, defaultVariant.size, 1);
                         }
                       }}
-                      className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#101010] shadow-sm transition-all hover:opacity-95"
+                      className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#171717] shadow-sm transition-all hover:brightness-105"
                     >
-                      <ShoppingBag className="h-3.5 w-3.5" /> Move to Bag
+                      <ShoppingBag className="h-3.5 w-3.5" /> Add to Cart
                     </button>
                   </div>
                 </div>
