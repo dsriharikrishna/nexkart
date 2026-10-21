@@ -1,5 +1,6 @@
 import { Product } from "@/types";
 import { ProductCard } from "./ProductCard";
+import { MotionGrid } from "@/components/ui/motion";
 
 interface ProductGridProps {
   products: Product[];
@@ -25,10 +26,10 @@ export function ProductGrid({ products, columns = 4, priorityCount = 4 }: Produc
   }[columns];
 
   return (
-    <div className={`grid ${gridColsClass} gap-6 md:gap-8`}>
+    <MotionGrid className={`grid ${gridColsClass} gap-6 md:gap-8`}>
       {products.map((product, idx) => (
         <ProductCard key={product.id} product={product} priority={idx < priorityCount} />
       ))}
-    </div>
+    </MotionGrid>
   );
 }

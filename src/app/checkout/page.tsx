@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm, useWatch } from "react-hook-form";
-import { Lock, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Lock, ArrowRight } from "lucide-react";
 import confetti from "canvas-confetti";
 import { useCartStore } from "@/stores/cartStore";
 import { useAccountStore, MockOrder } from "@/stores/accountStore";
 import { formatCurrency } from "@/lib/utils";
+import { luxuryTransition } from "@/components/ui/motion";
 
 interface CheckoutFormData {
   email: string;
@@ -25,6 +28,7 @@ interface CheckoutFormData {
 }
 
 export default function CheckoutPage() {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderComplete, setOrderComplete] = useState<MockOrder | null>(null);
@@ -125,75 +129,101 @@ export default function CheckoutPage() {
     }, 1000);
   };
 
-  // SUCCESS CONFIRMATION VIEW
+  // SUCCESS CONFIRMATION VIEW WITH 60-MIN WARDROBE EXPERIENCE
   if (orderComplete) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#C5A059]/40 bg-[#FBF8F4] text-[#9E643C]">
-          <CheckCircle2 className="h-8 w-8" />
-        </div>
-
-        <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-          COMMANDE VALIDÉE • DEMO ATELIER
-        </span>
-        <h1 className="mb-3 font-heading text-3xl font-bold tracking-tight text-neutral-950">
-          Your Order Has Been Cataloged
-        </h1>
-        <p className="mx-auto mb-8 max-w-md text-xs font-light text-neutral-600 sm:text-sm">
-          Order reference:{" "}
-          <strong className="font-semibold text-black">{orderComplete.orderNumber}</strong>. A
-          dispatch confirmation has been routed to your registered concierge email.
-        </p>
-
-        {/* Demo notification alert */}
-        <div className="mx-auto mb-10 max-w-lg border border-[#E8DCC8] bg-[#FAF7F2] p-4 text-left text-xs text-[#9E643C]">
-          <strong>Note:</strong> This was a simulated checkout in Phase 1 frontend development. No
-          real card charge or physical shipment was initiated.
-        </div>
-
-        <div className="mx-auto mb-8 max-w-lg space-y-4 border border-neutral-200 bg-white p-6 text-left">
-          <h3 className="border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-wider text-neutral-900">
-            Order Breakdown
-          </h3>
-          <div className="divide-y divide-neutral-100 text-xs">
-            {orderComplete.items.map((i, idx) => (
-              <div key={idx} className="flex justify-between py-2.5">
-                <span>
-                  {i.quantity}x {i.name} ({i.color}, {i.size})
-                </span>
-                <span className="font-semibold">{formatCurrency(i.price * i.quantity)}</span>
-              </div>
-            ))}
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-800">
+            <Lock className="h-7 w-7" />
           </div>
-          <div className="flex justify-between border-t border-neutral-200 pt-2 text-sm font-bold">
-            <span>Total Simulated Payment</span>
-            <span>{formatCurrency(orderComplete.total)}</span>
-          </div>
-          <p className="pt-1 text-[11px] text-neutral-500">
-            Destination: {orderComplete.shippingAddress}
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#8A6A3B]">
+            Consignment Confirmed
+          </span>
+          <h1 className="mt-2 font-heading text-3xl font-extrabold uppercase tracking-tight text-neutral-900 sm:text-4xl">
+            Thank you for your order
+          </h1>
+          <p className="mt-3 text-sm text-neutral-600">
+            Order Reference: <strong className="font-bold text-neutral-900">{orderComplete.orderNumber}</strong>. We
+            have dispatched confirmation to your email.
           </p>
         </div>
 
-        <div className="flex justify-center gap-4">
-          <Link
-            href={`/account/orders/${orderComplete.id}`}
-            className="bg-neutral-950 px-6 py-3 text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors hover:bg-neutral-800"
-          >
-            Inspect Order Dossier
-          </Link>
-          <Link
-            href="/account"
-            className="border border-neutral-300 px-6 py-3 text-xs font-medium uppercase tracking-[0.18em] text-neutral-800 transition-colors hover:border-black"
-          >
-            My Account & Orders
-          </Link>
+        {/* Order Details Dossier Below */}
+        <div className="mx-auto mt-12 max-w-3xl space-y-6 text-center">
+          <div className="rounded-3xl border border-neutral-200/80 bg-white p-6 text-left shadow-xs sm:p-8">
+            <div className="flex items-center justify-between border-b border-neutral-100 pb-4">
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8A6A3B]">
+                  CONSIGNMENT DOSSIER
+                </span>
+                <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-neutral-900">
+                  Order Breakdown ({orderComplete.orderNumber})
+                </h3>
+              </div>
+              <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-800">
+                Dispatched via Mumbai Flagship
+              </span>
+            </div>
+
+            <div className="divide-y divide-neutral-100 text-xs">
+              {orderComplete.items.map((i, idx) => (
+                <div key={idx} className="flex items-center justify-between py-3.5">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={i.image}
+                      alt={i.name}
+                      className="h-12 w-10 rounded-lg object-cover"
+                    />
+                    <div>
+                      <span className="font-semibold text-neutral-900">{i.name}</span>
+                      <p className="text-[11px] text-neutral-500">
+                        Qty: {i.quantity} • {i.color} / {i.size}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="font-heading font-semibold text-neutral-950">
+                    {formatCurrency(i.price * i.quantity)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-between border-t border-neutral-200 pt-4 text-sm font-bold text-neutral-950">
+              <span>Total Guaranteed Delivery</span>
+              <span className="font-heading text-base">{formatCurrency(orderComplete.total)}</span>
+            </div>
+            <p className="pt-2 text-[11px] text-neutral-500">
+              Valet Drop Location: {orderComplete.shippingAddress}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href={`/account/orders/${orderComplete.id}`}
+              className="rounded-full bg-neutral-950 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-all hover:bg-neutral-800"
+            >
+              Inspect Order Dossier
+            </Link>
+            <Link
+              href="/account"
+              className="rounded-full border border-neutral-300 bg-white px-8 py-3.5 text-xs font-medium uppercase tracking-[0.18em] text-neutral-800 transition-all hover:border-black"
+            >
+              My Account &amp; Orders
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto mb-10 max-w-2xl text-center">
         <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
           NEXKART CONCIERGE DESK
@@ -507,6 +537,6 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

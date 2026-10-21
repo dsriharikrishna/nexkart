@@ -97,11 +97,13 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
         </div>
       </div>
 
+
+
       {/* Shipment Tracking Progress Bar */}
-      <div className="mb-8 border border-neutral-200 bg-white p-6 sm:p-8">
+      <div className="mb-8 rounded-3xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-xs">
         <h2 className="mb-6 flex items-center justify-between font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
           <span>Consignment Journey</span>
-          <span className="font-normal text-neutral-500">Carrier: DHL Express Worldwide</span>
+          <span className="font-normal text-neutral-500">Valet Concierge: White-Glove Direct</span>
         </h2>
 
         <div className="relative mx-auto flex max-w-2xl items-center justify-between py-2">

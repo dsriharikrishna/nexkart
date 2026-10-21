@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Trash2, Heart, ShoppingBag } from "lucide-react";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
 import { formatCurrency } from "@/lib/utils";
+import { luxuryTransition } from "@/components/ui/motion";
 
 export default function WishlistPage() {
   const [mounted, setMounted] = useState(false);
@@ -20,7 +22,12 @@ export default function WishlistPage() {
   if (!mounted) return null;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+    >
       <div className="mb-10 border-b border-neutral-200 pb-6">
         <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9E643C]">
           PERSONAL ATELIER CURATION
@@ -57,9 +64,9 @@ export default function WishlistPage() {
             return (
               <div
                 key={product.id}
-                className="group flex flex-col justify-between border border-neutral-200/80 bg-white"
+                className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/80 bg-white transition-all duration-300 hover:border-[#D4AF62]/50 hover:shadow-lg"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-t-2xl bg-neutral-100">
                   <img
                     src={product.images[0]}
                     alt={product.name}
@@ -67,7 +74,7 @@ export default function WishlistPage() {
                   />
                   <button
                     onClick={() => removeFromWishlist(product.id)}
-                    className="absolute right-3 top-3 rounded-full bg-white/90 p-2 text-neutral-600 transition-colors hover:bg-rose-50 hover:text-rose-600"
+                    className="backdrop-blur-xs absolute right-3 top-3 rounded-full bg-white/90 p-2 text-neutral-600 transition-colors hover:bg-rose-50 hover:text-rose-600"
                     aria-label="Remove from wishlist"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
@@ -94,7 +101,7 @@ export default function WishlistPage() {
                           addItem(product, defaultVariant.color, defaultVariant.size, 1);
                         }
                       }}
-                      className="flex flex-1 items-center justify-center gap-1.5 bg-neutral-950 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#9E643C]"
+                      className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#101010] shadow-sm transition-all hover:opacity-95"
                     >
                       <ShoppingBag className="h-3.5 w-3.5" /> Move to Bag
                     </button>
@@ -105,6 +112,6 @@ export default function WishlistPage() {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

@@ -1,16 +1,10 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Zap,
-  Truck,
-  RotateCcw,
-  Award,
-} from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Truck, RotateCcw, Award } from "lucide-react";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { PRODUCTS } from "@/data/products";
 import { ThreeProductShowcase } from "@/components/home/ThreeProductShowcase";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
+import { HeroMotionWrapper, BannerCardMotion } from "@/components/home/HomeClientMotion";
 
 export default function HomePage() {
   const trendingProducts = PRODUCTS.filter((p) => p.isFeatured || p.isBestseller).slice(0, 4);
@@ -56,7 +50,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Editorial Copy & Oversized Sora Typography */}
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 py-24 text-center sm:px-6 lg:px-8">
+        <HeroMotionWrapper>
           {/* Eyebrow Pill */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4AF62]/35 bg-[#101010]/85 px-4 py-1.5 backdrop-blur-md">
             <span className="flex h-1.5 w-1.5 rounded-full bg-[#D4AF62]" />
@@ -108,7 +102,7 @@ export default function HomePage() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF62]" />
             <span>EXPRESS COURIER CONSIGNMENTS ACROSS INDIA • KALA GHODA ATELIER</span>
           </div>
-        </div>
+        </HeroMotionWrapper>
 
         {/* Hero Bottom Meta Strip */}
         <div className="absolute inset-x-0 bottom-0 z-10 hidden border-t border-[#D4AF62]/15 bg-[#101010]/90 backdrop-blur-md md:block">
@@ -196,62 +190,66 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Women's Banner */}
-          <Link
-            href="/collections/women"
-            className="group relative flex h-[520px] flex-col justify-end overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 transition-all duration-500 hover:shadow-xl sm:p-10"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
-              alt="Women's Atelier Edit"
-              className="absolute inset-0 h-full w-full object-cover object-center opacity-75 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            {/* Gradient Lighting Overlay: Black-to-Charcoal */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-[#101010]/45 to-transparent" />
-            <div className="relative z-10 text-white">
-              <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-[#EED8A1] to-[#D4AF62] px-3 py-1 text-[9.5px] font-bold uppercase tracking-[0.2em] text-[#101010]">
-                WOMENSWEAR FW26
-              </span>
-              <h3 className="mb-2 font-heading text-3xl font-extrabold tracking-tight text-[#F7F3EA] sm:text-4xl">
-                The Sculptural Feminine
-              </h3>
-              <p className="mb-6 max-w-md text-xs font-light text-[#EFE9DC]/80 sm:text-sm">
-                Fluid silk slips, heavyweight double-faced cashmere coats, and sharp cocoon
-                tailoring.
-              </p>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F7F3EA] backdrop-blur-md transition-all group-hover:border-[#D4AF62] group-hover:bg-[#D4AF62] group-hover:text-[#101010]">
-                Explore Women <ArrowRight className="h-3.5 w-3.5" />
+          <BannerCardMotion>
+            <Link
+              href="/collections/women"
+              className="group relative flex h-[520px] flex-col justify-end overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 transition-all duration-500 hover:shadow-xl sm:p-10"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
+                alt="Women's Atelier Edit"
+                className="absolute inset-0 h-full w-full object-cover object-center opacity-75 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              {/* Gradient Lighting Overlay: Black-to-Charcoal */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-[#101010]/45 to-transparent" />
+              <div className="relative z-10 text-white">
+                <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-[#EED8A1] to-[#D4AF62] px-3 py-1 text-[9.5px] font-bold uppercase tracking-[0.2em] text-[#101010]">
+                  WOMENSWEAR FW26
+                </span>
+                <h3 className="mb-2 font-heading text-3xl font-extrabold tracking-tight text-[#F7F3EA] sm:text-4xl">
+                  The Sculptural Feminine
+                </h3>
+                <p className="mb-6 max-w-md text-xs font-light text-[#EFE9DC]/80 sm:text-sm">
+                  Fluid silk slips, heavyweight double-faced cashmere coats, and sharp cocoon
+                  tailoring.
+                </p>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F7F3EA] backdrop-blur-md transition-all group-hover:border-[#D4AF62] group-hover:bg-[#D4AF62] group-hover:text-[#101010]">
+                  Explore Women <ArrowRight className="h-3.5 w-3.5" />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </BannerCardMotion>
 
           {/* Men's Banner */}
-          <Link
-            href="/collections/men"
-            className="group relative flex h-[520px] flex-col justify-end overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 transition-all duration-500 hover:shadow-xl sm:p-10"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85"
-              alt="Men's Atelier Edit"
-              className="absolute inset-0 h-full w-full object-cover object-center opacity-75 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            {/* Gradient Lighting Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-[#101010]/45 to-transparent" />
-            <div className="relative z-10 text-white">
-              <span className="mb-2 inline-block rounded-full border border-[#D4AF62]/40 bg-[#101010]/80 px-3 py-1 text-[9.5px] font-semibold uppercase tracking-[0.2em] text-[#D4AF62]">
-                MENSWEAR FW26
-              </span>
-              <h3 className="mb-2 font-heading text-3xl font-extrabold tracking-tight text-[#F7F3EA] sm:text-4xl">
-                Architectural Form
-              </h3>
-              <p className="mb-6 max-w-md text-xs font-light text-[#EFE9DC]/80 sm:text-sm">
-                Single-breasted Melton overcoats, high-twist virgin wool suits, and Japanese
-                selvedge denim.
-              </p>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F7F3EA] backdrop-blur-md transition-all group-hover:border-[#D4AF62] group-hover:bg-[#D4AF62] group-hover:text-[#101010]">
-                Explore Men <ArrowRight className="h-3.5 w-3.5" />
+          <BannerCardMotion>
+            <Link
+              href="/collections/men"
+              className="group relative flex h-[520px] flex-col justify-end overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 transition-all duration-500 hover:shadow-xl sm:p-10"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85"
+                alt="Men's Atelier Edit"
+                className="absolute inset-0 h-full w-full object-cover object-center opacity-75 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              {/* Gradient Lighting Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-[#101010]/45 to-transparent" />
+              <div className="relative z-10 text-white">
+                <span className="mb-2 inline-block rounded-full border border-[#D4AF62]/40 bg-[#101010]/80 px-3 py-1 text-[9.5px] font-semibold uppercase tracking-[0.2em] text-[#D4AF62]">
+                  MENSWEAR FW26
+                </span>
+                <h3 className="mb-2 font-heading text-3xl font-extrabold tracking-tight text-[#F7F3EA] sm:text-4xl">
+                  Architectural Form
+                </h3>
+                <p className="mb-6 max-w-md text-xs font-light text-[#EFE9DC]/80 sm:text-sm">
+                  Single-breasted Melton overcoats, high-twist virgin wool suits, and Japanese
+                  selvedge denim.
+                </p>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F7F3EA] backdrop-blur-md transition-all group-hover:border-[#D4AF62] group-hover:bg-[#D4AF62] group-hover:text-[#101010]">
+                  Explore Men <ArrowRight className="h-3.5 w-3.5" />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </BannerCardMotion>
         </div>
       </section>
 
@@ -300,94 +298,100 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Campaign 1: Outerwear */}
-          <Link
-            href="/categories/outerwear"
-            className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=900&q=85"
-              alt="Outerwear Campaign"
-              className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
-            <div className="relative z-10 flex items-start justify-between">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
-                CATEGORY 01
-              </span>
-              <span className="font-heading text-xl font-bold text-[#D4AF62]">01</span>
-            </div>
-            <div className="relative z-10">
-              <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
-                Coats &amp; Overcoats
-              </h3>
-              <p className="mb-4 text-xs font-light text-neutral-300">
-                Heavyweight double-faced cashmere and Spanish shearling.
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
-                Discover Coats <ArrowRight className="h-3 w-3" />
-              </span>
-            </div>
-          </Link>
+          <BannerCardMotion>
+            <Link
+              href="/categories/outerwear"
+              className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=900&q=85"
+                alt="Outerwear Campaign"
+                className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
+              <div className="relative z-10 flex items-start justify-between">
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
+                  CATEGORY 01
+                </span>
+                <span className="font-heading text-xl font-bold text-[#D4AF62]">01</span>
+              </div>
+              <div className="relative z-10">
+                <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
+                  Coats &amp; Overcoats
+                </h3>
+                <p className="mb-4 text-xs font-light text-neutral-300">
+                  Heavyweight double-faced cashmere and Spanish shearling.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
+                  Discover Coats <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </Link>
+          </BannerCardMotion>
 
           {/* Campaign 2: Tailoring */}
-          <Link
-            href="/categories/tailoring"
-            className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85"
-              alt="Modern Tailoring Campaign"
-              className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
-            <div className="relative z-10 flex items-start justify-between">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
-                CATEGORY 02
-              </span>
-              <span className="font-heading text-xl font-bold text-[#D4AF62]">02</span>
-            </div>
-            <div className="relative z-10">
-              <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
-                Modern Tailoring
-              </h3>
-              <p className="mb-4 text-xs font-light text-neutral-300">
-                Deconstructed shoulders and relaxed-straight silhouettes.
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
-                Discover Suiting <ArrowRight className="h-3 w-3" />
-              </span>
-            </div>
-          </Link>
+          <BannerCardMotion>
+            <Link
+              href="/categories/tailoring"
+              className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85"
+                alt="Modern Tailoring Campaign"
+                className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
+              <div className="relative z-10 flex items-start justify-between">
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
+                  CATEGORY 02
+                </span>
+                <span className="font-heading text-xl font-bold text-[#D4AF62]">02</span>
+              </div>
+              <div className="relative z-10">
+                <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
+                  Modern Tailoring
+                </h3>
+                <p className="mb-4 text-xs font-light text-neutral-300">
+                  Deconstructed shoulders and relaxed-straight silhouettes.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
+                  Discover Suiting <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </Link>
+          </BannerCardMotion>
 
           {/* Campaign 3: Cashmere Knitwear */}
-          <Link
-            href="/categories/knitwear"
-            className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=85"
-              alt="Cashmere Knitwear Campaign"
-              className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
-            <div className="relative z-10 flex items-start justify-between">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
-                CATEGORY 03
-              </span>
-              <span className="font-heading text-xl font-bold text-[#D4AF62]">03</span>
-            </div>
-            <div className="relative z-10">
-              <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
-                Knitwear Layers
-              </h3>
-              <p className="mb-4 text-xs font-light text-neutral-300">
-                7-gauge fisherman rib and 15.5-micron Mongolian underfleece.
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
-                Discover Knits <ArrowRight className="h-3 w-3" />
-              </span>
-            </div>
-          </Link>
+          <BannerCardMotion>
+            <Link
+              href="/categories/knitwear"
+              className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl border border-[#E8E2D2] bg-[#101010] p-8 text-white transition-all duration-300 hover:shadow-xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=85"
+                alt="Cashmere Knitwear Campaign"
+                className="absolute inset-0 h-full w-full object-cover opacity-65 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-black/30" />
+              <div className="relative z-10 flex items-start justify-between">
+                <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] font-medium uppercase tracking-[0.2em] backdrop-blur-md">
+                  CATEGORY 03
+                </span>
+                <span className="font-heading text-xl font-bold text-[#D4AF62]">03</span>
+              </div>
+              <div className="relative z-10">
+                <h3 className="mb-1 font-heading text-2xl font-black tracking-tight text-[#F7F3EA]">
+                  Knitwear Layers
+                </h3>
+                <p className="mb-4 text-xs font-light text-neutral-300">
+                  7-gauge fisherman rib and 15.5-micron Mongolian underfleece.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D4AF62] group-hover:underline">
+                  Discover Knits <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </Link>
+          </BannerCardMotion>
         </div>
       </section>
 

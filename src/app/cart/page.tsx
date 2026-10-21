@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Trash2, ShoppingBag, ArrowRight, ShieldCheck, Truck } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { formatCurrency } from "@/lib/utils";
+import { luxuryTransition } from "@/components/ui/motion";
 
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
@@ -26,7 +28,12 @@ export default function CartPage() {
   const total = getTotal();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+    >
       <div className="mb-10 border-b border-neutral-200 pb-6">
         <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9E643C]">
           BAG REVIEW
@@ -56,10 +63,10 @@ export default function CartPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           {/* Items Table */}
           <div className="space-y-6 lg:col-span-8">
-            <div className="divide-y divide-neutral-200 border border-neutral-200 bg-white">
+            <div className="divide-y divide-neutral-200 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xs">
               {items.map((item) => (
                 <div key={item.id} className="flex flex-col gap-6 p-6 sm:flex-row">
-                  <div className="h-32 w-24 shrink-0 overflow-hidden border border-neutral-200 bg-neutral-100">
+                  <div className="h-32 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
                     <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                   </div>
 
@@ -68,13 +75,13 @@ export default function CartPage() {
                       <div className="flex items-start justify-between">
                         <Link
                           href={`/products/${item.productSlug}`}
-                          className="font-heading text-sm font-semibold text-neutral-900 hover:text-[#9E643C]"
+                          className="font-heading text-sm font-semibold text-neutral-900 hover:text-[#8A6A3B]"
                         >
                           {item.name}
                         </Link>
                         <button
                           onClick={() => removeItem(item.id)}
-                          className="p-1 text-neutral-400 transition-colors hover:text-rose-600"
+                          className="rounded-full p-1.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-rose-600"
                           aria-label="Remove item"
                         >
                           <Trash2 className="h-4 w-4" />
@@ -89,14 +96,14 @@ export default function CartPage() {
                     </div>
 
                     <div className="mt-4 flex items-center justify-between border-t border-neutral-100 pt-4">
-                      <div className="flex items-center border border-neutral-200">
+                      <div className="flex items-center overflow-hidden rounded-full border border-neutral-200 bg-neutral-50">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="px-3 py-1 text-sm text-neutral-600 hover:text-black"
                         >
                           -
                         </button>
-                        <span className="px-4 py-1 text-xs font-semibold text-neutral-900">
+                        <span className="px-3 py-1 text-xs font-semibold text-neutral-900">
                           {item.quantity}
                         </span>
                         <button
@@ -126,7 +133,7 @@ export default function CartPage() {
 
           {/* Order Summary Card */}
           <div className="lg:col-span-4">
-            <div className="sticky top-28 space-y-6 border border-neutral-200 bg-white p-6">
+            <div className="sticky top-28 space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs">
               <h2 className="border-b border-neutral-200 pb-3 font-heading text-sm font-bold uppercase tracking-[0.2em] text-neutral-950">
                 Order Summary
               </h2>
@@ -153,15 +160,15 @@ export default function CartPage() {
               </div>
 
               {shipping > 0 && (
-                <div className="border border-[#E8DCC8] bg-[#FAF7F2] p-3 text-[11px] text-[#9E643C]">
-                  Spend {formatCurrency(300 - subtotal)} more to qualify for complimentary express
+                <div className="rounded-xl border border-[#E8DCC8] bg-[#FAF7F2] p-3 text-[11px] text-[#8A6A3B]">
+                  Spend {formatCurrency(5000 - subtotal)} more to qualify for complimentary express
                   global transit.
                 </div>
               )}
 
               <Link
                 href="/checkout"
-                className="flex w-full items-center justify-center gap-2 bg-neutral-950 py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#9E643C]"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] py-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#101010] shadow-md transition-all hover:opacity-95"
               >
                 Proceed to Checkout <ArrowRight className="h-3.5 w-3.5" />
               </Link>
@@ -180,6 +187,6 @@ export default function CartPage() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

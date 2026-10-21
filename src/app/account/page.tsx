@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Package, MapPin, LogOut, Check, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Package, MapPin, LogOut, Check, ChevronRight, Clock } from "lucide-react";
 import { useAccountStore } from "@/stores/accountStore";
 import { formatCurrency } from "@/lib/utils";
+import { luxuryTransition } from "@/components/ui/motion";
 
 export default function AccountPage() {
   const { isAuthenticated, user, orders, login, logout } = useAccountStore();
@@ -21,7 +23,12 @@ export default function AccountPage() {
 
   if (!isAuthenticated || !user) {
     return (
-      <div className="mx-auto max-w-md px-4 py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={luxuryTransition}
+        className="mx-auto max-w-md px-4 py-20"
+      >
         <div className="shadow-xs border border-neutral-200 bg-white p-8">
           <span className="mb-2 block text-center text-[10px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
             MAISON NEXKART CLIENT PORTAL
@@ -69,12 +76,17 @@ export default function AccountPage() {
             Phase 1 simulated client authentication. No actual credentials stored.
           </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+    >
       {/* Account Header */}
       <div className="mb-8 flex flex-col justify-between gap-4 border-b border-neutral-200 pb-8 md:flex-row md:items-end">
         <div>
@@ -156,21 +168,24 @@ export default function AccountPage() {
             orders.map((order) => (
               <div
                 key={order.id}
-                className="hover:shadow-xs space-y-4 border border-neutral-200 bg-white p-6 transition-all hover:border-neutral-400"
+                className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs transition-all hover:border-[#D4AF62]/50 hover:shadow-md"
               >
                 <div className="flex flex-col justify-between gap-2 border-b border-neutral-100 pb-4 text-xs sm:flex-row sm:items-center">
-                  <div>
+                  <div className="flex flex-wrap items-center gap-2">
                     <Link
                       href={`/account/orders/${order.id}`}
-                      className="font-heading font-bold text-neutral-950 transition-colors hover:text-[#9E643C]"
+                      className="font-heading font-bold text-neutral-950 transition-colors hover:text-[#8A6A3B]"
                     >
                       {order.orderNumber}
                     </Link>
-                    <span className="mx-2 text-neutral-400">•</span>
+                    <span className="text-neutral-300">•</span>
                     <span className="text-neutral-500">{order.date}</span>
+                    <span className="inline-flex items-center gap-1 rounded-full border border-[#D4AF62]/40 bg-[#D4AF62]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#101010]">
+                      <Clock className="h-2.5 w-2.5 text-[#8A6A3B]" /> 60-Min Wardrobe
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center gap-1 bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-800">
                       <Check className="h-3 w-3" /> {order.status}
                     </span>
                     <span className="font-bold text-neutral-950">
@@ -178,7 +193,7 @@ export default function AccountPage() {
                     </span>
                     <Link
                       href={`/account/orders/${order.id}`}
-                      className="ml-2 text-neutral-400 transition-colors hover:text-black"
+                      className="ml-2 rounded-full p-1 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-black"
                       title="View order dossier"
                     >
                       <ChevronRight className="h-4 w-4" />
@@ -276,6 +291,6 @@ export default function AccountPage() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

@@ -1,14 +1,35 @@
 import * as React from "react";
+import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn("shadow-2xs border border-border bg-card text-card-foreground", className)}
-      {...props}
-    />
-  )
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  hoverLift?: boolean;
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, hoverLift = false, ...props }, ref) => {
+    if (hoverLift) {
+      return (
+        <motion.div
+          ref={ref as React.Ref<HTMLDivElement>}
+          whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
+          className={cn(
+            "shadow-2xs rounded-2xl border border-border bg-card text-card-foreground transition-shadow hover:shadow-md",
+            className
+          )}
+          {...(props as HTMLMotionProps<"div">)}
+        />
+      );
+    }
+
+    return (
+      <div
+        ref={ref}
+        className={cn("shadow-2xs rounded-2xl border border-border bg-card text-card-foreground", className)}
+        {...props}
+      />
+    );
+  }
 );
 Card.displayName = "Card";
 

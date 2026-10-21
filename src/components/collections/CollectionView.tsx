@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
 import { Product, FilterState, ProductSize } from "@/types";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { FilterBar } from "@/components/collections/FilterBar";
+import { luxuryTransition } from "@/components/ui/motion";
 
 interface CollectionViewProps {
   initialProducts: Product[];
@@ -108,10 +110,15 @@ export function CollectionView({
   }, [initialProducts, filters]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       {/* Editorial Header Banner */}
       {heroImage ? (
-        <div className="relative mb-12 h-64 overflow-hidden bg-neutral-900 sm:h-80 md:h-96">
+        <div className="relative mb-12 h-64 overflow-hidden rounded-3xl border border-[#E8E2D2] bg-neutral-900 sm:h-80 md:h-96">
           <img
             src={heroImage}
             alt={title}
@@ -167,6 +174,6 @@ export function CollectionView({
       </div>
 
       <ProductGrid products={filteredProducts} columns={4} priorityCount={4} />
-    </div>
+    </motion.div>
   );
 }

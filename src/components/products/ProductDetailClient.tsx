@@ -17,6 +17,8 @@ import { formatCurrency, formatDiscount } from "@/lib/utils";
 import { useCartStore } from "@/stores/cartStore";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { ProductGrid } from "@/components/products/ProductGrid";
+import { motion } from "framer-motion";
+import { luxuryTransition } from "@/components/ui/motion";
 
 interface ProductDetailClientProps {
   product: Product;
@@ -55,7 +57,12 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={luxuryTransition}
+      className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8"
+    >
       {/* Breadcrumb Navigation */}
       <nav className="mb-8 flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-500">
         <Link href="/" className="transition-colors hover:text-black">
@@ -100,7 +107,7 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
           )}
 
           {/* Main Selected Image */}
-          <div className="relative aspect-[4/5] flex-1 overflow-hidden border border-neutral-200/80 bg-neutral-100">
+          <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-sm">
             <img
               src={product.images[selectedImageIndex] || product.images[0]}
               alt={product.name}
@@ -114,13 +121,13 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
               }}
             />
             {discountBadge && (
-              <span className="absolute left-4 top-4 bg-[#9E643C] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+              <span className="absolute left-4 top-4 rounded-full bg-[#8A6A3B] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-xs">
                 {discountBadge}
               </span>
             )}
             {product.isNew && (
-              <span className="absolute right-4 top-4 bg-[#111111] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                NEW RELEASE
+              <span className="absolute right-4 top-4 rounded-full bg-[#101010] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF62] shadow-xs">
+                NEW IN
               </span>
             )}
           </div>
@@ -216,12 +223,12 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
                         setSelectedSize(size);
                         setSizeError(false);
                       }}
-                      className={`border py-3 text-xs font-semibold uppercase tracking-wider transition-all ${
+                      className={`rounded-xl border py-3 text-xs font-semibold uppercase tracking-wider transition-all ${
                         !available
                           ? "cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 line-through opacity-30"
                           : isSelected
                             ? "shadow-xs border-neutral-950 bg-neutral-950 text-white"
-                            : "border-neutral-300 bg-white text-neutral-900 hover:border-neutral-950"
+                            : "border-neutral-300 bg-white text-neutral-900 hover:border-neutral-950 hover:bg-neutral-50"
                       }`}
                     >
                       {size}
@@ -233,18 +240,18 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
 
             {/* Quantity Selector & Stock Status */}
             <div className="mb-8 flex items-center justify-between">
-              <div className="flex items-center border border-neutral-300">
+              <div className="flex items-center overflow-hidden rounded-full border border-neutral-300 bg-neutral-50">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-3 py-2 text-sm text-neutral-600 hover:text-black"
+                  className="px-3.5 py-2 text-sm text-neutral-600 hover:text-black"
                   aria-label="Decrease quantity"
                 >
                   -
                 </button>
-                <span className="px-4 py-2 text-xs font-semibold text-neutral-900">{quantity}</span>
+                <span className="px-3.5 py-2 text-xs font-semibold text-neutral-900">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-3 py-2 text-sm text-neutral-600 hover:text-black"
+                  className="px-3.5 py-2 text-sm text-neutral-600 hover:text-black"
                   aria-label="Increase quantity"
                 >
                   +
@@ -266,10 +273,10 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
             <div className="mb-8 flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={handleAddToCart}
-                className={`flex flex-1 items-center justify-center gap-2 px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] shadow-sm transition-all ${
+                className={`flex flex-1 items-center justify-center gap-2 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] shadow-md transition-all ${
                   addedNotice
                     ? "bg-emerald-900 text-white"
-                    : "bg-neutral-950 text-white hover:bg-[#9E643C]"
+                    : "bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] text-[#101010] hover:opacity-95"
                 }`}
               >
                 {addedNotice ? (
@@ -285,10 +292,10 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
 
               <button
                 onClick={() => toggleWishlist(product)}
-                className={`flex items-center justify-center gap-2 border p-4 transition-colors ${
+                className={`flex items-center justify-center gap-2 rounded-full border px-6 py-4 transition-colors ${
                   isInWishlist
                     ? "border-neutral-950 bg-neutral-100 text-neutral-950"
-                    : "border-neutral-300 text-neutral-800 hover:border-black"
+                    : "border-neutral-300 text-neutral-800 hover:border-black hover:bg-neutral-50"
                 }`}
                 aria-label="Save to Wishlist"
               >
@@ -441,6 +448,6 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

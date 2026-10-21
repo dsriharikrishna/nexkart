@@ -14,7 +14,7 @@ const badgeVariants = cva(
         muted: "bg-muted text-foreground border border-border",
         accent: "bg-accent text-accent-foreground font-medium border border-accent",
         outline: "text-foreground border border-primary/50 bg-white/70",
-        
+
         // Brand named aliases for compatibility
         champagneGold:
           "bg-gradient-to-r from-primary-light via-primary to-primary-dark text-primary-foreground font-bold shadow-xs border border-primary/30",

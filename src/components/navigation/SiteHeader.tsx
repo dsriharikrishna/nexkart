@@ -56,7 +56,7 @@ export function SiteHeader() {
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="-ml-2 rounded-full p-2 text-neutral-900 transition-colors hover:bg-[#FFE600]/20"
+              className="-ml-2 rounded-full p-2 text-neutral-900 transition-colors hover:bg-[#D4AF62]/20"
               aria-label="Open mobile navigation"
             >
               <Menu className="h-5 w-5" />

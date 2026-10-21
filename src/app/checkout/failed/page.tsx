@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  RotateCcw,
-  HelpCircle,
-} from "lucide-react";
+import { AlertTriangle, RotateCcw, HelpCircle } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { formatCurrency } from "@/lib/utils";
 

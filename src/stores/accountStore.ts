@@ -14,6 +14,8 @@ export interface MockOrder {
   orderNumber: string;
   date: string;
   status: "Processing" | "Dispatched" | "Delivered";
+  isWardrobeDelivery?: boolean;
+  estimatedMinutes?: number;
   items: {
     name: string;
     size: string;

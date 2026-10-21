@@ -84,7 +84,7 @@ export function FilterBar({
               onClick={() => handleGenderChange(gender)}
               className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] transition-all ${
                 filters.gender === gender
-                  ? "shadow-xs bg-[#FFE600] text-[#0A0A0A]"
+                  ? "shadow-xs bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] text-[#101010]"
                   : "text-neutral-600 hover:text-neutral-950"
               }`}
             >
@@ -141,7 +141,7 @@ export function FilterBar({
           {filters.colors.map((c) => (
             <span
               key={c}
-              className="inline-flex items-center gap-1.5 bg-neutral-100 px-2.5 py-1 text-[11px] text-neutral-800"
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] text-neutral-800 shadow-2xs"
             >
               {c}
               <button onClick={() => toggleColor(c)}>
@@ -152,7 +152,7 @@ export function FilterBar({
           {filters.sizes.map((s) => (
             <span
               key={s}
-              className="inline-flex items-center gap-1.5 bg-neutral-100 px-2.5 py-1 text-[11px] text-neutral-800"
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] text-neutral-800 shadow-2xs"
             >
               Size: {s}
               <button onClick={() => toggleSize(s)}>
@@ -168,13 +168,13 @@ export function FilterBar({
                   onFilterChange({ ...filters, priceRange: [filters.priceRange[0], 200000] })
                 }
               >
-                <X className="h-3 w-3 hover:text-[#FF3344]" />
+                <X className="h-3 w-3 hover:text-[#8A6A3B]" />
               </button>
             </span>
           )}
           <button
             onClick={clearAllFilters}
-            className="ml-2 text-[11px] uppercase tracking-wider text-[#9E643C] underline hover:text-black"
+            className="ml-2 text-[11px] uppercase tracking-wider text-[#8A6A3B] underline hover:text-black"
           >
             Clear All
           </button>
@@ -189,7 +189,7 @@ export function FilterBar({
             onClick={() => setMobileDrawerOpen(false)}
           />
           <div className="fixed inset-y-0 right-0 flex max-w-full">
-            <div className="flex w-screen max-w-md flex-col justify-between bg-white p-6 shadow-2xl">
+            <div className="flex w-screen max-w-md flex-col justify-between bg-white p-6 shadow-2xl sm:rounded-l-3xl">
               <div>
                 <div className="flex items-center justify-between border-b border-neutral-200 pb-4">
                   <h3 className="font-heading text-base font-bold uppercase tracking-wider">
@@ -197,7 +197,7 @@ export function FilterBar({
                   </h3>
                   <button
                     onClick={() => setMobileDrawerOpen(false)}
-                    className="p-1 text-neutral-500 hover:text-black"
+                    className="rounded-full p-1.5 text-neutral-500 hover:bg-neutral-100 hover:text-black"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -214,10 +214,10 @@ export function FilterBar({
                           <button
                             key={size}
                             onClick={() => toggleSize(size)}
-                            className={`border py-2 text-center text-xs font-medium transition-colors ${
+                            className={`rounded-xl border py-2.5 text-center text-xs font-medium transition-all ${
                               isSelected
-                                ? "border-black bg-black text-white"
-                                : "border-neutral-200 bg-white text-neutral-800 hover:border-black"
+                                ? "border-[#101010] bg-[#101010] text-[#D4AF62] shadow-sm"
+                                : "border-neutral-200 bg-white text-neutral-800 hover:border-[#D4AF62] hover:bg-neutral-50"
                             }`}
                           >
                             {size}
@@ -237,10 +237,10 @@ export function FilterBar({
                           <button
                             key={color}
                             onClick={() => toggleColor(color)}
-                            className={`flex items-center gap-1.5 border px-3 py-1.5 text-xs transition-colors ${
+                            className={`flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all ${
                               isSelected
-                                ? "border-black bg-black text-white"
-                                : "border-neutral-200 bg-white text-neutral-700 hover:border-black"
+                                ? "border-[#101010] bg-[#101010] text-[#D4AF62] shadow-sm"
+                                : "border-neutral-200 bg-white text-neutral-700 hover:border-[#D4AF62] hover:bg-neutral-50"
                             }`}
                           >
                             {isSelected && <Check className="h-3 w-3" />}
@@ -255,7 +255,7 @@ export function FilterBar({
                   <div>
                     <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-wider">
                       <span>Maximum Price</span>
-                      <span className="font-bold text-[#FF3344]">
+                      <span className="font-bold text-[#8A6A3B]">
                         ₹{filters.priceRange[1].toLocaleString("en-IN")}
                       </span>
                     </div>
@@ -266,7 +266,7 @@ export function FilterBar({
                       step={5000}
                       value={filters.priceRange[1]}
                       onChange={handlePriceChange}
-                      className="w-full cursor-pointer accent-[#FFE600]"
+                      className="w-full cursor-pointer accent-[#D4AF62]"
                     />
                     <div className="mt-1 flex justify-between text-[11px] text-neutral-400">
                       <span>₹5,000</span>
@@ -283,7 +283,7 @@ export function FilterBar({
                         onChange={(e) =>
                           onFilterChange({ ...filters, onlyInStock: e.target.checked })
                         }
-                        className="h-4 w-4 accent-black"
+                        className="h-4 w-4 rounded-md accent-[#101010]"
                       />
                       <span className="text-xs font-medium uppercase tracking-wider text-neutral-800">
                         In-Stock Inventory Only
@@ -297,13 +297,13 @@ export function FilterBar({
               <div className="flex gap-3 border-t border-neutral-200 pt-4">
                 <button
                   onClick={clearAllFilters}
-                  className="flex-1 border border-neutral-300 py-3 text-xs uppercase tracking-[0.15em] text-neutral-700 transition-colors hover:border-black"
+                  className="flex-1 rounded-full border border-neutral-300 py-3 text-xs uppercase tracking-[0.15em] text-neutral-700 transition-colors hover:border-black"
                 >
                   Reset
                 </button>
                 <button
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="flex-1 bg-black py-3 text-xs font-medium uppercase tracking-[0.15em] text-white transition-colors hover:bg-neutral-800"
+                  className="flex-1 rounded-full bg-gradient-to-r from-[#EED8A1] via-[#D4AF62] to-[#C89B48] py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#101010] shadow-md transition-all hover:opacity-95"
                 >
                   View ({totalResults}) Pieces
                 </button>

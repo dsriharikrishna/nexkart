@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Heart, ShoppingBag, Check } from "lucide-react";
 import { Product } from "@/types";
 import { formatCurrency, formatDiscount } from "@/lib/utils";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
+import { fadeUpVariants } from "@/components/ui/motion";
 
 interface ProductCardProps {
   product: Product;
@@ -41,11 +43,15 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative flex flex-col border border-neutral-100/80 bg-white transition-all duration-300 hover:shadow-sm">
+    <motion.div
+      variants={fadeUpVariants}
+      whileHover={{ y: -5, transition: { duration: 0.25, ease: "easeOut" } }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200/80 bg-white transition-all duration-300 hover:border-[#D4AF62]/50 hover:shadow-lg"
+    >
       {/* Image Container with Editorial Aspect Ratio (4:5) */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[4/5] overflow-hidden bg-neutral-100"
+        className="relative block aspect-[4/5] overflow-hidden rounded-t-2xl bg-neutral-100"
         onMouseEnter={() => {
           if (product.images.length > 1) setCurrentImageIndex(1);
         }}
@@ -164,6 +170,6 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
