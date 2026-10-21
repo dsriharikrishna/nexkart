@@ -55,18 +55,18 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white shadow-2xs">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
-          {/* Left: Brand Logo & Pin Code Delivery Selector */}
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-1.5">
-              <span className="font-heading text-2xl font-black uppercase tracking-tight text-[#171717] sm:text-3xl">
+      <header className="sticky top-0 z-40 w-full border-b border-neutral-200/90 bg-white/95 backdrop-blur-md shadow-2xs">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2 sm:gap-4 sm:px-6 lg:px-8">
+          {/* Left: Brand Logo & Desktop Location Pill */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Link href="/" className="flex items-center gap-1 shrink-0">
+              <span className="font-heading text-xl font-black uppercase tracking-tight text-[#171717] sm:text-3xl">
                 NEXKART
               </span>
               <span className="flex h-2 w-2 rounded-full bg-[#FFD629]" />
             </Link>
 
-            {/* Delivery Location Pill: Telangana / AP Regional First */}
+            {/* Desktop / Tablet Delivery Location Pill */}
             <button
               onClick={() => setLocationModalOpen(true)}
               className="hidden items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-left text-xs transition-colors hover:border-[#FFD629] hover:bg-[#FFF9D6]/40 sm:flex"
@@ -78,27 +78,42 @@ export function SiteHeader() {
                 <span className="text-[10px] font-medium leading-none text-[#707070]">
                   ⚡ Delivery in {deliveryTime}
                 </span>
-                <span className="font-heading text-[11px] font-bold leading-tight text-[#171717]">
+                <span className="font-heading text-[11px] font-bold leading-tight text-[#171717] max-w-[140px] truncate">
                   {selectedCity} • {selectedPinCode}
                 </span>
               </div>
               <ChevronDown className="h-3 w-3 text-neutral-400" />
             </button>
+
+            {/* Mobile Location Badge (shown only on small screens) */}
+            <button
+              onClick={() => setLocationModalOpen(true)}
+              className="flex items-center gap-1 rounded-full border border-neutral-200 bg-neutral-50 px-2 py-1 text-left sm:hidden active:scale-95 transition-all"
+              aria-label="Change location"
+            >
+              <MapPin className="h-3 w-3 text-[#FFB800] shrink-0" />
+              <span className="text-[10px] font-bold text-[#171717] max-w-[70px] truncate">
+                {selectedPinCode}
+              </span>
+              <span className="text-[9px] font-bold text-[#FFB800]">⚡{deliveryTime.replace(" mins", "m")}</span>
+            </button>
           </div>
 
           {/* Center: Search Bar */}
-          <div className="flex flex-1 max-w-xl">
+          <div className="flex flex-1 max-w-xl min-w-0">
             <button
               onClick={openSearch}
-              className="relative flex w-full items-center gap-2.5 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-left text-xs text-neutral-400 transition-colors hover:border-[#FFD629] hover:bg-white"
+              className="relative flex w-full items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 sm:px-4 sm:py-2 text-left text-xs text-neutral-400 transition-colors hover:border-[#FFD629] hover:bg-white"
             >
-              <Search className="h-4 w-4 text-neutral-400" />
-              <span className="line-clamp-1">Search shirts, kurtas, dresses, shoes, and pants...</span>
+              <Search className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-neutral-400" />
+              <span className="line-clamp-1 text-[11px] sm:text-xs">
+                Search fashion, kurtas, jackets...
+              </span>
             </button>
           </div>
 
           {/* Right: Quick Links & Actions */}
-          <div className="flex items-center gap-2 sm:gap-4 text-xs font-semibold text-[#171717]">
+          <div className="flex items-center gap-1.5 sm:gap-3 text-xs font-semibold text-[#171717] shrink-0">
             <Link
               href="/categories"
               className="hidden items-center gap-1.5 transition-colors hover:text-[#FFB800] lg:flex"
@@ -117,13 +132,13 @@ export function SiteHeader() {
 
             <Link
               href="/wishlist"
-              className="relative flex items-center gap-1.5 p-2 transition-colors hover:text-[#FFB800]"
+              className="relative flex items-center justify-center p-2 transition-colors hover:text-[#FFB800]"
               aria-label="Wishlist"
             >
               <Heart className="h-4 w-4" />
-              <span className="hidden md:inline">Saved</span>
+              <span className="hidden md:inline ml-1">Saved</span>
               {mounted && wishlistCount > 0 && (
-                <span className="absolute -top-0.5 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#FFD629] text-[9px] font-bold text-[#171717]">
+                <span className="absolute 0 top-0.5 right-0.5 flex h-3.5 w-3.5 sm:h-4 sm:w-4 items-center justify-center rounded-full bg-[#FFD629] text-[8px] sm:text-[9px] font-black text-[#171717]">
                   {wishlistCount}
                 </span>
               )}
@@ -131,7 +146,7 @@ export function SiteHeader() {
 
             <button
               onClick={openCart}
-              className="relative flex items-center gap-1.5 rounded-full bg-[#171717] px-3.5 py-2 text-xs font-bold text-white transition-all hover:bg-[#FFD629] hover:text-[#171717]"
+              className="relative hidden sm:flex items-center gap-1.5 rounded-full bg-[#171717] px-3.5 py-1.5 sm:py-2 text-xs font-bold text-white transition-all hover:bg-[#FFD629] hover:text-[#171717] active:scale-95"
               aria-label="Shopping bag"
             >
               <ShoppingBag className="h-3.5 w-3.5" />
@@ -145,7 +160,7 @@ export function SiteHeader() {
 
             <Link
               href="/account"
-              className="flex items-center gap-1.5 p-1.5 hover:text-[#FFB800]"
+              className="flex items-center gap-1 p-2 hover:text-[#FFB800]"
               aria-label="User Account"
             >
               <User className="h-4 w-4" />
