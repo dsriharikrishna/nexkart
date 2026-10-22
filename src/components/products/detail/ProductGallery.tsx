@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { RotateCw, Image as ImageIcon } from "lucide-react";
 import { Product360Viewer } from "./Product360Viewer";
+import { ProductImage } from "../ProductImage";
 
 interface ProductGalleryProps {
   images: string[];
   view360?: string[];
   productName: string;
+  price: number;
+  compareAtPrice?: number;
   selectedImageIndex: number;
   discountBadge: string | null;
   isNew?: boolean;
@@ -18,6 +21,8 @@ export function ProductGallery({
   images,
   view360,
   productName,
+  price,
+  compareAtPrice,
   selectedImageIndex,
   discountBadge,
   isNew,
@@ -51,7 +56,7 @@ export function ProductGallery({
           </button>
         ))}
 
-        {/* 360 View Thumbnail Button if available or interactive */}
+        {/* 360 View Thumbnail Button if available */}
         {has360 && (
           <button
             onClick={() => setActiveTab("360")}
@@ -114,20 +119,16 @@ export function ProductGallery({
           </span>
         )}
 
-        {/* Display Content: 360 Viewer or High-Res Main Image */}
+        {/* Display Content: 360 Viewer or High-Res Main Image with Dynamic Price Overlay */}
         {activeTab === "360" ? (
           <Product360Viewer frames={view360} productName={productName} />
         ) : (
-          <img
+          <ProductImage
             src={images[selectedImageIndex] || images[0]}
             alt={productName}
-            className="h-full w-full object-cover object-center transition-all duration-500"
-            onError={(e) => {
-              const target = e.currentTarget;
-              if (!target.src.includes("placeholder.webp")) {
-                target.src = "/images/products/placeholder.webp";
-              }
-            }}
+            price={price}
+            compareAtPrice={compareAtPrice}
+            showOverlay={true}
           />
         )}
       </div>

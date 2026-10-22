@@ -1,0 +1,860 @@
+{
+  "specification": "Nexkart 5-Image Premium Product Catalog System",
+  "totalProducts": 26,
+  "viewsRequiredPerProduct": [
+    "front",
+    "back",
+    "detail",
+    "lifestyle",
+    "alternative"
+  ],
+  "catalog": {
+    "prod-01": {
+      "productId": "prod-01",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-01/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-01/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-01/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-01/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-01/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-02": {
+      "productId": "prod-02",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-02/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-02/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-02/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-02/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-02/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-03": {
+      "productId": "prod-03",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-03/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-03/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-03/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-03/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-03/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-04": {
+      "productId": "prod-04",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-04/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-04/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-04/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-04/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-04/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-05": {
+      "productId": "prod-05",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-05/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-05/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-05/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-05/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-05/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-06": {
+      "productId": "prod-06",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-06/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-06/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-06/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-06/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-06/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-07": {
+      "productId": "prod-07",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-07/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-07/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-07/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-07/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-07/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-08": {
+      "productId": "prod-08",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-08/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-08/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-08/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-08/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-08/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-09": {
+      "productId": "prod-09",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-09/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-09/back.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "detail": {
+          "src": "/images/products/prod-09/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-09/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-09/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-10": {
+      "productId": "prod-10",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-10/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-10/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-10/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-10/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-10/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-11": {
+      "productId": "prod-11",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-11/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-11/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-11/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-11/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-11/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-12": {
+      "productId": "prod-12",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-12/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-12/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-12/detail.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-12/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-12/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-13": {
+      "productId": "prod-13",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-13/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-13/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-13/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-13/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-13/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-14": {
+      "productId": "prod-14",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-14/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-14/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-14/detail.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-14/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-14/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-15": {
+      "productId": "prod-15",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-15/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-15/back.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "detail": {
+          "src": "/images/products/prod-15/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-15/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-15/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-16": {
+      "productId": "prod-16",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-16/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-16/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-16/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-16/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-16/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      },
+      "has360": true,
+      "frames360Count": 16
+    },
+    "prod-17": {
+      "productId": "prod-17",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-17/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-17/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-17/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-17/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-17/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-18": {
+      "productId": "prod-18",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-18/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-18/back.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "detail": {
+          "src": "/images/products/prod-18/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-18/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-18/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-19": {
+      "productId": "prod-19",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-19/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-19/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-19/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-19/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-19/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-20": {
+      "productId": "prod-20",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-20/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-20/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-20/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-20/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-20/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-21": {
+      "productId": "prod-21",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-21/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-21/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-21/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-21/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-21/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      },
+      "has360": true,
+      "frames360Count": 16
+    },
+    "prod-22": {
+      "productId": "prod-22",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-22/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-22/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-22/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-22/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-22/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      },
+      "has360": true,
+      "frames360Count": 16
+    },
+    "prod-23": {
+      "productId": "prod-23",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-23/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-23/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-23/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-23/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-23/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      },
+      "has360": true,
+      "frames360Count": 16
+    },
+    "prod-24": {
+      "productId": "prod-24",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-24/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-24/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-24/detail.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-24/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-24/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    },
+    "prod-25": {
+      "productId": "prod-25",
+      "availableViewsCount": 2,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-25/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-25/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-25/detail.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-25/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-25/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      },
+      "has360": true,
+      "frames360Count": 16
+    },
+    "prod-26": {
+      "productId": "prod-26",
+      "availableViewsCount": 1,
+      "requiredViewsCount": 5,
+      "views": {
+        "front": {
+          "src": "/images/products/prod-26/front.webp",
+          "exists": true,
+          "status": "AVAILABLE"
+        },
+        "back": {
+          "src": "/images/products/prod-26/back.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "detail": {
+          "src": "/images/products/prod-26/detail.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "lifestyle": {
+          "src": "/images/products/prod-26/lifestyle.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        },
+        "alternative": {
+          "src": "/images/products/prod-26/alternative.webp",
+          "exists": false,
+          "status": "QUEUED_FOR_GENERATION"
+        }
+      }
+    }
+  },
+  "summary": {
+    "readyToDeploy": 0,
+    "partiallyPopulated": 26,
+    "awaitingAiGenerationQuota": 0
+  }
+}

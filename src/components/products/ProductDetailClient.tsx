@@ -92,6 +92,8 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
           images={product.images}
           view360={product.view360}
           productName={product.name}
+          price={product.price}
+          compareAtPrice={product.compareAtPrice}
           selectedImageIndex={selectedImageIndex}
           discountBadge={discountBadge}
           isNew={product.isNew}

@@ -8,6 +8,7 @@ import { Product } from "@/types";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
 import { fadeUpVariants } from "@/components/ui/motion";
+import { ProductImage } from "./ProductImage";
 
 interface ProductCardProps {
   product: Product;
@@ -51,27 +52,23 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-150/80 bg-white transition-all duration-300 hover:border-neutral-900 hover:shadow-lg"
     >
-      {/* Editorial Fashion Product Image (4:5 Portrait Ratio) */}
+      {/* Editorial Fashion Product Image (4:5 Portrait Ratio) with Dynamic Price Overlay */}
       <Link
         href={`/products/${product.slug}`}
         className="relative block aspect-[4/5] overflow-hidden bg-neutral-100"
         aria-label={product.name}
       >
-        <img
+        <ProductImage
           src={product.images[0] || "/images/products/placeholder.webp"}
           alt={product.name}
-          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-          loading={priority ? "eager" : "lazy"}
-          onError={(e) => {
-            const target = e.currentTarget;
-            if (!target.src.includes("placeholder.webp")) {
-              target.src = "/images/products/placeholder.webp";
-            }
-          }}
+          price={product.price}
+          compareAtPrice={product.compareAtPrice}
+          priority={priority}
+          imageClassName="group-hover:scale-105"
         />
 
         {/* Eye Quick View Icon on top right (Slikk style) */}
-        <div className="absolute right-2.5 top-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs transition-transform hover:scale-110">
+        <div className="absolute right-2.5 top-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs transition-transform hover:scale-110">
           <Eye className="h-3.5 w-3.5" />
         </div>
 
