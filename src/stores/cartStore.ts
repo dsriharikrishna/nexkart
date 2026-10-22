@@ -102,7 +102,7 @@ export const useCartStore = create<CartStore>()(
       getShippingEstimate: () => {
         const subtotal = get().getSubtotal();
         if (subtotal === 0) return 0;
-        return subtotal >= 5000 ? 0 : 500; // Complimentary express delivery across India over ₹5,000
+        return subtotal >= 999 ? 0 : 49; // Free express delivery across AP & TS on orders over ₹999
       },
 
       getTotal: () => {

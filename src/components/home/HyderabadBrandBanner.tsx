@@ -92,12 +92,24 @@ export function HyderabadBrandBanner() {
           </motion.div>
         </div>
 
-        {/* Hyderabad Hubs Indicator Pill */}
+        {/* Regional Hubs Indicator Pill: Telangana & Andhra Pradesh */}
         <div className="mt-8 mb-10 flex flex-wrap items-center justify-center gap-2">
           <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-            Live across Hyderabad:
+            60-Min Express Hubs across TS &amp; AP:
           </span>
-          {["HITEC City", "Gachibowli", "Banjara Hills", "Jubilee Hills", "Kondapur", "Madhapur", "Secunderabad"].map((loc) => (
+          {[
+            "HITEC City",
+            "Gachibowli",
+            "Banjara Hills",
+            "Jubilee Hills",
+            "Madhapur",
+            "Secunderabad",
+            "Warangal",
+            "Visakhapatnam",
+            "Vijayawada",
+            "Guntur",
+            "Tirupati",
+          ].map((loc) => (
             <span
               key={loc}
               className="rounded-full border border-neutral-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-[#171717] shadow-2xs"

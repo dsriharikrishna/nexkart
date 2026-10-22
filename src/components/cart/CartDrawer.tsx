@@ -166,7 +166,7 @@ export function CartDrawer() {
 
               {shipping > 0 && (
                 <p className="text-center text-[10px] text-neutral-500">
-                  Add {formatCurrency(2500 - subtotal)} more for free fast delivery.
+                  Add {formatCurrency(999 - subtotal)} more for free fast delivery.
                 </p>
               )}
 

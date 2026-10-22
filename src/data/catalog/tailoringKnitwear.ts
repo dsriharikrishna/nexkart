@@ -12,7 +12,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     category: "tailoring",
     collection: "minimalist-capsule",
     gender: "men",
-    price: 52000,
+    price: 1999,
+    compareAtPrice: 3999,
     images: [
       "/images/products/tailoring/prod-04-1.webp",
       "/images/products/tailoring/prod-04-2.webp",
@@ -76,8 +77,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     category: "tailoring",
     collection: "evening-luxe",
     gender: "women",
-    price: 64000,
-    compareAtPrice: 78000,
+    price: 2499,
+    compareAtPrice: 4999,
     images: [
       "/images/products/tailoring/prod-05-1.webp",
       "/images/products/outerwear/prod-01-2.webp",
@@ -119,7 +120,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     category: "knitwear",
     collection: "atelier-autumn",
     gender: "unisex",
-    price: 48000,
+    price: 1499,
+    compareAtPrice: 2999,
     images: [
       "/images/products/knitwear/prod-06-1.webp",
       "/images/products/knitwear/prod-06-2.webp",
@@ -182,7 +184,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     category: "knitwear",
     collection: "minimalist-capsule",
     gender: "men",
-    price: 24000,
+    price: 999,
+    compareAtPrice: 1999,
     images: [
       "/images/products/knitwear/prod-07-1.webp",
       "/images/products/shirts/prod-10-1.webp",

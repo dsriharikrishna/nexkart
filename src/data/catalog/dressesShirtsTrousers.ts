@@ -12,8 +12,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     category: "dresses",
     collection: "evening-luxe",
     gender: "women",
-    price: 59000,
-    compareAtPrice: 72000,
+    price: 1799,
+    compareAtPrice: 3599,
     images: [
       "/images/products/dresses/prod-08-1.webp",
       "/images/products/dresses/prod-08-2.webp",
@@ -83,7 +83,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     category: "dresses",
     collection: "resort-modern",
     gender: "women",
-    price: 41000,
+    price: 1199,
+    compareAtPrice: 2399,
     images: [
       "/images/products/dresses/prod-09-1.webp",
       "/images/products/outerwear/prod-01-3.webp",
@@ -134,7 +135,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     category: "shirts",
     collection: "minimalist-capsule",
     gender: "unisex",
-    price: 19500,
+    price: 699,
+    compareAtPrice: 1399,
     images: [
       "/images/products/shirts/prod-10-1.webp",
       "/images/products/shirts/prod-10-2.webp",
@@ -184,7 +186,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     category: "trousers",
     collection: "monochrome-series",
     gender: "all",
-    price: 38000,
+    price: 1099,
+    compareAtPrice: 2199,
     images: [
       "/images/products/trousers/prod-11-1.webp",
       "/images/products/trousers/prod-11-2.webp",

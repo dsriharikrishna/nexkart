@@ -8,8 +8,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     subtitle: "Understated 50cm curb link chain necklace",
     description:
       "Precision-crafted 18-karat gold vermeil over a solid 925 sterling silver core. Features a sleek 2.2mm box profile that lays flat against the collarbone, secured with a custom engraved lobster clasp.",
-    price: 19500,
-    compareAtPrice: 24000,
+    price: 699,
+    compareAtPrice: 1399,
     category: "jewelry",
     collection: "fine-jewelry",
     gender: "unisex",
@@ -54,8 +54,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     subtitle: "Natural black onyx inset in 925 silver",
     description:
       "A modern reinterpretation of the heritage signet ring. Set with a hand-cut natural black onyx gemstone within a solid bevelled sterling silver housing with brushed directional satin flanks.",
-    price: 16800,
-    compareAtPrice: 19500,
+    price: 499,
+    compareAtPrice: 999,
     category: "jewelry",
     collection: "fine-jewelry",
     gender: "all",

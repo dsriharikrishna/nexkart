@@ -11,8 +11,8 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     category: "outerwear",
     collection: "atelier-autumn",
     gender: "women",
-    price: 89000,
-    compareAtPrice: 115000,
+    price: 2999,
+    compareAtPrice: 5999,
     images: [
       "/images/products/outerwear/prod-01-1.webp",
       "/images/products/outerwear/prod-01-2.webp",
@@ -65,8 +65,8 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     category: "outerwear",
     collection: "monochrome-series",
     gender: "men",
-    price: 75000,
-    compareAtPrice: 92000,
+    price: 2499,
+    compareAtPrice: 4999,
     images: [
       "/images/products/outerwear/prod-02-1.webp",
       "/images/products/outerwear/prod-02-2.webp",
@@ -139,8 +139,8 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     category: "outerwear",
     collection: "atelier-autumn",
     gender: "unisex",
-    price: 145000,
-    compareAtPrice: 178000,
+    price: 3499,
+    compareAtPrice: 6999,
     images: [
       "/images/products/outerwear/prod-03-1.webp",
       "/images/products/outerwear/prod-03-2.webp",

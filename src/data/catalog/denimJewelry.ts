@@ -8,8 +8,8 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     subtitle: "Durable Raw Denim Jeans",
     description:
       "Sturdy 14oz raw Japanese selvedge denim woven on vintage shuttle looms. Cut in a timeless straight-leg silhouette that breaks in comfortably and develops a personalized fade over years of wear.",
-    price: 18500,
-    compareAtPrice: 22000,
+    price: 1199,
+    compareAtPrice: 2399,
     category: "trousers",
     collection: "minimalist-capsule",
     gender: "men",
@@ -60,8 +60,8 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     subtitle: "Minimalist Silver Wrist Bracelet",
     description:
       "Handcrafted 925 sterling silver cuff featuring a subtle brushed satin finish and gently tapered ergonomic ends. An understated daily jewelry piece that pairs with everything from tailored suits to casual wear.",
-    price: 14500,
-    compareAtPrice: 16500,
+    price: 499,
+    compareAtPrice: 999,
     category: "jewelry",
     collection: "fine-jewelry",
     gender: "unisex",

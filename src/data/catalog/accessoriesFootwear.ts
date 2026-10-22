@@ -12,8 +12,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     category: "accessories",
     collection: "minimalist-capsule",
     gender: "all",
-    price: 72000,
-    compareAtPrice: 89000,
+    price: 1499,
+    compareAtPrice: 2999,
     images: [
       "/images/products/accessories/prod-12-1.webp",
       "/images/products/accessories/prod-12-2.webp",
@@ -69,7 +69,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     category: "footwear",
     collection: "monochrome-series",
     gender: "all",
-    price: 49000,
+    price: 1399,
+    compareAtPrice: 2799,
     images: [
       "/images/products/footwear/prod-14-2.webp",
       "/images/products/footwear/prod-19-1.webp",
@@ -139,7 +140,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     category: "accessories",
     collection: "atelier-autumn",
     gender: "all",
-    price: 26000,
+    price: 699,
+    compareAtPrice: 1399,
     images: [
       "/images/products/placeholder.webp",
       "/images/products/footwear/prod-20-1.webp",

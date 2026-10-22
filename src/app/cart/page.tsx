@@ -157,7 +157,7 @@ export default function CartPage() {
 
               {shipping > 0 && (
                 <div className="rounded-xl border border-[#FFD629]/40 bg-[#FFF9D6] p-3 text-[11px] text-[#171717]">
-                  Add {formatCurrency(2500 - subtotal)} more to get free fast delivery!
+                  Add {formatCurrency(999 - subtotal)} more to get free fast delivery!
                 </div>
               )}
 

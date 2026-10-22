@@ -11,8 +11,8 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     category: "shirts",
     collection: "minimalist-capsule",
     gender: "men",
-    price: 14500,
-    compareAtPrice: 17500,
+    price: 799,
+    compareAtPrice: 1599,
     images: [
       "/images/products/shirts/prod-10-2.webp",
       "/images/products/shirts/prod-10-1.webp",
@@ -56,8 +56,8 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     category: "shirts",
     collection: "resort-modern",
     gender: "unisex",
-    price: 16500,
-    compareAtPrice: 19500,
+    price: 899,
+    compareAtPrice: 1799,
     images: [
       "/images/products/shirts/prod-18-1.webp",
       "/images/products/placeholder.webp",

@@ -8,8 +8,8 @@ export const GIFTS_PRODUCTS: Product[] = [
     subtitle: "300g Hand-Poured Mineral & Soy Wax Candle",
     description:
       "Hand-poured in a matte ceramic vessel featuring dual lead-free cotton wicks. Releases grounding aromatic notes of black fig leaf, wild cedarwood, and crushed vetiver with up to 65 hours of clean burn time.",
-    price: 6500,
-    compareAtPrice: 8000,
+    price: 399,
+    compareAtPrice: 799,
     category: "gifts",
     collection: "gifts-and-living",
     gender: "all",
@@ -52,8 +52,8 @@ export const GIFTS_PRODUCTS: Product[] = [
     subtitle: "Presented in a Rigid Magnetic Gift Box",
     description:
       "The definitive presentation gift box containing a 100% mulberry silk sleep mask, travel Santal & Amber fragrance (15ml), and a pure brass wick trimmer set. Wrapped with an embossed golden ribbon.",
-    price: 15500,
-    compareAtPrice: 18500,
+    price: 899,
+    compareAtPrice: 1799,
     category: "gifts",
     collection: "gifts-and-living",
     gender: "all",

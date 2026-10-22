@@ -8,8 +8,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     subtitle: "50ml Artisan Botanical Unisex Fragrance",
     description:
       "A rich, smoky blend of Australian sandalwood, cardamom, warm amber, and hints of Tuscan iris. Formulated with 22% concentrated fragrance oils for a 12-hour nuanced sillage.",
-    price: 12500,
-    compareAtPrice: 15000,
+    price: 799,
+    compareAtPrice: 1599,
     category: "beauty",
     collection: "beauty-wellness",
     gender: "unisex",
@@ -51,8 +51,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     subtitle: "30ml Cold-Pressed Antioxidant Complex",
     description:
       "An intensive restorative facial elixir formulated with 16 nutrient-dense botanical oils, including rosehip, squalane, marula, and neroli. Delivers instant hydration and a radiant dewy finish without clogging pores.",
-    price: 8900,
-    compareAtPrice: 11000,
+    price: 499,
+    compareAtPrice: 999,
     category: "beauty",
     collection: "beauty-wellness",
     gender: "all",

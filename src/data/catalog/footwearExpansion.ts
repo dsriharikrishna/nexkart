@@ -11,8 +11,8 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     category: "footwear",
     collection: "monochrome-series",
     gender: "all",
-    price: 38500,
-    compareAtPrice: 44000,
+    price: 1299,
+    compareAtPrice: 2599,
     images: [
       "/images/products/footwear/prod-19-1.webp",
       "/images/products/footwear/prod-14-2.webp",
@@ -54,8 +54,8 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     category: "footwear",
     collection: "atelier-autumn",
     gender: "all",
-    price: 52000,
-    compareAtPrice: 62000,
+    price: 1899,
+    compareAtPrice: 3799,
     images: [
       "/images/products/footwear/prod-20-1.webp",
       "/images/products/footwear/prod-14-2.webp",
