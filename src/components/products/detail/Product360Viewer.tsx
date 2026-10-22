@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { RotateCw, MoveHorizontal, AlertCircle } from "lucide-react";
+import { RotateCw, MoveHorizontal } from "lucide-react";
 
 interface Product360ViewerProps {
   frames?: string[];

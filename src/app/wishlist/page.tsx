@@ -6,6 +6,7 @@ import { Heart, ShoppingBag, X, Zap } from "lucide-react";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductById } from "@/data/products";
+import { Product } from "@/types";
 
 export default function WishlistPage() {
   const [mounted, setMounted] = useState(false);
@@ -28,8 +29,8 @@ export default function WishlistPage() {
 
   if (!mounted) return null;
 
-  const handleMoveToBag = (product: any) => {
-    const defaultVariant = product.variants?.find((v: any) => v.inStock) || product.variants?.[0];
+  const handleMoveToBag = (product: Product) => {
+    const defaultVariant = product.variants?.find((v) => v.inStock) || product.variants?.[0];
     if (defaultVariant) {
       setMovingId(product.id);
       addItem(product, defaultVariant.color, defaultVariant.size, 1);

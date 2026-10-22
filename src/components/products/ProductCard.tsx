@@ -72,10 +72,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           <Eye className="h-3.5 w-3.5" />
         </div>
 
-        {/* Try & Buy Black Sticker Pill at bottom left of image (Slikk style) */}
+        {/* Try & Buy Black Sticker Pill at bottom left of image (Slikk style)
         <div className="absolute bottom-2.5 left-2.5 z-10 rounded-md bg-black px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-xs">
           Try &amp; Buy
-        </div>
+        </div> */}
 
         {/* Heart Wishlist Icon at bottom right of image (Slikk style) */}
         <button
@@ -105,27 +105,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </h3>
         </Link>
 
-        {/* Price Row: Selling Price, MRP, Green % Discount Badge (Slikk exact) */}
-        <div className="mt-1 flex items-center gap-1.5 flex-wrap">
-          <span className="font-heading text-xs sm:text-sm font-bold text-neutral-950">
-            ₹{product.price.toLocaleString("en-IN")}
-          </span>
-          {product.compareAtPrice && product.compareAtPrice > product.price && (
-            <>
-              <span className="text-[11px] text-neutral-400 line-through">
-                ₹{product.compareAtPrice.toLocaleString("en-IN")}
-              </span>
-              <span className="rounded bg-[#E8F8EA] px-1 py-0.2 text-[9px] font-bold text-[#147924]">
-                {Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)}% OFF
-              </span>
-            </>
-          )}
-        </div>
-
         {/* Quick Add To Bag Strip */}
         <div className="mt-2 flex items-center justify-between border-t border-neutral-100 pt-1.5 text-[10px]">
           <span className="text-emerald-700 font-semibold flex items-center gap-1">
-            ⚡ <span>60 Min Delivery</span>
+            ⚡ <span>{product.estimatedDeliveryTime || "60 Min Delivery"}</span>
           </span>
           <button
             onClick={handleQuickAdd}

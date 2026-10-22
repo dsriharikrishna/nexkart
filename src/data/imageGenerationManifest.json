@@ -853,8 +853,11 @@
     }
   },
   "summary": {
+    "totalTargetViews": 130,
+    "availableViews": 33,
+    "queuedViews": 97,
     "readyToDeploy": 0,
     "partiallyPopulated": 26,
-    "awaitingAiGenerationQuota": 0
+    "generationQuotaStatus": "RESOURCE_EXHAUSTED_429"
   }
 }

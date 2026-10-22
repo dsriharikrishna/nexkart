@@ -41,8 +41,8 @@
   },
   "prod-09": {
     "views": [
-      "/images/products/prod-09/back.webp",
-      "/images/products/prod-09/front.webp"
+      "/images/products/prod-09/front.webp",
+      "/images/products/prod-09/back.webp"
     ]
   },
   "prod-10": {
@@ -57,8 +57,8 @@
   },
   "prod-12": {
     "views": [
-      "/images/products/prod-12/detail.webp",
-      "/images/products/prod-12/front.webp"
+      "/images/products/prod-12/front.webp",
+      "/images/products/prod-12/detail.webp"
     ]
   },
   "prod-13": {
@@ -68,14 +68,14 @@
   },
   "prod-14": {
     "views": [
-      "/images/products/prod-14/detail.webp",
-      "/images/products/prod-14/front.webp"
+      "/images/products/prod-14/front.webp",
+      "/images/products/prod-14/detail.webp"
     ]
   },
   "prod-15": {
     "views": [
-      "/images/products/prod-15/back.webp",
-      "/images/products/prod-15/front.webp"
+      "/images/products/prod-15/front.webp",
+      "/images/products/prod-15/back.webp"
     ]
   },
   "prod-16": {
@@ -108,8 +108,8 @@
   },
   "prod-18": {
     "views": [
-      "/images/products/prod-18/back.webp",
-      "/images/products/prod-18/front.webp"
+      "/images/products/prod-18/front.webp",
+      "/images/products/prod-18/back.webp"
     ]
   },
   "prod-19": {
@@ -193,14 +193,14 @@
   },
   "prod-24": {
     "views": [
-      "/images/products/prod-24/detail.webp",
-      "/images/products/prod-24/front.webp"
+      "/images/products/prod-24/front.webp",
+      "/images/products/prod-24/detail.webp"
     ]
   },
   "prod-25": {
     "views": [
-      "/images/products/prod-25/detail.webp",
-      "/images/products/prod-25/front.webp"
+      "/images/products/prod-25/front.webp",
+      "/images/products/prod-25/detail.webp"
     ],
     "view360": [
       "/images/products/prod-25/360/frame-01.webp",

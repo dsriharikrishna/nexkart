@@ -198,7 +198,11 @@ function SlikkProductListingContent() {
                 </span>
                 <select
                   value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
+                  onChange={(e) =>
+                    setSortBy(
+                      e.target.value as "featured" | "price-asc" | "price-desc" | "newest"
+                    )
+                  }
                   className="rounded-xl border border-neutral-300 bg-white px-3 py-1.5 text-xs font-semibold text-[#171717] focus:border-[#171717] focus:outline-none cursor-pointer"
                 >
                   <option value="featured">Featured / Recommended</option>
