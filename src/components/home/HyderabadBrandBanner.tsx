@@ -1,25 +1,40 @@
+"use client";
+
 import Link from "next/link";
 import { ShieldCheck, Sparkles, Shirt, RotateCcw, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUpVariants, staggerContainerVariants } from "@/components/ui/motion";
 
 export function HyderabadBrandBanner() {
   return (
-    <section className="w-full bg-neutral-50/60 py-6 sm:py-6 border-t border-b border-neutral-150">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      variants={staggerContainerVariants}
+      className="w-full bg-neutral-50/60 py-8 border-t border-b border-neutral-150 overflow-hidden"
+    >
       <div className="w-full px-4 text-center sm:px-6 lg:px-8">
         {/* Header Heading: "Hyderabad's fastest" in italic serif + "fashion x lifestyle app" */}
-        <div className="mb-8 flex flex-col items-center justify-center">
+        <motion.div variants={fadeUpVariants} className="mb-8 flex flex-col items-center justify-center">
           <h2 className="font-serif italic text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#171717]">
             Hyderabad&apos;s fastest
           </h2>
           <p className="mt-1 font-heading text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-[#707070]">
             fashion x lifestyle app
           </p>
-        </div>
+        </motion.div>
 
         {/* Glossy / 3D Badge Trio: 60 MIN DELIVERY, TRY N BUY, 60 MIN RETURN */}
         <div className="relative mx-auto my-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xl">
           {/* Badge 1: Red Glossy "HELLO WE DELIVER IN 60 MIN" */}
-          <div className="relative group transform -rotate-6 transition-all hover:rotate-0 hover:scale-105 active:scale-95 duration-200">
-            <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-white/60 bg-gradient-to-b from-[#ff3344] via-[#e5192c] to-[#b30e1d] px-5 py-3 text-white shadow-xl shadow-red-500/25 ring-2 ring-red-400/40">
+          <motion.div
+            variants={fadeUpVariants}
+            whileHover={{ scale: 1.05, rotate: 0 }}
+            whileTap={{ scale: 0.96 }}
+            className="relative group -rotate-6 transition-transform duration-200"
+          >
+            <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-white/60 bg-gradient-to-b from-[#ff3344] via-[#e5192c] to-[#b30e1d] px-5 py-3 text-white shadow-xl shadow-red-500/25 ring-2 ring-red-400/40 cursor-default">
               {/* Gloss shine highlight */}
               <div className="absolute inset-x-2 top-1 h-3 rounded-t-xl bg-white/30 blur-[1px]" />
               <span className="text-[9px] font-black uppercase tracking-wider text-white/90 drop-shadow-xs">
@@ -31,11 +46,16 @@ export function HyderabadBrandBanner() {
                 <Zap className="h-4 w-4 fill-[#FFD629] text-[#FFD629]" />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Badge 2: Green Triangle / Shield "TRY N BUY" */}
-          <div className="relative group z-10 transform -rotate-1 transition-all hover:rotate-0 hover:scale-105 active:scale-95 duration-200">
-            <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-white/70 bg-gradient-to-b from-[#10b981] via-[#059669] to-[#047857] px-6 py-3.5 text-white shadow-xl shadow-emerald-500/25 ring-2 ring-emerald-400/40">
+          <motion.div
+            variants={fadeUpVariants}
+            whileHover={{ scale: 1.05, rotate: 0 }}
+            whileTap={{ scale: 0.96 }}
+            className="relative group z-10 -rotate-1 transition-transform duration-200"
+          >
+            <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-white/70 bg-gradient-to-b from-[#10b981] via-[#059669] to-[#047857] px-6 py-3.5 text-white shadow-xl shadow-emerald-500/25 ring-2 ring-emerald-400/40 cursor-default">
               {/* Gloss shine highlight */}
               <div className="absolute inset-x-2 top-1 h-3.5 rounded-t-xl bg-white/35 blur-[1px]" />
               <Shirt className="h-4 w-4 mb-0.5 text-emerald-100" />
@@ -48,11 +68,16 @@ export function HyderabadBrandBanner() {
                 AT YOUR DOORSTEP
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Badge 3: Blue Elliptical "60 MIN RETURN" */}
-          <div className="relative group transform rotate-6 transition-all hover:rotate-0 hover:scale-105 active:scale-95 duration-200">
-            <div className="relative flex flex-col items-center justify-center rounded-full border-2 border-white/60 bg-gradient-to-b from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a] px-6 py-3 text-white shadow-xl shadow-blue-500/25 ring-2 ring-blue-400/40">
+          <motion.div
+            variants={fadeUpVariants}
+            whileHover={{ scale: 1.05, rotate: 0 }}
+            whileTap={{ scale: 0.96 }}
+            className="relative group rotate-6 transition-transform duration-200"
+          >
+            <div className="relative flex flex-col items-center justify-center rounded-full border-2 border-white/60 bg-gradient-to-b from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a] px-6 py-3 text-white shadow-xl shadow-blue-500/25 ring-2 ring-blue-400/40 cursor-default">
               {/* Gloss shine highlight */}
               <div className="absolute inset-x-3 top-1 h-3 rounded-full bg-white/30 blur-[1px]" />
               <div className="flex items-center gap-1 font-heading text-lg sm:text-xl font-black tracking-tight leading-none drop-shadow-md">
@@ -64,7 +89,7 @@ export function HyderabadBrandBanner() {
                 EASY RETURN
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Hyderabad Hubs Indicator Pill */}
@@ -138,6 +163,7 @@ export function HyderabadBrandBanner() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
+
