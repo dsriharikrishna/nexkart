@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, ShoppingBag, Check, Eye } from "lucide-react";
+import { Heart, Eye } from "lucide-react";
 import { Product } from "@/types";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
@@ -15,11 +15,17 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
+  const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [addedNotice, setAddedNotice] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const toggleWishlist = useWishlistStore((state) => state.toggleWishlist);
   const isInWishlist = useWishlistStore((state) => state.isInWishlist(product.id));
+  const isSaved = mounted && isInWishlist;
   const addItem = useCartStore((state) => state.addItem);
 
   const defaultVariant = product.variants.find((v) => v.inStock) || product.variants[0];
@@ -85,13 +91,13 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         <button
           onClick={handleWishlistToggle}
           className={`absolute bottom-2.5 right-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all ${
-            isInWishlist
+            isSaved
               ? "bg-[#171717] text-[#FFD629] scale-110 shadow-md"
               : "bg-black/30 text-white/90 backdrop-blur-xs hover:bg-black/60 hover:text-white"
           }`}
-          aria-label={isInWishlist ? `Remove ${product.name} from saved items` : `Save ${product.name}`}
+          aria-label={isSaved ? `Remove ${product.name} from saved items` : `Save ${product.name}`}
         >
-          <Heart className={`h-3.5 w-3.5 ${isInWishlist ? "fill-[#FFD629]" : ""}`} />
+          <Heart className={`h-3.5 w-3.5 ${isSaved ? "fill-[#FFD629]" : ""}`} />
         </button>
       </Link>
 
