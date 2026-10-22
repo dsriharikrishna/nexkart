@@ -61,15 +61,15 @@ const CATEGORY_ICONS: CategoryIconItem[] = [
 
 export function TopCategoryCircleBar() {
   return (
-    <div className="w-full border-b border-neutral-100 bg-white py-2 sm:py-3 shadow-2xs">
-      <div className="mx-auto flex max-w-7xl items-center gap-3 sm:gap-4 overflow-x-auto px-3 sm:px-6 lg:px-8 scrollbar-none overscroll-x-contain snap-x snap-proximity">
+    <div className="w-full border-b border-neutral-100 bg-white py-2 shadow-2xs">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 overflow-x-auto px-4 sm:px-6 lg:px-8 scrollbar-none overscroll-x-contain snap-x snap-proximity">
         {CATEGORY_ICONS.map((item) => (
           <Link
             key={item.name}
             href={item.href}
             className="group flex flex-col items-center gap-1 shrink-0 snap-start active:scale-95 transition-transform"
           >
-            <div className="flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-neutral-50 p-0.5 transition-all group-hover:scale-105 group-hover:border-[#FFD629] group-hover:shadow-xs">
+            <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-neutral-50 p-0.5 transition-all group-hover:scale-105 group-hover:border-[#FFD629] group-hover:shadow-xs">
               <img
                 src={item.image}
                 alt={item.name}
@@ -77,7 +77,7 @@ export function TopCategoryCircleBar() {
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
-            <span className="text-[10px] sm:text-[11px] font-semibold text-[#171717] group-hover:text-[#FFB800] whitespace-nowrap">
+            <span className="text-[10px] sm:text-[11px] font-semibold text-[#171717] group-hover:text-[#FFB800] whitespace-nowrap leading-tight">
               {item.name}
             </span>
           </Link>

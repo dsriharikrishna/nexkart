@@ -7,6 +7,7 @@ import { CompleteTheLook } from "@/components/home/CompleteTheLook";
 import { PromotionalCampaigns } from "@/components/home/PromotionalCampaigns";
 import { TrendingSection } from "@/components/home/TrendingSection";
 import { NewArrivalsSection } from "@/components/home/NewArrivalsSection";
+import { HyderabadBrandBanner } from "@/components/home/HyderabadBrandBanner";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 
 export default function HomePage() {
@@ -41,7 +42,10 @@ export default function HomePage() {
       {/* 8. NEW ARRIVALS GRID */}
       <NewArrivalsSection products={newArrivals} totalCount={totalNewCount} />
 
-      {/* 9. NEWSLETTER DISPATCH */}
+      {/* 9. HYDERABAD'S FASTEST FASHION X LIFESTYLE BANNER */}
+      <HyderabadBrandBanner />
+
+      {/* 10. NEWSLETTER DISPATCH */}
       <NewsletterSection />
     </div>
   );
