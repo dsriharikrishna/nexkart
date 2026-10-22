@@ -16,7 +16,6 @@ export const JEWELRY_PRODUCTS: Product[] = [
     tags: ["jewelry", "gold", "necklace", "chain", "fine-jewelry"],
     images: [
       "/images/products/jewelry/prod-21-1.webp",
-      "/images/products/jewelry/prod-16-1.webp",
     ],
     colors: [
       { name: "18K Gold", hex: "#E5C158" },
@@ -61,8 +60,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["jewelry", "ring", "onyx", "silver", "signet"],
     images: [
-      "/images/products/jewelry/prod-22-1.webp",
-      "/images/products/placeholder.webp",
+      "/images/products/jewelry/prod-22-2.webp",
     ],
     colors: [
       { name: "Silver & Onyx", hex: "#C0C0C0" },

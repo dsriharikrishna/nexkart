@@ -122,7 +122,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Warm Layers and Comfortable Everyday Fits",
     description:
       "Discover soft warm coats, neat blazers, and easy knit layers designed for everyday wear.",
-    heroImage: "/images/products/outerwear/prod-01-3.webp",
+    heroImage: "/images/products/outerwear/prod-01-1.webp",
     editorialQuote: "Simple, warm, and easy to wear every day.",
   },
   {
@@ -155,7 +155,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Classic Black, White, and Grey Outfits",
     description:
       "Simple black coats, crisp white tops, and grey pants that give you a clean, sharp look.",
-    heroImage: "/images/products/outerwear/prod-01-2.webp",
+    heroImage: "/images/products/outerwear/prod-02-1.webp",
     editorialQuote: "Clean black and white styles that never go out of style.",
   },
   {
@@ -166,7 +166,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Special Outfits for Parties and Events",
     description:
       "Silk dresses, clean party jackets, and neat celebration wear made for dinners and festive gatherings.",
-    heroImage: "/images/products/dresses/prod-08-2.webp",
+    heroImage: "/images/products/dresses/prod-08-1.webp",
     editorialQuote: "Look your best for dinner and celebrations.",
   },
 ];

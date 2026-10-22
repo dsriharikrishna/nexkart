@@ -16,7 +16,6 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     compareAtPrice: 3599,
     images: [
       "/images/products/dresses/prod-08-1.webp",
-      "/images/products/dresses/prod-08-2.webp",
     ],
     colors: [
       { name: "Champagne Gold", hex: "#F7E7CE" },
@@ -87,7 +86,7 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     compareAtPrice: 2399,
     images: [
       "/images/products/dresses/prod-09-1.webp",
-      "/images/products/outerwear/prod-01-3.webp",
+      "/images/products/dresses/prod-09-2.webp",
     ],
     colors: [
       { name: "Optic White", hex: "#FFFFFF" },
@@ -139,7 +138,6 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     compareAtPrice: 1399,
     images: [
       "/images/products/shirts/prod-10-1.webp",
-      "/images/products/shirts/prod-10-2.webp",
     ],
     colors: [
       { name: "Sky Blue", hex: "#B0C4DE" },
@@ -189,7 +187,6 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     price: 1099,
     compareAtPrice: 2199,
     images: [
-      "/images/products/trousers/prod-11-1.webp",
       "/images/products/trousers/prod-11-2.webp",
     ],
     colors: [

@@ -17,7 +17,7 @@ const CAMPAIGN_SLIDES: CampaignSlide[] = [
     alt: "Autumn Atelier & Festive Collection Editorial Campaign",
   },
   {
-    image: "/images/products/outerwear/prod-01-3.webp",
+    image: "/images/products/outerwear/prod-01-1.webp",
     href: "/products?namex=Tokyo%20Talkies",
     alt: "Contemporary Editorial Womenswear Campaign",
   },
@@ -27,7 +27,7 @@ const CAMPAIGN_SLIDES: CampaignSlide[] = [
     alt: "Modern Tailoring & Menswear Campaign",
   },
   {
-    image: "/images/products/dresses/prod-08-2.webp",
+    image: "/images/products/dresses/prod-08-1.webp",
     href: "/products?namex=Aadvi%20Fashion",
     alt: "Evening Luxe & Festive Picks Editorial Campaign",
   },

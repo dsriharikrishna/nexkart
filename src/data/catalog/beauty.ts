@@ -16,7 +16,6 @@ export const BEAUTY_PRODUCTS: Product[] = [
     tags: ["beauty", "perfume", "fragrance", "santal", "amber"],
     images: [
       "/images/products/beauty/prod-23-1.webp",
-      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Amber Glass", hex: "#7E5109" },
@@ -58,8 +57,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["beauty", "skincare", "face-oil", "botanical", "glow"],
     images: [
-      "/images/products/placeholder.webp",
-      "/images/products/placeholder.webp",
+      "/images/products/beauty/prod-24-1.webp",
+      "/images/products/beauty/prod-24-2.webp",
     ],
     colors: [
       { name: "Golden Dropper", hex: "#D4AF37" },

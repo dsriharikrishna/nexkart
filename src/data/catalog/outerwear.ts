@@ -15,8 +15,6 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     compareAtPrice: 5999,
     images: [
       "/images/products/outerwear/prod-01-1.webp",
-      "/images/products/outerwear/prod-01-2.webp",
-      "/images/products/outerwear/prod-01-3.webp",
     ],
     colors: [
       { name: "Camel", hex: "#C19A6B" },
@@ -69,8 +67,6 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     compareAtPrice: 4999,
     images: [
       "/images/products/outerwear/prod-02-1.webp",
-      "/images/products/outerwear/prod-02-2.webp",
-      "/images/products/outerwear/prod-02-3.webp",
     ],
     colors: [
       { name: "Obsidian Black", hex: "#111111" },
@@ -143,7 +139,6 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     compareAtPrice: 6999,
     images: [
       "/images/products/outerwear/prod-03-1.webp",
-      "/images/products/outerwear/prod-03-2.webp",
     ],
     colors: [
       { name: "Espresso Brown", hex: "#3B271E" },

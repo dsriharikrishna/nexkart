@@ -16,7 +16,6 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     compareAtPrice: 3999,
     images: [
       "/images/products/tailoring/prod-04-1.webp",
-      "/images/products/tailoring/prod-04-2.webp",
     ],
     colors: [
       { name: "Heather Slate", hex: "#5C6B73" },
@@ -81,7 +80,6 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     compareAtPrice: 4999,
     images: [
       "/images/products/tailoring/prod-05-1.webp",
-      "/images/products/outerwear/prod-01-2.webp",
     ],
     colors: [
       { name: "Ivory", hex: "#FFFFF0" },
@@ -123,7 +121,6 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     price: 1499,
     compareAtPrice: 2999,
     images: [
-      "/images/products/knitwear/prod-06-1.webp",
       "/images/products/knitwear/prod-06-2.webp",
     ],
     colors: [
@@ -187,8 +184,7 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     price: 999,
     compareAtPrice: 1999,
     images: [
-      "/images/products/knitwear/prod-07-1.webp",
-      "/images/products/shirts/prod-10-1.webp",
+      "/images/products/knitwear/prod-07-2.webp",
     ],
     colors: [
       { name: "Midnight Navy", hex: "#121A28" },

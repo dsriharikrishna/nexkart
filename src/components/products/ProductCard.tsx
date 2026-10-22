@@ -16,7 +16,6 @@ interface ProductCardProps {
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   const [mounted, setMounted] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [addedNotice, setAddedNotice] = useState(false);
 
   useEffect(() => {
@@ -56,16 +55,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <Link
         href={`/products/${product.slug}`}
         className="relative block aspect-[4/5] overflow-hidden bg-neutral-100"
-        onMouseEnter={() => {
-          if (product.images.length > 1) setCurrentImageIndex(1);
-        }}
-        onMouseLeave={() => {
-          setCurrentImageIndex(0);
-        }}
         aria-label={product.name}
       >
         <img
-          src={product.images[currentImageIndex] || product.images[0]}
+          src={product.images[0] || "/images/products/placeholder.webp"}
           alt={product.name}
           className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           loading={priority ? "eager" : "lazy"}

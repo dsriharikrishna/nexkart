@@ -16,7 +16,7 @@ export const GIFTS_PRODUCTS: Product[] = [
     tags: ["gifts", "candle", "home", "living", "lifestyle"],
     images: [
       "/images/products/gifts/prod-25-1.webp",
-      "/images/products/placeholder.webp",
+      "/images/products/gifts/prod-25-2.webp",
     ],
     colors: [
       { name: "Matte Charcoal", hex: "#222222" },
@@ -59,8 +59,7 @@ export const GIFTS_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["gifts", "gift-set", "luxury", "silk", "hamper"],
     images: [
-      "/images/products/gifts/prod-26-1.webp",
-      "/images/products/placeholder.webp",
+      "/images/products/gifts/prod-26-2.webp",
     ],
     colors: [
       { name: "Obsidian & Gold", hex: "#1A1A1A" },

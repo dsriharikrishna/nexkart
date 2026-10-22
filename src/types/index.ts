@@ -52,6 +52,7 @@ export interface Product {
   price: number;
   compareAtPrice?: number;
   images: string[];
+  view360?: string[];
   colors: ProductColor[];
   sizes: ProductSize[];
   variants: ProductVariant[];

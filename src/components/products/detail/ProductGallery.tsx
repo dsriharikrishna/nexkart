@@ -1,7 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { RotateCw, Image as ImageIcon } from "lucide-react";
+import { Product360Viewer } from "./Product360Viewer";
+
 interface ProductGalleryProps {
   images: string[];
+  view360?: string[];
   productName: string;
   selectedImageIndex: number;
   discountBadge: string | null;
@@ -11,59 +16,119 @@ interface ProductGalleryProps {
 
 export function ProductGallery({
   images,
+  view360,
   productName,
   selectedImageIndex,
   discountBadge,
   isNew,
   onSelectImage,
 }: ProductGalleryProps) {
+  const [activeTab, setActiveTab] = useState<"gallery" | "360">("gallery");
+  const has360 = Boolean(view360 && view360.length >= 8);
+
   return (
     <div className="flex flex-col-reverse gap-4 md:flex-row lg:col-span-7">
-      {/* Thumbnails */}
-      {images.length > 1 && (
-        <div className="flex shrink-0 gap-3 overflow-x-auto md:w-20 md:flex-col md:overflow-y-auto">
-          {images.map((img, idx) => (
+      {/* Left Thumbnail Column */}
+      <div className="flex shrink-0 gap-3 overflow-x-auto md:w-20 md:flex-col md:overflow-y-auto">
+        {images.map((img, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              setActiveTab("gallery");
+              onSelectImage(idx);
+            }}
+            className={`relative aspect-[4/5] w-16 overflow-hidden rounded-lg border transition-all md:w-full ${
+              activeTab === "gallery" && selectedImageIndex === idx
+                ? "border-neutral-950 ring-2 ring-neutral-950 opacity-100"
+                : "border-neutral-200 opacity-60 hover:opacity-100"
+            }`}
+          >
+            <img
+              src={img}
+              alt={`${productName} view ${idx + 1}`}
+              className="h-full w-full object-cover"
+            />
+          </button>
+        ))}
+
+        {/* 360 View Thumbnail Button if available or interactive */}
+        {has360 && (
+          <button
+            onClick={() => setActiveTab("360")}
+            className={`relative flex aspect-[4/5] w-16 flex-col items-center justify-center rounded-lg border bg-neutral-900 text-white transition-all md:w-full ${
+              activeTab === "360"
+                ? "border-neutral-950 ring-2 ring-[#FFD629] text-[#FFD629]"
+                : "border-neutral-300 opacity-80 hover:opacity-100"
+            }`}
+            title="Interactive 360° View"
+          >
+            <RotateCw className="h-5 w-5 mb-1 animate-spin-slow" />
+            <span className="text-[9px] font-bold uppercase tracking-wider">360°</span>
+          </button>
+        )}
+      </div>
+
+      {/* Main Display Area */}
+      <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-sm">
+        {/* Gallery / 360 Tab Toggle Pills */}
+        {has360 && (
+          <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 rounded-full bg-white/90 p-1 shadow-sm backdrop-blur-md">
             <button
-              key={idx}
-              onClick={() => onSelectImage(idx)}
-              className={`relative aspect-[4/5] w-16 overflow-hidden border transition-all md:w-full ${
-                selectedImageIndex === idx
-                  ? "border-neutral-950 opacity-100"
-                  : "border-neutral-200 opacity-60 hover:opacity-100"
+              onClick={() => setActiveTab("gallery")}
+              className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold transition-all ${
+                activeTab === "gallery"
+                  ? "bg-[#171717] text-white shadow-xs"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
-              <img
-                src={img}
-                alt={`${productName} ${idx + 1}`}
-                className="h-full w-full object-cover"
-              />
+              <ImageIcon className="h-3 w-3" />
+              <span>Photos</span>
             </button>
-          ))}
-        </div>
-      )}
+            <button
+              onClick={() => setActiveTab("360")}
+              className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold transition-all ${
+                activeTab === "360"
+                  ? "bg-[#171717] text-[#FFD629] shadow-xs"
+                  : "text-neutral-600 hover:text-black"
+              }`}
+            >
+              <RotateCw className="h-3 w-3" />
+              <span>360° Spin</span>
+            </button>
+          </div>
+        )}
 
-      {/* Main Selected Image */}
-      <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-sm">
-        <img
-          src={images[selectedImageIndex] || images[0]}
-          alt={productName}
-          className="h-full w-full object-cover object-center transition-all duration-500"
-          onError={(e) => {
-            const target = e.currentTarget;
-            if (!target.src.includes("placeholder.webp")) {
-              target.src = "/images/products/placeholder.webp";
-            }
-          }}
-        />
-        {discountBadge && (
-          <span className="absolute left-4 top-4 rounded-full bg-[#8A6A3B] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-xs">
+        {/* Badges */}
+        {activeTab === "gallery" && discountBadge && (
+          <span
+            className={`absolute top-4 z-10 rounded-full bg-[#147924] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white shadow-xs ${
+              has360 ? "right-4" : "left-4"
+            }`}
+          >
             {discountBadge}
           </span>
         )}
-        {isNew && (
-          <span className="absolute right-4 top-4 rounded-full bg-[#101010] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF62] shadow-xs">
+        {activeTab === "gallery" && isNew && !discountBadge && (
+          <span className="absolute right-4 top-4 z-10 rounded-full bg-[#101010] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#FFD629] shadow-xs">
             NEW IN
           </span>
+        )}
+
+        {/* Display Content: 360 Viewer or High-Res Main Image */}
+        {activeTab === "360" ? (
+          <Product360Viewer frames={view360} productName={productName} />
+        ) : (
+          <img
+            src={images[selectedImageIndex] || images[0]}
+            alt={productName}
+            className="h-full w-full object-cover object-center transition-all duration-500"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.includes("placeholder.webp")) {
+                target.src = "/images/products/placeholder.webp";
+              }
+            }}
+          />
         )}
       </div>
     </div>

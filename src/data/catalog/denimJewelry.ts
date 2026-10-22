@@ -67,8 +67,7 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["jewelry", "silver", "minimalist", "handcrafted", "cuff"],
     images: [
-      "/images/products/jewelry/prod-16-1.webp",
-      "/images/products/placeholder.webp",
+      "/images/products/jewelry/prod-16-2.webp",
     ],
     colors: [
       { name: "Sterling Silver", hex: "#C0C0C0" },

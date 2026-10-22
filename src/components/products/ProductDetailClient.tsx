@@ -90,6 +90,7 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
         {/* Left: Gallery */}
         <ProductGallery
           images={product.images}
+          view360={product.view360}
           productName={product.name}
           selectedImageIndex={selectedImageIndex}
           discountBadge={discountBadge}

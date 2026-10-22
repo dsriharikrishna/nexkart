@@ -10,7 +10,7 @@ const PARTNER_LABELS = [
   { name: "The Souled Store", off: "Min 50% Off", link: "/products?namex=The%20Souled%20Store", img: "/images/products/shirts/prod-17-1.webp" },
   { name: "Snitch", off: "Up to 70% Off", link: "/products?namex=Snitch", img: "/images/products/trousers/prod-11-1.webp" },
   { name: "Puma", off: "Flat 40% Off", link: "/products?namex=Puma", img: "/images/products/footwear/prod-19-1.webp" },
-  { name: "Tokyo Talkies", off: "Up to 80% Off", link: "/products?namex=Tokyo%20Talkies", img: "/images/products/outerwear/prod-01-3.webp" },
+  { name: "Tokyo Talkies", off: "Up to 80% Off", link: "/products?namex=Tokyo%20Talkies", img: "/images/products/outerwear/prod-01-1.webp" },
   { name: "Zouk", off: "Under ₹999", link: "/products?namex=Zouk", img: "/images/products/accessories/prod-12-1.webp" },
   { name: "Brown Butter", off: "From ₹499", link: "/products?namex=Brown%20Butter", img: "/images/products/dresses/prod-09-1.webp" },
 ];

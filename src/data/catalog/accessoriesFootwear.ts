@@ -72,8 +72,7 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     price: 1399,
     compareAtPrice: 2799,
     images: [
-      "/images/products/footwear/prod-14-2.webp",
-      "/images/products/footwear/prod-19-1.webp",
+      "/images/products/accessories/prod-13-1.webp",
     ],
     colors: [
       { name: "Gloss Obsidian", hex: "#111111" },
@@ -143,8 +142,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     price: 699,
     compareAtPrice: 1399,
     images: [
-      "/images/products/placeholder.webp",
-      "/images/products/footwear/prod-20-1.webp",
+      "/images/products/accessories/prod-14-1.webp",
+      "/images/products/accessories/prod-14-2.webp",
     ],
     colors: [
       { name: "Oatmeal Melange", hex: "#D6C7B2" },
