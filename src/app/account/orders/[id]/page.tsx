@@ -56,7 +56,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
   const isDispatched = order.status === "Dispatched" || isDelivered;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="w-full px-4 py-12 sm:px-6 lg:px-8">
       {/* Back button */}
       <div className="mb-6">
         <button

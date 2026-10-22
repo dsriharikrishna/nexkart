@@ -32,7 +32,7 @@ export default function CartPage() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={luxuryTransition}
-      className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+      className="w-full px-4 py-12 sm:px-6 lg:px-8"
     >
       <div className="mb-10 border-b border-neutral-200 pb-6">
         <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#FFB800]">

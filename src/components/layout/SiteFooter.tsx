@@ -4,7 +4,7 @@ import { ArrowUpRight, ShieldCheck, Zap, RotateCcw, Clock } from "lucide-react";
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-[#EAEAEA] bg-[#171717] pb-12 pt-16 text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Quick Commerce Value Propositions */}
         <div className="grid grid-cols-1 gap-8 border-b border-neutral-800 pb-14 text-xs md:grid-cols-4">
           <div className="flex items-start gap-3.5">
@@ -133,7 +133,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/new-arrivals" className="transition-colors hover:text-[#FFD629]">
+                <Link href="/products?sort=newest" className="transition-colors hover:text-[#FFD629]">
                   New Arrivals
                 </Link>
               </li>

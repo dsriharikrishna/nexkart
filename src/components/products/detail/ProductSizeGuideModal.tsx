@@ -22,6 +22,56 @@ export function ProductSizeGuideModal({ isOpen, onClose }: ProductSizeGuideModal
             ✕
           </button>
         </div>
+        {/* Visual Measurement Silhouette Diagram */}
+        <div className="mb-6 rounded-2xl border border-neutral-200/90 bg-neutral-50 p-4">
+          <div className="flex flex-col sm:flex-row items-center justify-around gap-4">
+            <svg
+              className="h-32 w-28 text-neutral-800"
+              viewBox="0 0 100 120"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-label="Garment Measurement Diagram"
+            >
+              {/* Garment Silhouette */}
+              <path
+                d="M 35 15 L 20 28 L 30 38 L 35 32 L 35 105 L 65 105 L 65 32 L 70 38 L 80 28 L 65 15 C 60 22 40 22 35 15 Z"
+                fill="#f5f5f5"
+                stroke="#171717"
+              />
+              {/* Chest Measurement Line */}
+              <line x1="30" y1="48" x2="70" y2="48" stroke="#FFB800" strokeWidth="2" strokeDasharray="3 2" />
+              <circle cx="30" cy="48" r="2.5" fill="#FFB800" />
+              <circle cx="70" cy="48" r="2.5" fill="#FFB800" />
+
+              {/* Waist Measurement Line */}
+              <line x1="33" y1="68" x2="67" y2="68" stroke="#171717" strokeWidth="1.5" strokeDasharray="3 2" />
+              <circle cx="33" cy="68" r="2" fill="#171717" />
+              <circle cx="67" cy="68" r="2" fill="#171717" />
+
+              {/* Hips Measurement Line */}
+              <line x1="34" y1="88" x2="66" y2="88" stroke="#171717" strokeWidth="1.5" strokeDasharray="3 2" />
+              <circle cx="34" cy="88" r="2" fill="#171717" />
+              <circle cx="66" cy="88" r="2" fill="#171717" />
+            </svg>
+
+            <div className="space-y-2 text-[11px] text-neutral-600">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FFB800]" />
+                <span className="font-semibold text-neutral-900">Chest:</span> Measured across fullest point
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral-900" />
+                <span className="font-semibold text-neutral-900">Waist:</span> Measured around natural waistline
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral-500" />
+                <span className="font-semibold text-neutral-900">Hips:</span> Measured around fullest hip curve
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="border-b border-neutral-200 font-semibold uppercase text-neutral-500">
@@ -67,9 +117,9 @@ export function ProductSizeGuideModal({ isOpen, onClose }: ProductSizeGuideModal
         <div className="mt-6 border-t border-neutral-200 pt-4 text-right">
           <button
             onClick={onClose}
-            className="bg-black px-6 py-2 text-xs font-medium uppercase tracking-wider text-white"
+            className="rounded-full bg-black px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors"
           >
-            Understood
+            Close Guide
           </button>
         </div>
       </div>

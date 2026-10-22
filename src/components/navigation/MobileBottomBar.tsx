@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Grid, Compass, Heart, ShoppingBag } from "lucide-react";
@@ -8,15 +9,20 @@ import { useCartStore } from "@/stores/cartStore";
 
 export function MobileBottomBar() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const wishlistCount = useWishlistStore((state) => state.getCount());
   const cartCount = useCartStore((state) => state.getItemCount());
   const openCart = useCartStore((state) => state.openCart);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const navItems = [
     { label: "Home", href: "/", icon: Home },
     { label: "Categories", href: "/categories", icon: Grid },
-    { label: "Collections", href: "/collections", icon: Compass },
-    { label: "Saved", href: "/wishlist", icon: Heart, count: wishlistCount },
+    { label: "Discover", href: "/products", icon: Compass },
+    { label: "Saved", href: "/wishlist", icon: Heart, count: mounted ? wishlistCount : 0 },
   ];
 
   return (
@@ -76,7 +82,7 @@ export function MobileBottomBar() {
         >
           <div className="relative flex items-center justify-center">
             <ShoppingBag className="h-5 w-5 text-neutral-600" />
-            {cartCount > 0 && (
+            {mounted && cartCount > 0 && (
               <span className="absolute -top-1 -right-2.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-[#171717] px-1 text-[9px] font-black leading-none text-[#FFD629] ring-2 ring-white">
                 {cartCount > 99 ? "99+" : cartCount}
               </span>

@@ -56,7 +56,7 @@ export function SiteHeader() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-neutral-200/90 bg-white/95 backdrop-blur-md shadow-2xs">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2 sm:gap-4 sm:px-6 lg:px-8">
+        <div className="flex w-full items-center justify-between gap-2 px-4 py-2 sm:gap-4 sm:px-6 lg:px-8">
           {/* Left: Brand Logo & Desktop Location Pill */}
           <div className="flex items-center gap-2 sm:gap-4">
             <Link href="/" className="flex items-center gap-1 shrink-0">
@@ -123,11 +123,11 @@ export function SiteHeader() {
             </Link>
 
             <Link
-              href="/collections"
+              href="/products"
               className="hidden items-center gap-1.5 transition-colors hover:text-[#FFB800] lg:flex"
             >
               <Compass className="h-4 w-4" />
-              <span>Collections</span>
+              <span>Discover</span>
             </Link>
 
             <Link

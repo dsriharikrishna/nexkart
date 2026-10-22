@@ -3,8 +3,8 @@ import { ShieldCheck, Sparkles, Shirt, RotateCcw, Zap } from "lucide-react";
 
 export function HyderabadBrandBanner() {
   return (
-    <section className="w-full bg-neutral-50/60 py-12 sm:py-16 border-t border-b border-neutral-150">
-      <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
+    <section className="w-full bg-neutral-50/60 py-6 sm:py-6 border-t border-b border-neutral-150">
+      <div className="w-full px-4 text-center sm:px-6 lg:px-8">
         {/* Header Heading: "Hyderabad's fastest" in italic serif + "fashion x lifestyle app" */}
         <div className="mb-8 flex flex-col items-center justify-center">
           <h2 className="font-serif italic text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#171717]">

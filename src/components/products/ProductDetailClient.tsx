@@ -67,7 +67,7 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={luxuryTransition}
-      className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8"
+      className="w-full px-4 py-8 sm:px-6 md:py-12 lg:px-8"
     >
       {/* Breadcrumb Navigation */}
       <nav className="mb-8 flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-500">
@@ -201,62 +201,89 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
         </div>
       </div>
 
-      {/* Product Details Section */}
-      <div className="mt-16 grid grid-cols-1 gap-8 border-t border-neutral-200 pt-12 md:grid-cols-3">
-        <div>
-          <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-neutral-900">
-            About This Item
-          </h3>
-          <p className="mb-4 text-xs font-light leading-relaxed text-neutral-600">
-            {product.description}
-          </p>
-          <p className="text-xs font-medium text-neutral-700">Fit: {product.fit}</p>
-        </div>
+      {/* Visual Product Details & Craftsmanship Gallery */}
+      <div className="mt-16 border-t border-neutral-200/80 pt-12">
+        {/* Material & Craftsmanship Visual Cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Card 1: Fabric & Texture Close-up */}
+          <div className="group overflow-hidden rounded-2xl border border-neutral-150/80 bg-neutral-50/50 p-4 transition-all hover:shadow-md">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200">
+              <img
+                src={product.images[1] || product.images[0]}
+                alt="Fabric texture and craftsmanship detail"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+            <div className="mt-3.5 flex items-center justify-between">
+              <span className="font-heading text-xs font-bold text-neutral-900">
+                {product.composition}
+              </span>
+              <span className="text-[11px] text-neutral-500">{product.fit}</span>
+            </div>
+          </div>
 
-        <div>
-          <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-neutral-900">
-            Product Details
-          </h3>
-          <dl className="space-y-2 text-xs">
-            {product.details.map((item, idx) => (
-              <div key={idx} className="flex justify-between border-b border-neutral-100 py-1">
-                <dt className="text-neutral-500">{item.label}</dt>
-                <dd className="text-right font-medium text-neutral-900">{item.value}</dd>
+          {/* Card 2: Silhouette & Form */}
+          <div className="group overflow-hidden rounded-2xl border border-neutral-150/80 bg-neutral-50/50 p-4 transition-all hover:shadow-md">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200">
+              <img
+                src={product.images[2] || product.images[0]}
+                alt="Silhouette and fit overview"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+            <div className="mt-3.5 flex items-center justify-between">
+              <span className="font-heading text-xs font-bold text-neutral-900">
+                Tailored Silhouette
+              </span>
+              <span className="text-[11px] text-neutral-500">Regular / Relaxed</span>
+            </div>
+          </div>
+
+          {/* Card 3: Care & Craftsmanship Specifications */}
+          <div className="rounded-2xl border border-neutral-150/80 bg-neutral-50/50 p-5 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="border-b border-neutral-200/70 pb-3">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                  SPECIFICATIONS
+                </span>
+                <dl className="mt-2 space-y-2 text-xs">
+                  {product.details.map((item, idx) => (
+                    <div key={idx} className="flex justify-between">
+                      <dt className="text-neutral-500">{item.label}</dt>
+                      <dd className="font-medium text-neutral-900">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-            ))}
-          </dl>
-        </div>
 
-        <div>
-          <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-neutral-900">
-            Care Instructions
-          </h3>
-          <ul className="list-inside list-disc space-y-2 text-xs text-neutral-600">
-            {product.careInstructions.map((inst, idx) => (
-              <li key={idx}>{inst}</li>
-            ))}
-          </ul>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                  CARE
+                </span>
+                <ul className="mt-2 space-y-1.5 text-xs text-neutral-600">
+                  {product.careInstructions.map((inst, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-neutral-400" />
+                      <span>{inst}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Related Products Carousel / Grid */}
+      {/* Curated Complementary Styling Gallery */}
       {relatedProducts.length > 0 && (
-        <div className="mt-20 border-t border-neutral-200 pt-12">
-          <div className="mb-8 flex items-end justify-between">
-            <div>
-              <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#FFB800]">
-                MORE LIKE THIS
-              </span>
-              <h2 className="font-heading text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl">
-                You Might Also Like
-              </h2>
-            </div>
-          </div>
+        <div className="mt-16 border-t border-neutral-200/80 pt-12">
           <ProductGrid products={relatedProducts} columns={4} />
         </div>
       )}
 
-      {/* Size Guide Modal */}
+      {/* Size Guide Modal with Visual Measurement Diagram */}
       <ProductSizeGuideModal
         isOpen={sizeGuideOpen}
         onClose={() => setSizeGuideOpen(false)}

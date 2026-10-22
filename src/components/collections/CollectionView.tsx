@@ -114,7 +114,7 @@ export function CollectionView({
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={luxuryTransition}
-      className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+      className="w-full px-4 py-10 sm:px-6 lg:px-8"
     >
       {/* Editorial Header Banner */}
       {heroImage ? (

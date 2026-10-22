@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { useSearchOverlayStore } from "@/stores/searchOverlayStore";
 import { PRODUCTS } from "@/data/products";
 import { formatCurrency } from "@/lib/utils";
 
 export function SearchModal() {
+  const router = useRouter();
   const isOpen = useSearchOverlayStore((state) => state.isOpen);
   const closeSearch = useSearchOverlayStore((state) => state.closeSearch);
   const [query, setQuery] = useState("");
@@ -19,6 +21,19 @@ export function SearchModal() {
 
   if (!isOpen || !mounted) return null;
 
+  const handleSearchSubmit = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (query.trim()) {
+      closeSearch();
+      router.push(`/products?q=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
+  const handleSelectTerm = (term: string) => {
+    closeSearch();
+    router.push(`/products?q=${encodeURIComponent(term)}`);
+  };
+
   const results =
     query.trim().length > 1
       ? PRODUCTS.filter(
@@ -26,17 +41,18 @@ export function SearchModal() {
             p.name.toLowerCase().includes(query.toLowerCase()) ||
             p.subtitle.toLowerCase().includes(query.toLowerCase()) ||
             p.category.toLowerCase().includes(query.toLowerCase()) ||
-            p.tags.some((t) => t.toLowerCase().includes(query.toLowerCase()))
+            p.tags.some((t) => t.toLowerCase().includes(query.toLowerCase())) ||
+            (p.brand && p.brand.toLowerCase().includes(query.toLowerCase()))
         )
       : [];
 
   const suggestedTerms = [
-    "Warm Coats",
-    "Blazers",
-    "Cotton Shirts",
-    "Festive Dresses",
-    "Leather Shoes",
-    "Pants",
+    "Tokyo Talkies",
+    "Aadvi Fashion",
+    "Bewakoof",
+    "Shirts",
+    "Dresses",
+    "Jeans",
   ];
 
   return (
@@ -50,7 +66,10 @@ export function SearchModal() {
       {/* Modal Dialog */}
       <div className="animate-in fade-in zoom-in-95 relative z-10 w-full max-w-2xl overflow-hidden rounded-3xl border border-neutral-200/90 bg-[#FBF9F4] p-3 shadow-2xl duration-200">
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 sm:px-6">
+        <form
+          onSubmit={handleSearchSubmit}
+          className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 sm:px-6"
+        >
           <Search className="h-5 w-5 shrink-0 text-neutral-400" />
           <input
             type="text"
@@ -62,6 +81,7 @@ export function SearchModal() {
           />
           {query && (
             <button
+              type="button"
               onClick={() => setQuery("")}
               className="rounded-full p-1 text-neutral-400 hover:bg-neutral-100 hover:text-black"
             >
@@ -69,12 +89,19 @@ export function SearchModal() {
             </button>
           )}
           <button
+            type="submit"
+            className="rounded-full bg-[#171717] px-3.5 py-1 text-xs font-bold text-white hover:bg-[#FFD629] hover:text-black transition-colors"
+          >
+            Search
+          </button>
+          <button
+            type="button"
             onClick={closeSearch}
-            className="ml-2 rounded-full border border-neutral-200 bg-neutral-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-neutral-600 hover:bg-[#FFD629] hover:text-black"
+            className="ml-1 rounded-full border border-neutral-200 bg-neutral-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-neutral-600 hover:bg-neutral-200"
           >
             Esc
           </button>
-        </div>
+        </form>
 
         {/* Content Body */}
         <div className="max-h-[60vh] overflow-y-auto p-6">
@@ -87,7 +114,7 @@ export function SearchModal() {
                 {suggestedTerms.map((term) => (
                   <button
                     key={term}
-                    onClick={() => setQuery(term)}
+                    onClick={() => handleSelectTerm(term)}
                     className="hover:shadow-xs rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-800 transition-all hover:border-[#FFD629] hover:bg-[#FFF9D6] hover:text-black"
                   >
                     {term}

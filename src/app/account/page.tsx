@@ -85,7 +85,7 @@ export default function AccountPage() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={luxuryTransition}
-      className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+      className="w-full px-4 py-12 sm:px-6 lg:px-8"
     >
       {/* Account Header */}
       <div className="mb-8 flex flex-col justify-between gap-4 border-b border-neutral-200 pb-8 md:flex-row md:items-end">

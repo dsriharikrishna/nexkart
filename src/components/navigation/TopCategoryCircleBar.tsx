@@ -8,7 +8,7 @@ interface CategoryIconItem {
 
 const CATEGORY_ICONS: CategoryIconItem[] = [
   {
-    name: "For You",
+    name: "For you",
     href: "/collections",
     image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=200&q=80",
   },
@@ -23,7 +23,7 @@ const CATEGORY_ICONS: CategoryIconItem[] = [
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Festive",
+    name: "Ethnic",
     href: "/categories/tailoring",
     image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=200&q=80",
   },
@@ -33,27 +33,27 @@ const CATEGORY_ICONS: CategoryIconItem[] = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Bags",
+    name: "Accessories",
     href: "/categories/accessories",
     image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Shoes",
+    name: "Footwear",
     href: "/categories/footwear",
     image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Jackets",
+    name: "Home",
     href: "/categories/outerwear",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Jewelry",
+    name: "Jewellery",
     href: "/categories/jewelry",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80",
   },
   {
-    name: "Gifts",
+    name: "Gifting",
     href: "/categories/gifts",
     image: "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?auto=format&fit=crop&w=200&q=80",
   },
@@ -62,7 +62,7 @@ const CATEGORY_ICONS: CategoryIconItem[] = [
 export function TopCategoryCircleBar() {
   return (
     <div className="w-full border-b border-neutral-100 bg-white py-2 shadow-2xs">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 overflow-x-auto px-4 sm:px-6 lg:px-8 scrollbar-none overscroll-x-contain snap-x snap-proximity">
+      <div className="flex w-full items-center justify-between gap-2 overflow-x-auto px-4 sm:px-6 lg:px-8 scrollbar-none overscroll-x-contain snap-x snap-proximity">
         {CATEGORY_ICONS.map((item) => (
           <Link
             key={item.name}

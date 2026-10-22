@@ -11,23 +11,28 @@ export const metadata = {
 
 export default function CategoriesIndexPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8">
-      {/* Hero Header */}
-      <div className="mb-10 text-center sm:mb-14">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#FFD629] bg-[#FFF9D6] px-4 py-1 text-xs font-bold text-[#171717]">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>Curated Quick-Commerce Catalog</span>
+    <div className="w-full px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+      {/* Compact Header */}
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-neutral-100 pb-4">
+        <div>
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-[#FFD629] bg-[#FFF9D6] px-3 py-0.5 text-[11px] font-bold text-[#171717]">
+            <Sparkles className="h-3 w-3" />
+            <span>Curated Quick-Commerce Catalog</span>
+          </div>
+          <h1 className="mt-2 font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-[#171717]">
+            Shop by Category
+          </h1>
+          <p className="mt-1 text-xs text-neutral-500">
+            Browse all product departments with guaranteed local hub dispatch and 45-60 minute doorstep delivery.
+          </p>
         </div>
-        <h1 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-[#171717] sm:text-4xl md:text-5xl">
-          Shop by Category
-        </h1>
-        <p className="mx-auto mt-3 max-w-2xl text-xs font-light text-neutral-600 sm:text-sm">
-          Browse all product departments with guaranteed local hub dispatch, doorstep size exchanges, and 45-60 minute delivery across Telangana &amp; Andhra Pradesh.
-        </p>
+        <span className="text-xs font-semibold text-neutral-400 shrink-0">
+          {CATEGORIES.length} Departments
+        </span>
       </div>
 
-      {/* Categories Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {/* Categories Grid - Full Width without awkward empty gaps */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 sm:gap-4 lg:gap-5">
         {CATEGORIES.map((cat) => {
           const productCount = PRODUCTS.filter((p) => p.category === cat.slug).length;
 

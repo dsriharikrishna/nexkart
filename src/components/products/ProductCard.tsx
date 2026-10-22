@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, ShoppingBag, Check, Zap } from "lucide-react";
+import { Heart, ShoppingBag, Check, Eye } from "lucide-react";
 import { Product } from "@/types";
-import { formatCurrency, formatDiscount } from "@/lib/utils";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
 import { fadeUpVariants } from "@/components/ui/motion";
@@ -23,7 +22,6 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   const isInWishlist = useWishlistStore((state) => state.isInWishlist(product.id));
   const addItem = useCartStore((state) => state.addItem);
 
-  const discountText = formatDiscount(product.price, product.compareAtPrice);
   const defaultVariant = product.variants.find((v) => v.inStock) || product.variants[0];
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -45,24 +43,25 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <motion.div
       variants={fadeUpVariants}
-      whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#EAEAEA] bg-white transition-all duration-300 hover:border-[#FFD629] hover:shadow-md"
+      whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-150/80 bg-white transition-all duration-300 hover:border-neutral-900 hover:shadow-lg"
     >
-      {/* Image Container with Editorial Fashion Aspect Ratio (4:5) */}
+      {/* Editorial Fashion Product Image (4:5 Portrait Ratio) */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[4/5] overflow-hidden rounded-t-2xl bg-neutral-100"
+        className="relative block aspect-[4/5] overflow-hidden bg-neutral-100"
         onMouseEnter={() => {
           if (product.images.length > 1) setCurrentImageIndex(1);
         }}
         onMouseLeave={() => {
           setCurrentImageIndex(0);
         }}
+        aria-label={product.name}
       >
         <img
           src={product.images[currentImageIndex] || product.images[0]}
           alt={product.name}
-          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           loading={priority ? "eager" : "lazy"}
           onError={(e) => {
             const target = e.currentTarget;
@@ -73,110 +72,75 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           }}
         />
 
-        {/* Badges: Fast Delivery + Discount + New In */}
-        <div className="absolute left-2 top-2 z-10 flex flex-col items-start gap-1 sm:left-3 sm:top-3 sm:gap-1.5">
-          {product.isFastDeliveryEligible && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-wider text-[#FFD629] shadow-xs sm:px-2.5 sm:text-[9.5px]">
-              <Zap className="h-2 w-2 fill-[#FFD629] text-[#FFD629] sm:h-2.5 sm:w-2.5" />
-              {product.estimatedDeliveryTime || "60 mins"}
-            </span>
-          )}
-
-          {product.isNew && (
-            <span className="inline-flex rounded-full bg-[#FFD629] px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.16em] text-[#171717] shadow-xs sm:px-2.5 sm:text-[9px]">
-              NEW
-            </span>
-          )}
-
-          {discountText && (
-            <span className="inline-flex rounded-full bg-[#FFF9D6] border border-[#FFD629]/40 px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wider text-[#171717] shadow-xs sm:px-2 sm:text-[9px]">
-              {discountText}
-            </span>
-          )}
+        {/* Eye Quick View Icon on top right (Slikk style) */}
+        <div className="absolute right-2.5 top-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs transition-transform hover:scale-110">
+          <Eye className="h-3.5 w-3.5" />
         </div>
 
-        {/* Wishlist Toggle Button */}
+        {/* Try & Buy Black Sticker Pill at bottom left of image (Slikk style) */}
+        <div className="absolute bottom-2.5 left-2.5 z-10 rounded-md bg-black px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-xs">
+          Try &amp; Buy
+        </div>
+
+        {/* Heart Wishlist Icon at bottom right of image (Slikk style) */}
         <button
           onClick={handleWishlistToggle}
-          className={`absolute right-2 top-2 z-10 rounded-full p-1.5 transition-all duration-200 sm:right-3 sm:top-3 sm:p-2 ${
+          className={`absolute bottom-2.5 right-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all ${
             isInWishlist
-              ? "bg-[#FFD629] text-[#171717] shadow-xs"
-              : "border border-neutral-200 bg-white/90 text-neutral-700 backdrop-blur-xs hover:border-[#FFD629] hover:bg-white hover:text-black"
+              ? "bg-[#171717] text-[#FFD629] scale-110 shadow-md"
+              : "bg-black/30 text-white/90 backdrop-blur-xs hover:bg-black/60 hover:text-white"
           }`}
-          aria-label={isInWishlist ? "Remove from saved items" : "Save item"}
+          aria-label={isInWishlist ? `Remove ${product.name} from saved items` : `Save ${product.name}`}
         >
-          <Heart className={`h-3 w-3 sm:h-3.5 sm:w-3.5 ${isInWishlist ? "fill-[#171717]" : ""}`} />
+          <Heart className={`h-3.5 w-3.5 ${isInWishlist ? "fill-[#FFD629]" : ""}`} />
         </button>
-
-        {/* Quick Add Overlay on Desktop Hover */}
-        <div className="absolute inset-x-3 bottom-3 z-10 hidden gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 lg:flex">
-          <button
-            onClick={handleQuickAdd}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
-              addedNotice
-                ? "border border-[#171717] bg-[#171717] text-[#FFD629]"
-                : "bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] text-[#171717] hover:brightness-105 hover:shadow-lg"
-            }`}
-          >
-            {addedNotice ? (
-              <>
-                <Check className="h-3.5 w-3.5" /> ADDED TO CART
-              </>
-            ) : (
-              <>
-                <ShoppingBag className="h-3.5 w-3.5" /> ADD TO CART ({defaultVariant?.size})
-              </>
-            )}
-          </button>
-        </div>
       </Link>
 
-      {/* Product Details Block */}
-      <div className="flex flex-1 flex-col justify-between p-2.5 sm:p-4">
-        <div>
-          {/* Colors palette dots */}
-          <div className="mb-2 flex items-center gap-1.5">
-            {product.colors.slice(0, 4).map((c) => (
-              <span
-                key={c.name}
-                className="h-2.5 w-2.5 rounded-full border border-neutral-300"
-                style={{ backgroundColor: c.hex }}
-                title={c.name}
-              />
-            ))}
-            {product.colors.length > 4 && (
-              <span className="text-[10px] text-[#707070]">+{product.colors.length - 4}</span>
-            )}
-          </div>
+      {/* Slikk Card Info: Brand, Title, Price, Discount Pill */}
+      <div className="flex flex-col p-3 text-left">
+        {/* Brand Name */}
+        <span className="text-[11px] font-semibold text-neutral-500 uppercase tracking-tight">
+          {product.brand || (product.category === "outerwear" ? "Tokyo Talkies" : product.category === "tailoring" ? "Aadvi Fashion" : "Bewakoof")}
+        </span>
 
-          <h3 className="line-clamp-1 font-heading text-xs font-semibold tracking-wide text-[#171717] transition-colors group-hover:text-black">
-            <Link href={`/products/${product.slug}`}>{product.name}</Link>
+        {/* Product Title */}
+        <Link href={`/products/${product.slug}`} className="group-hover:text-neutral-950">
+          <h3 className="line-clamp-1 text-xs text-neutral-800 font-normal leading-snug hover:underline">
+            {product.name}
           </h3>
-          <p className="mt-0.5 line-clamp-1 text-[11px] text-[#707070]">{product.subtitle}</p>
+        </Link>
+
+        {/* Price Row: Selling Price, MRP, Green % Discount Badge (Slikk exact) */}
+        <div className="mt-1 flex items-center gap-1.5 flex-wrap">
+          <span className="font-heading text-xs sm:text-sm font-bold text-neutral-950">
+            ₹{product.price.toLocaleString("en-IN")}
+          </span>
+          {product.compareAtPrice && product.compareAtPrice > product.price && (
+            <>
+              <span className="text-[11px] text-neutral-400 line-through">
+                ₹{product.compareAtPrice.toLocaleString("en-IN")}
+              </span>
+              <span className="rounded bg-[#E8F8EA] px-1 py-0.2 text-[9px] font-bold text-[#147924]">
+                {Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)}% OFF
+              </span>
+            </>
+          )}
         </div>
 
-        {/* Price & Mobile Add */}
-        <div className="mt-3 flex items-center justify-between border-t border-[#EAEAEA] pt-3">
-          <div className="flex items-baseline gap-2">
-            <span className="text-xs font-bold text-[#171717]">
-              {formatCurrency(product.price)}
-            </span>
-            {product.compareAtPrice && product.compareAtPrice > product.price && (
-              <span className="text-[11px] text-[#707070] line-through">
-                {formatCurrency(product.compareAtPrice)}
-              </span>
-            )}
-          </div>
-
+        {/* Quick Add To Bag Strip */}
+        <div className="mt-2 flex items-center justify-between border-t border-neutral-100 pt-1.5 text-[10px]">
+          <span className="text-emerald-700 font-semibold flex items-center gap-1">
+            ⚡ <span>60 Min Delivery</span>
+          </span>
           <button
             onClick={handleQuickAdd}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF9D6] text-[#171717] hover:bg-[#FFD629] lg:hidden"
-            aria-label="Quick add"
+            className="font-bold uppercase tracking-wider text-[#171717] hover:text-[#FFB800] active:scale-95"
           >
-            <ShoppingBag className="h-3.5 w-3.5" />
+            {addedNotice ? "Added" : "+ Add"}
           </button>
         </div>
       </div>
     </motion.div>
   );
 }
+

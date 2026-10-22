@@ -73,7 +73,7 @@ export default function NotFound() {
               Fine Jewelry
             </Link>
             <span>•</span>
-            <Link href="/new-arrivals" className="hover:text-[#FFB800] underline-offset-4 hover:underline">
+            <Link href="/products?sort=newest" className="hover:text-[#FFB800] underline-offset-4 hover:underline">
               New Arrivals
             </Link>
           </div>

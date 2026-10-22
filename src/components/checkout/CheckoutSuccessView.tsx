@@ -9,7 +9,7 @@ interface CheckoutSuccessViewProps {
 
 export function CheckoutSuccessView({ order }: CheckoutSuccessViewProps) {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="w-full px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-800">
           <Lock className="h-7 w-7" />
