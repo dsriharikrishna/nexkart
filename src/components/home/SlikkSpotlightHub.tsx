@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Zap, RotateCcw, ShieldCheck, ArrowRight } from "lucide-react";
+import { Zap, ShieldCheck, ArrowRight } from "lucide-react";
 import {
-  TITLE_SPONSORS,
-  ASSOCIATE_SPONSORS,
+
   DEALS_OF_THE_DAY,
   FEATURED_STYLE_CATEGORIES,
 } from "@/data/spotlight";
