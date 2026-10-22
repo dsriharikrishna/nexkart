@@ -15,8 +15,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["beauty", "perfume", "fragrance", "santal", "amber"],
     images: [
-      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/beauty/prod-23-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Amber Glass", hex: "#7E5109" },
@@ -58,8 +58,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["beauty", "skincare", "face-oil", "botanical", "glow"],
     images: [
-      "https://images.unsplash.com/photo-1608248597359-58b21c43557d?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/placeholder.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Golden Dropper", hex: "#D4AF37" },

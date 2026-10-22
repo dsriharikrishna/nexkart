@@ -15,8 +15,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     price: 59000,
     compareAtPrice: 72000,
     images: [
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/dresses/prod-08-1.webp",
+      "/images/products/dresses/prod-08-2.webp",
     ],
     colors: [
       { name: "Champagne Gold", hex: "#F7E7CE" },
@@ -85,8 +85,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     gender: "women",
     price: 41000,
     images: [
-      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/dresses/prod-09-1.webp",
+      "/images/products/outerwear/prod-01-3.webp",
     ],
     colors: [
       { name: "Optic White", hex: "#FFFFFF" },
@@ -136,8 +136,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     gender: "unisex",
     price: 19500,
     images: [
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/shirts/prod-10-1.webp",
+      "/images/products/shirts/prod-10-2.webp",
     ],
     colors: [
       { name: "Sky Blue", hex: "#B0C4DE" },
@@ -186,8 +186,8 @@ export const DRESSES_SHIRTS_TROUSERS_PRODUCTS: Product[] = [
     gender: "all",
     price: 38000,
     images: [
-      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/trousers/prod-11-1.webp",
+      "/images/products/trousers/prod-11-2.webp",
     ],
     colors: [
       { name: "Charcoal Heather", hex: "#36454F" },

@@ -94,7 +94,7 @@ export default function WishlistPage() {
               const imageUrl =
                 product.images && product.images.length > 0
                   ? product.images[0]
-                  : "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85";
+                  : "/images/products/placeholder.webp";
 
               return (
                 <div
@@ -110,9 +110,8 @@ export default function WishlistPage() {
                         className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                         onError={(e) => {
                           const target = e.currentTarget;
-                          if (!target.src.includes("1539571696357")) {
-                            target.src =
-                              "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85";
+                          if (!target.src.includes("placeholder.webp")) {
+                            target.src = "/images/products/placeholder.webp";
                           }
                         }}
                       />

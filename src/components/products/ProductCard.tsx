@@ -65,9 +65,8 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           loading={priority ? "eager" : "lazy"}
           onError={(e) => {
             const target = e.currentTarget;
-            if (!target.src.includes("1539571696357")) {
-              target.src =
-                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85";
+            if (!target.src.includes("placeholder.webp")) {
+              target.src = "/images/products/placeholder.webp";
             }
           }}
         />

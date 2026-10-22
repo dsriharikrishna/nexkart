@@ -15,8 +15,8 @@ export const GIFTS_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["gifts", "candle", "home", "living", "lifestyle"],
     images: [
-      "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/gifts/prod-25-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Matte Charcoal", hex: "#222222" },
@@ -59,8 +59,8 @@ export const GIFTS_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["gifts", "gift-set", "luxury", "silk", "hamper"],
     images: [
-      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/gifts/prod-26-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Obsidian & Gold", hex: "#1A1A1A" },

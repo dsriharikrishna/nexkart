@@ -15,8 +15,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     price: 72000,
     compareAtPrice: 89000,
     images: [
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/accessories/prod-12-1.webp",
+      "/images/products/accessories/prod-12-2.webp",
     ],
     colors: [
       { name: "Black Box", hex: "#0B0B0B" },
@@ -71,8 +71,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     gender: "all",
     price: 49000,
     images: [
-      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/footwear/prod-14-2.webp",
+      "/images/products/footwear/prod-19-1.webp",
     ],
     colors: [
       { name: "Gloss Obsidian", hex: "#111111" },
@@ -141,8 +141,8 @@ export const ACCESSORIES_FOOTWEAR_PRODUCTS: Product[] = [
     gender: "all",
     price: 26000,
     images: [
-      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/placeholder.webp",
+      "/images/products/footwear/prod-20-1.webp",
     ],
     colors: [
       { name: "Oatmeal Melange", hex: "#D6C7B2" },

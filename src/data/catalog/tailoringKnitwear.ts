@@ -14,8 +14,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     gender: "men",
     price: 52000,
     images: [
-      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/tailoring/prod-04-1.webp",
+      "/images/products/tailoring/prod-04-2.webp",
     ],
     colors: [
       { name: "Heather Slate", hex: "#5C6B73" },
@@ -79,8 +79,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     price: 64000,
     compareAtPrice: 78000,
     images: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/tailoring/prod-05-1.webp",
+      "/images/products/outerwear/prod-01-2.webp",
     ],
     colors: [
       { name: "Ivory", hex: "#FFFFF0" },
@@ -121,8 +121,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     gender: "unisex",
     price: 48000,
     images: [
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/knitwear/prod-06-1.webp",
+      "/images/products/knitwear/prod-06-2.webp",
     ],
     colors: [
       { name: "Chalk White", hex: "#F5F5F0" },
@@ -184,8 +184,8 @@ export const TAILORING_KNITWEAR_PRODUCTS: Product[] = [
     gender: "men",
     price: 24000,
     images: [
-      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/knitwear/prod-07-1.webp",
+      "/images/products/shirts/prod-10-1.webp",
     ],
     colors: [
       { name: "Midnight Navy", hex: "#121A28" },

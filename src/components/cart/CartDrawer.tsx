@@ -76,7 +76,17 @@ export function CartDrawer() {
               items.map((item) => (
                 <div key={item.id} className="flex gap-4 border-b border-neutral-100 pb-6">
                   <div className="h-24 w-20 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
-                    <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-full w-full object-cover"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.includes("placeholder.webp")) {
+                          target.src = "/images/products/placeholder.webp";
+                        }
+                      }}
+                    />
                   </div>
 
                   <div className="flex flex-1 flex-col justify-between">

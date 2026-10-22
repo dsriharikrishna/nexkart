@@ -15,8 +15,8 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     gender: "men",
     tags: ["denim", "selvedge", "casual", "raw", "essential"],
     images: [
-      "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1582552938357-32b906df40cb?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/trousers/prod-15-1.webp",
+      "/images/products/trousers/prod-15-2.webp",
     ],
     colors: [
       { name: "Raw Indigo", hex: "#1A2536" },
@@ -67,8 +67,8 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["jewelry", "silver", "minimalist", "handcrafted", "cuff"],
     images: [
-      "https://images.unsplash.com/photo-1611591475102-4618c5ea4960?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/jewelry/prod-16-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Sterling Silver", hex: "#C0C0C0" },

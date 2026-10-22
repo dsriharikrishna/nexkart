@@ -31,8 +31,9 @@ export const useCartStore = create<CartStore>()(
 
       addItem: (product, color, size, quantity = 1) => {
         const itemId = `${product.id}-${color}-${size}`;
-        const existingVariant = product.variants.find((v) => v.color === color && v.size === size);
+        const existingVariant = product.variants?.find((v) => v.color === color && v.size === size);
         const maxStock = existingVariant ? existingVariant.stockCount : 10;
+        const liveImage = product.images?.[0] || "/images/products/placeholder.webp";
 
         set((state) => {
           const existingItemIndex = state.items.findIndex((item) => item.id === itemId);
@@ -43,6 +44,7 @@ export const useCartStore = create<CartStore>()(
             const newQty = Math.min(currentItem.quantity + quantity, maxStock);
             updatedItems[existingItemIndex] = {
               ...currentItem,
+              image: liveImage,
               quantity: newQty,
             };
             return { items: updatedItems, isOpen: true };
@@ -55,7 +57,7 @@ export const useCartStore = create<CartStore>()(
               color,
               size,
               price: product.price,
-              image: product.images[0] || "",
+              image: liveImage,
               quantity: Math.min(quantity, maxStock),
               maxStock,
             };

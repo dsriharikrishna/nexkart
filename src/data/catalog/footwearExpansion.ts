@@ -14,8 +14,8 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     price: 38500,
     compareAtPrice: 44000,
     images: [
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/footwear/prod-19-1.webp",
+      "/images/products/footwear/prod-14-2.webp",
     ],
     colors: [
       { name: "Monochrome White", hex: "#FFFFFF" },
@@ -57,8 +57,8 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     price: 52000,
     compareAtPrice: 62000,
     images: [
-      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/footwear/prod-20-1.webp",
+      "/images/products/footwear/prod-14-2.webp",
     ],
     colors: [
       { name: "Tobacco Brown", hex: "#704214" },

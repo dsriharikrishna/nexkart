@@ -14,8 +14,8 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     price: 14500,
     compareAtPrice: 17500,
     images: [
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/shirts/prod-10-2.webp",
+      "/images/products/shirts/prod-10-1.webp",
     ],
     colors: [
       { name: "Crisp White", hex: "#FFFFFF" },
@@ -59,8 +59,8 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     price: 16500,
     compareAtPrice: 19500,
     images: [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/shirts/prod-18-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Olive Earth", hex: "#556B2F" },

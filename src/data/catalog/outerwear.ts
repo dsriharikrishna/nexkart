@@ -14,9 +14,9 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     price: 89000,
     compareAtPrice: 115000,
     images: [
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/outerwear/prod-01-1.webp",
+      "/images/products/outerwear/prod-01-2.webp",
+      "/images/products/outerwear/prod-01-3.webp",
     ],
     colors: [
       { name: "Camel", hex: "#C19A6B" },
@@ -68,9 +68,9 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     price: 75000,
     compareAtPrice: 92000,
     images: [
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/outerwear/prod-02-1.webp",
+      "/images/products/outerwear/prod-02-2.webp",
+      "/images/products/outerwear/prod-02-3.webp",
     ],
     colors: [
       { name: "Obsidian Black", hex: "#111111" },
@@ -142,8 +142,8 @@ export const OUTERWEAR_PRODUCTS: Product[] = [
     price: 145000,
     compareAtPrice: 178000,
     images: [
-      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=85",
+      "/images/products/outerwear/prod-03-1.webp",
+      "/images/products/outerwear/prod-03-2.webp",
     ],
     colors: [
       { name: "Espresso Brown", hex: "#3B271E" },

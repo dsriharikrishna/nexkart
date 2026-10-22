@@ -15,8 +15,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["jewelry", "gold", "necklace", "chain", "fine-jewelry"],
     images: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1611591475102-4618c5ea4960?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/jewelry/prod-21-1.webp",
+      "/images/products/jewelry/prod-16-1.webp",
     ],
     colors: [
       { name: "18K Gold", hex: "#E5C158" },
@@ -61,8 +61,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["jewelry", "ring", "onyx", "silver", "signet"],
     images: [
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1200&q=85",
+      "/images/products/jewelry/prod-22-1.webp",
+      "/images/products/placeholder.webp",
     ],
     colors: [
       { name: "Silver & Onyx", hex: "#C0C0C0" },
