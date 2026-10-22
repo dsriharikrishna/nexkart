@@ -122,7 +122,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Warm Layers and Comfortable Everyday Fits",
     description:
       "Discover soft warm coats, neat blazers, and easy knit layers designed for everyday wear.",
-    heroImage: "/images/products/outerwear/prod-01-1.webp",
+    heroImage: "/images/products/prod-01/front.webp",
     editorialQuote: "Simple, warm, and easy to wear every day.",
   },
   {
@@ -133,7 +133,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Essential Outfits That Always Match",
     description:
       "Clean basic pieces you can wear to work, dinners, or casual weekends without thinking twice.",
-    heroImage: "/images/products/shirts/prod-10-1.webp",
+    heroImage: "/images/products/prod-10/front.webp",
     editorialQuote: "Good clothes that match everything in your closet.",
   },
   {
@@ -144,7 +144,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Breezy Linens and Light Cotton Clothes",
     description:
       "Light linen shirts, easy summer pants, and soft cotton tops perfect for warm days and sunny trips.",
-    heroImage: "/images/products/dresses/prod-09-1.webp",
+    heroImage: "/images/products/prod-09/front.webp",
     editorialQuote: "Light, cool clothes made for warm sunny days.",
   },
   {
@@ -155,7 +155,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Classic Black, White, and Grey Outfits",
     description:
       "Simple black coats, crisp white tops, and grey pants that give you a clean, sharp look.",
-    heroImage: "/images/products/outerwear/prod-02-1.webp",
+    heroImage: "/images/products/prod-02/front.webp",
     editorialQuote: "Clean black and white styles that never go out of style.",
   },
   {
@@ -166,7 +166,7 @@ export const COLLECTIONS: CollectionMeta[] = [
     headline: "Special Outfits for Parties and Events",
     description:
       "Silk dresses, clean party jackets, and neat celebration wear made for dinners and festive gatherings.",
-    heroImage: "/images/products/dresses/prod-08-1.webp",
+    heroImage: "/images/products/prod-08/front.webp",
     editorialQuote: "Look your best for dinner and celebrations.",
   },
 ];

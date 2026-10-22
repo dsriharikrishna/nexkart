@@ -187,27 +187,116 @@ export function FilterSidebar({
         )}
       </div>
 
-      {/* Static Slikk Filter Rows */}
-      {[
-        "Product Type",
-        "Shade",
-        "Size",
-        "Aesthetic",
-        "Material",
-        "Boldness",
-        "Tops Type",
-        "Body Type Fit",
-      ].map((item) => (
-        <div key={item} className="py-3.5">
-          <button
-            onClick={() => toggleSection(item)}
-            className="flex w-full items-center justify-between font-bold uppercase tracking-wider text-neutral-800 hover:text-black"
-          >
-            <span>+ {item}</span>
-            <ChevronDown className="h-4 w-4 text-neutral-400" />
-          </button>
-        </div>
-      ))}
+      {/* 5. Size */}
+      <div className="py-3.5">
+        <button
+          onClick={() => toggleSection("size")}
+          className="flex w-full items-center justify-between font-bold uppercase tracking-wider text-neutral-800"
+        >
+          <span>+ Size</span>
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              openSections.size ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {openSections.size && (
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            {["XS", "S", "M", "L", "XL", "OS"].map((sz) => (
+              <span
+                key={sz}
+                className="rounded-md border border-neutral-300 px-2.5 py-1 text-[11px] font-semibold text-neutral-700 hover:border-black cursor-pointer"
+              >
+                {sz}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* 6. Material */}
+      <div className="py-3.5">
+        <button
+          onClick={() => toggleSection("material")}
+          className="flex w-full items-center justify-between font-bold uppercase tracking-wider text-neutral-800"
+        >
+          <span>+ Material</span>
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              openSections.material ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {openSections.material && (
+          <div className="mt-2.5 space-y-1.5 text-neutral-600">
+            {["100% Cashmere", "Virgin Wool", "Mulberry Silk", "Organic Cotton", "Italian Leather", "Sterling Silver"].map((m) => (
+              <label key={m} className="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" className="accent-[#171717]" />
+                <span>{m}</span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* 7. Shade & Color */}
+      <div className="py-3.5">
+        <button
+          onClick={() => toggleSection("shade")}
+          className="flex w-full items-center justify-between font-bold uppercase tracking-wider text-neutral-800"
+        >
+          <span>+ Shade</span>
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              openSections.shade ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {openSections.shade && (
+          <div className="mt-2.5 flex items-center gap-2 flex-wrap">
+            {[
+              { name: "Black", hex: "#111111" },
+              { name: "White", hex: "#FFFFFF" },
+              { name: "Navy", hex: "#0F1A2C" },
+              { name: "Camel", hex: "#C19A6B" },
+              { name: "Silver", hex: "#C0C0C0" },
+              { name: "Gold", hex: "#E5C158" },
+            ].map((c) => (
+              <span
+                key={c.name}
+                title={c.name}
+                style={{ backgroundColor: c.hex }}
+                className="h-5 w-5 rounded-full border border-neutral-300 shadow-xs cursor-pointer hover:scale-110 transition-transform"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* 8. Aesthetic & Style */}
+      <div className="py-3.5">
+        <button
+          onClick={() => toggleSection("aesthetic")}
+          className="flex w-full items-center justify-between font-bold uppercase tracking-wider text-neutral-800"
+        >
+          <span>+ Aesthetic</span>
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              openSections.aesthetic ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {openSections.aesthetic && (
+          <div className="mt-2.5 space-y-1.5 text-neutral-600">
+            {["Quiet Luxury", "Modern Tailoring", "Atelier Autumn", "Minimalist Capsule", "Evening Luxe"].map((a) => (
+              <label key={a} className="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" className="accent-[#171717]" />
+                <span>{a}</span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

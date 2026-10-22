@@ -14,7 +14,7 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     price: 1299,
     compareAtPrice: 2599,
     images: [
-      "/images/products/footwear/prod-19-1.webp",
+      "/images/products/prod-19/front.webp",
     ],
     colors: [
       { name: "Monochrome White", hex: "#FFFFFF" },
@@ -56,7 +56,7 @@ export const FOOTWEAR_EXPANSION_PRODUCTS: Product[] = [
     price: 1899,
     compareAtPrice: 3799,
     images: [
-      "/images/products/footwear/prod-20-1.webp",
+      "/images/products/prod-20/front.webp",
     ],
     colors: [
       { name: "Tobacco Brown", hex: "#704214" },

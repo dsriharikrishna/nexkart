@@ -14,7 +14,7 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     price: 799,
     compareAtPrice: 1599,
     images: [
-      "/images/products/shirts/prod-17-1.webp",
+      "/images/products/prod-17/front.webp",
     ],
     colors: [
       { name: "Crisp White", hex: "#FFFFFF" },
@@ -58,8 +58,8 @@ export const SHIRTS_EXPANSION_PRODUCTS: Product[] = [
     price: 899,
     compareAtPrice: 1799,
     images: [
-      "/images/products/shirts/prod-18-1.webp",
-      "/images/products/shirts/prod-18-2.webp",
+      "/images/products/prod-18/front.webp",
+      "/images/products/prod-18/back.webp",
     ],
     colors: [
       { name: "Olive Earth", hex: "#556B2F" },

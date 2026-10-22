@@ -15,7 +15,25 @@ export const BEAUTY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["beauty", "perfume", "fragrance", "santal", "amber"],
     images: [
-      "/images/products/beauty/prod-23-1.webp",
+      "/images/products/prod-23/front.webp",
+    ],
+    view360: [
+      "/images/products/prod-23/360/frame-01.webp",
+      "/images/products/prod-23/360/frame-02.webp",
+      "/images/products/prod-23/360/frame-03.webp",
+      "/images/products/prod-23/360/frame-04.webp",
+      "/images/products/prod-23/360/frame-05.webp",
+      "/images/products/prod-23/360/frame-06.webp",
+      "/images/products/prod-23/360/frame-07.webp",
+      "/images/products/prod-23/360/frame-08.webp",
+      "/images/products/prod-23/360/frame-09.webp",
+      "/images/products/prod-23/360/frame-10.webp",
+      "/images/products/prod-23/360/frame-11.webp",
+      "/images/products/prod-23/360/frame-12.webp",
+      "/images/products/prod-23/360/frame-13.webp",
+      "/images/products/prod-23/360/frame-14.webp",
+      "/images/products/prod-23/360/frame-15.webp",
+      "/images/products/prod-23/360/frame-16.webp",
     ],
     colors: [
       { name: "Amber Glass", hex: "#7E5109" },
@@ -57,8 +75,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["beauty", "skincare", "face-oil", "botanical", "glow"],
     images: [
-      "/images/products/beauty/prod-24-1.webp",
-      "/images/products/beauty/prod-24-2.webp",
+      "/images/products/prod-24/front.webp",
+      "/images/products/prod-24/detail.webp",
     ],
     colors: [
       { name: "Golden Dropper", hex: "#D4AF37" },

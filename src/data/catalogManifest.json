@@ -1,0 +1,229 @@
+{
+  "prod-01": {
+    "views": [
+      "/images/products/prod-01/front.webp"
+    ]
+  },
+  "prod-02": {
+    "views": [
+      "/images/products/prod-02/front.webp"
+    ]
+  },
+  "prod-03": {
+    "views": [
+      "/images/products/prod-03/front.webp"
+    ]
+  },
+  "prod-04": {
+    "views": [
+      "/images/products/prod-04/front.webp"
+    ]
+  },
+  "prod-05": {
+    "views": [
+      "/images/products/prod-05/front.webp"
+    ]
+  },
+  "prod-06": {
+    "views": [
+      "/images/products/prod-06/front.webp"
+    ]
+  },
+  "prod-07": {
+    "views": [
+      "/images/products/prod-07/front.webp"
+    ]
+  },
+  "prod-08": {
+    "views": [
+      "/images/products/prod-08/front.webp"
+    ]
+  },
+  "prod-09": {
+    "views": [
+      "/images/products/prod-09/back.webp",
+      "/images/products/prod-09/front.webp"
+    ]
+  },
+  "prod-10": {
+    "views": [
+      "/images/products/prod-10/front.webp"
+    ]
+  },
+  "prod-11": {
+    "views": [
+      "/images/products/prod-11/front.webp"
+    ]
+  },
+  "prod-12": {
+    "views": [
+      "/images/products/prod-12/detail.webp",
+      "/images/products/prod-12/front.webp"
+    ]
+  },
+  "prod-13": {
+    "views": [
+      "/images/products/prod-13/front.webp"
+    ]
+  },
+  "prod-14": {
+    "views": [
+      "/images/products/prod-14/detail.webp",
+      "/images/products/prod-14/front.webp"
+    ]
+  },
+  "prod-15": {
+    "views": [
+      "/images/products/prod-15/back.webp",
+      "/images/products/prod-15/front.webp"
+    ]
+  },
+  "prod-16": {
+    "views": [
+      "/images/products/prod-16/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-16/360/frame-01.webp",
+      "/images/products/prod-16/360/frame-02.webp",
+      "/images/products/prod-16/360/frame-03.webp",
+      "/images/products/prod-16/360/frame-04.webp",
+      "/images/products/prod-16/360/frame-05.webp",
+      "/images/products/prod-16/360/frame-06.webp",
+      "/images/products/prod-16/360/frame-07.webp",
+      "/images/products/prod-16/360/frame-08.webp",
+      "/images/products/prod-16/360/frame-09.webp",
+      "/images/products/prod-16/360/frame-10.webp",
+      "/images/products/prod-16/360/frame-11.webp",
+      "/images/products/prod-16/360/frame-12.webp",
+      "/images/products/prod-16/360/frame-13.webp",
+      "/images/products/prod-16/360/frame-14.webp",
+      "/images/products/prod-16/360/frame-15.webp",
+      "/images/products/prod-16/360/frame-16.webp"
+    ]
+  },
+  "prod-17": {
+    "views": [
+      "/images/products/prod-17/front.webp"
+    ]
+  },
+  "prod-18": {
+    "views": [
+      "/images/products/prod-18/back.webp",
+      "/images/products/prod-18/front.webp"
+    ]
+  },
+  "prod-19": {
+    "views": [
+      "/images/products/prod-19/front.webp"
+    ]
+  },
+  "prod-20": {
+    "views": [
+      "/images/products/prod-20/front.webp"
+    ]
+  },
+  "prod-21": {
+    "views": [
+      "/images/products/prod-21/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-21/360/frame-01.webp",
+      "/images/products/prod-21/360/frame-02.webp",
+      "/images/products/prod-21/360/frame-03.webp",
+      "/images/products/prod-21/360/frame-04.webp",
+      "/images/products/prod-21/360/frame-05.webp",
+      "/images/products/prod-21/360/frame-06.webp",
+      "/images/products/prod-21/360/frame-07.webp",
+      "/images/products/prod-21/360/frame-08.webp",
+      "/images/products/prod-21/360/frame-09.webp",
+      "/images/products/prod-21/360/frame-10.webp",
+      "/images/products/prod-21/360/frame-11.webp",
+      "/images/products/prod-21/360/frame-12.webp",
+      "/images/products/prod-21/360/frame-13.webp",
+      "/images/products/prod-21/360/frame-14.webp",
+      "/images/products/prod-21/360/frame-15.webp",
+      "/images/products/prod-21/360/frame-16.webp"
+    ]
+  },
+  "prod-22": {
+    "views": [
+      "/images/products/prod-22/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-22/360/frame-01.webp",
+      "/images/products/prod-22/360/frame-02.webp",
+      "/images/products/prod-22/360/frame-03.webp",
+      "/images/products/prod-22/360/frame-04.webp",
+      "/images/products/prod-22/360/frame-05.webp",
+      "/images/products/prod-22/360/frame-06.webp",
+      "/images/products/prod-22/360/frame-07.webp",
+      "/images/products/prod-22/360/frame-08.webp",
+      "/images/products/prod-22/360/frame-09.webp",
+      "/images/products/prod-22/360/frame-10.webp",
+      "/images/products/prod-22/360/frame-11.webp",
+      "/images/products/prod-22/360/frame-12.webp",
+      "/images/products/prod-22/360/frame-13.webp",
+      "/images/products/prod-22/360/frame-14.webp",
+      "/images/products/prod-22/360/frame-15.webp",
+      "/images/products/prod-22/360/frame-16.webp"
+    ]
+  },
+  "prod-23": {
+    "views": [
+      "/images/products/prod-23/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-23/360/frame-01.webp",
+      "/images/products/prod-23/360/frame-02.webp",
+      "/images/products/prod-23/360/frame-03.webp",
+      "/images/products/prod-23/360/frame-04.webp",
+      "/images/products/prod-23/360/frame-05.webp",
+      "/images/products/prod-23/360/frame-06.webp",
+      "/images/products/prod-23/360/frame-07.webp",
+      "/images/products/prod-23/360/frame-08.webp",
+      "/images/products/prod-23/360/frame-09.webp",
+      "/images/products/prod-23/360/frame-10.webp",
+      "/images/products/prod-23/360/frame-11.webp",
+      "/images/products/prod-23/360/frame-12.webp",
+      "/images/products/prod-23/360/frame-13.webp",
+      "/images/products/prod-23/360/frame-14.webp",
+      "/images/products/prod-23/360/frame-15.webp",
+      "/images/products/prod-23/360/frame-16.webp"
+    ]
+  },
+  "prod-24": {
+    "views": [
+      "/images/products/prod-24/detail.webp",
+      "/images/products/prod-24/front.webp"
+    ]
+  },
+  "prod-25": {
+    "views": [
+      "/images/products/prod-25/detail.webp",
+      "/images/products/prod-25/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-25/360/frame-01.webp",
+      "/images/products/prod-25/360/frame-02.webp",
+      "/images/products/prod-25/360/frame-03.webp",
+      "/images/products/prod-25/360/frame-04.webp",
+      "/images/products/prod-25/360/frame-05.webp",
+      "/images/products/prod-25/360/frame-06.webp",
+      "/images/products/prod-25/360/frame-07.webp",
+      "/images/products/prod-25/360/frame-08.webp",
+      "/images/products/prod-25/360/frame-09.webp",
+      "/images/products/prod-25/360/frame-10.webp",
+      "/images/products/prod-25/360/frame-11.webp",
+      "/images/products/prod-25/360/frame-12.webp",
+      "/images/products/prod-25/360/frame-13.webp",
+      "/images/products/prod-25/360/frame-14.webp",
+      "/images/products/prod-25/360/frame-15.webp",
+      "/images/products/prod-25/360/frame-16.webp"
+    ]
+  },
+  "prod-26": {
+    "views": [
+      "/images/products/prod-26/front.webp"
+    ]
+  }
+}

@@ -7,12 +7,12 @@ import { fadeUpVariants, staggerContainerVariants } from "@/components/ui/motion
 import { DEALS_OF_THE_DAY, FEATURED_STYLE_CATEGORIES } from "@/data/spotlight";
 
 const PARTNER_LABELS = [
-  { name: "The Souled Store", off: "Min 50% Off", link: "/products?namex=The%20Souled%20Store", img: "/images/products/shirts/prod-17-1.webp" },
-  { name: "Snitch", off: "Up to 70% Off", link: "/products?namex=Snitch", img: "/images/products/trousers/prod-11-1.webp" },
-  { name: "Puma", off: "Flat 40% Off", link: "/products?namex=Puma", img: "/images/products/footwear/prod-19-1.webp" },
-  { name: "Tokyo Talkies", off: "Up to 80% Off", link: "/products?namex=Tokyo%20Talkies", img: "/images/products/outerwear/prod-01-1.webp" },
-  { name: "Zouk", off: "Under ₹999", link: "/products?namex=Zouk", img: "/images/products/accessories/prod-12-1.webp" },
-  { name: "Brown Butter", off: "From ₹499", link: "/products?namex=Brown%20Butter", img: "/images/products/dresses/prod-09-1.webp" },
+  { name: "The Souled Store", off: "Min 50% Off", link: "/products?namex=The%20Souled%20Store", img: "/images/products/prod-17/front.webp" },
+  { name: "Snitch", off: "Up to 70% Off", link: "/products?namex=Snitch", img: "/images/products/prod-11/front.webp" },
+  { name: "Puma", off: "Flat 40% Off", link: "/products?namex=Puma", img: "/images/products/prod-19/front.webp" },
+  { name: "Tokyo Talkies", off: "Up to 80% Off", link: "/products?namex=Tokyo%20Talkies", img: "/images/products/prod-01/front.webp" },
+  { name: "Zouk", off: "Under ₹999", link: "/products?namex=Zouk", img: "/images/products/prod-12/front.webp" },
+  { name: "Brown Butter", off: "From ₹499", link: "/products?namex=Brown%20Butter", img: "/images/products/prod-09/front.webp" },
 ];
 
 export function SlikkSpotlightHub() {
@@ -102,7 +102,7 @@ export function SlikkSpotlightHub() {
               className="group relative flex h-44 sm:h-52 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
             >
               <img
-                src="/images/products/shirts/prod-10-1.webp"
+                src="/images/products/prod-10/front.webp"
                 alt="Bewakoof Official Store"
                 className="absolute right-0 top-0 h-full w-3/5 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
               />
@@ -130,7 +130,7 @@ export function SlikkSpotlightHub() {
               className="group relative flex h-44 sm:h-52 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
             >
               <img
-                src="/images/products/outerwear/prod-02-1.webp"
+                src="/images/products/prod-02/front.webp"
                 alt="The Indian Garage Co Store"
                 className="absolute right-0 top-0 h-full w-3/5 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
               />

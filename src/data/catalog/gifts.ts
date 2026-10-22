@@ -15,8 +15,26 @@ export const GIFTS_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["gifts", "candle", "home", "living", "lifestyle"],
     images: [
-      "/images/products/gifts/prod-25-1.webp",
-      "/images/products/gifts/prod-25-2.webp",
+      "/images/products/prod-25/front.webp",
+      "/images/products/prod-25/detail.webp",
+    ],
+    view360: [
+      "/images/products/prod-25/360/frame-01.webp",
+      "/images/products/prod-25/360/frame-02.webp",
+      "/images/products/prod-25/360/frame-03.webp",
+      "/images/products/prod-25/360/frame-04.webp",
+      "/images/products/prod-25/360/frame-05.webp",
+      "/images/products/prod-25/360/frame-06.webp",
+      "/images/products/prod-25/360/frame-07.webp",
+      "/images/products/prod-25/360/frame-08.webp",
+      "/images/products/prod-25/360/frame-09.webp",
+      "/images/products/prod-25/360/frame-10.webp",
+      "/images/products/prod-25/360/frame-11.webp",
+      "/images/products/prod-25/360/frame-12.webp",
+      "/images/products/prod-25/360/frame-13.webp",
+      "/images/products/prod-25/360/frame-14.webp",
+      "/images/products/prod-25/360/frame-15.webp",
+      "/images/products/prod-25/360/frame-16.webp",
     ],
     colors: [
       { name: "Matte Charcoal", hex: "#222222" },
@@ -59,7 +77,7 @@ export const GIFTS_PRODUCTS: Product[] = [
     gender: "all",
     tags: ["gifts", "gift-set", "luxury", "silk", "hamper"],
     images: [
-      "/images/products/gifts/prod-26-2.webp",
+      "/images/products/prod-26/front.webp",
     ],
     colors: [
       { name: "Obsidian & Gold", hex: "#1A1A1A" },

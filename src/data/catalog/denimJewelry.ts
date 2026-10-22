@@ -15,8 +15,8 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     gender: "men",
     tags: ["denim", "selvedge", "casual", "raw", "essential"],
     images: [
-      "/images/products/trousers/prod-15-1.webp",
-      "/images/products/trousers/prod-15-2.webp",
+      "/images/products/prod-15/front.webp",
+      "/images/products/prod-15/back.webp",
     ],
     colors: [
       { name: "Raw Indigo", hex: "#1A2536" },
@@ -67,7 +67,25 @@ export const DENIM_JEWELRY_PRODUCTS: Product[] = [
     gender: "unisex",
     tags: ["jewelry", "silver", "minimalist", "handcrafted", "cuff"],
     images: [
-      "/images/products/jewelry/prod-16-2.webp",
+      "/images/products/prod-16/front.webp",
+    ],
+    view360: [
+      "/images/products/prod-16/360/frame-01.webp",
+      "/images/products/prod-16/360/frame-02.webp",
+      "/images/products/prod-16/360/frame-03.webp",
+      "/images/products/prod-16/360/frame-04.webp",
+      "/images/products/prod-16/360/frame-05.webp",
+      "/images/products/prod-16/360/frame-06.webp",
+      "/images/products/prod-16/360/frame-07.webp",
+      "/images/products/prod-16/360/frame-08.webp",
+      "/images/products/prod-16/360/frame-09.webp",
+      "/images/products/prod-16/360/frame-10.webp",
+      "/images/products/prod-16/360/frame-11.webp",
+      "/images/products/prod-16/360/frame-12.webp",
+      "/images/products/prod-16/360/frame-13.webp",
+      "/images/products/prod-16/360/frame-14.webp",
+      "/images/products/prod-16/360/frame-15.webp",
+      "/images/products/prod-16/360/frame-16.webp",
     ],
     colors: [
       { name: "Sterling Silver", hex: "#C0C0C0" },
