@@ -11,7 +11,11 @@
     "price": 2999,
     "compareAtPrice": 5999,
     "images": [
-      "/images/products/prod-01/front.webp"
+      "/images/products/prod-01/front.webp",
+      "/images/products/prod-01/back.webp",
+      "/images/products/prod-01/detail.webp",
+      "/images/products/prod-01/lifestyle.webp",
+      "/images/products/prod-01/alternative.webp"
     ],
     "colors": [
       {
@@ -150,7 +154,11 @@
     "price": 2499,
     "compareAtPrice": 4999,
     "images": [
-      "/images/products/prod-02/front.webp"
+      "/images/products/prod-02/front.webp",
+      "/images/products/prod-02/back.webp",
+      "/images/products/prod-02/detail.webp",
+      "/images/products/prod-02/lifestyle.webp",
+      "/images/products/prod-02/alternative.webp"
     ],
     "colors": [
       {
@@ -260,7 +268,10 @@
     "price": 3499,
     "compareAtPrice": 6999,
     "images": [
-      "/images/products/prod-03/front.webp"
+      "/images/products/prod-03/front.webp",
+      "/images/products/prod-03/back.webp",
+      "/images/products/prod-03/detail.webp",
+      "/images/products/prod-03/lifestyle.webp"
     ],
     "colors": [
       {

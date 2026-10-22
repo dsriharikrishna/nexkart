@@ -11,7 +11,7 @@
   "catalog": {
     "prod-01": {
       "productId": "prod-01",
-      "availableViewsCount": 1,
+      "availableViewsCount": 5,
       "requiredViewsCount": 5,
       "views": {
         "front": {
@@ -21,29 +21,29 @@
         },
         "back": {
           "src": "/images/products/prod-01/back.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "detail": {
           "src": "/images/products/prod-01/detail.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "lifestyle": {
           "src": "/images/products/prod-01/lifestyle.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "alternative": {
           "src": "/images/products/prod-01/alternative.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         }
       }
     },
     "prod-02": {
       "productId": "prod-02",
-      "availableViewsCount": 1,
+      "availableViewsCount": 5,
       "requiredViewsCount": 5,
       "views": {
         "front": {
@@ -53,29 +53,29 @@
         },
         "back": {
           "src": "/images/products/prod-02/back.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "detail": {
           "src": "/images/products/prod-02/detail.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "lifestyle": {
           "src": "/images/products/prod-02/lifestyle.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "alternative": {
           "src": "/images/products/prod-02/alternative.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         }
       }
     },
     "prod-03": {
       "productId": "prod-03",
-      "availableViewsCount": 1,
+      "availableViewsCount": 4,
       "requiredViewsCount": 5,
       "views": {
         "front": {
@@ -85,18 +85,18 @@
         },
         "back": {
           "src": "/images/products/prod-03/back.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "detail": {
           "src": "/images/products/prod-03/detail.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "lifestyle": {
           "src": "/images/products/prod-03/lifestyle.webp",
-          "exists": false,
-          "status": "QUEUED_FOR_GENERATION"
+          "exists": true,
+          "status": "AVAILABLE"
         },
         "alternative": {
           "src": "/images/products/prod-03/alternative.webp",
@@ -854,10 +854,10 @@
   },
   "summary": {
     "totalTargetViews": 130,
-    "availableViews": 33,
-    "queuedViews": 97,
-    "readyToDeploy": 0,
-    "partiallyPopulated": 26,
+    "availableViews": 44,
+    "queuedViews": 86,
+    "readyToDeploy": 2,
+    "partiallyPopulated": 24,
     "generationQuotaStatus": "RESOURCE_EXHAUSTED_429"
   }
 }

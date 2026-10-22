@@ -1,17 +1,28 @@
 {
   "prod-01": {
     "views": [
-      "/images/products/prod-01/front.webp"
+      "/images/products/prod-01/front.webp",
+      "/images/products/prod-01/back.webp",
+      "/images/products/prod-01/detail.webp",
+      "/images/products/prod-01/lifestyle.webp",
+      "/images/products/prod-01/alternative.webp"
     ]
   },
   "prod-02": {
     "views": [
-      "/images/products/prod-02/front.webp"
+      "/images/products/prod-02/front.webp",
+      "/images/products/prod-02/back.webp",
+      "/images/products/prod-02/detail.webp",
+      "/images/products/prod-02/lifestyle.webp",
+      "/images/products/prod-02/alternative.webp"
     ]
   },
   "prod-03": {
     "views": [
-      "/images/products/prod-03/front.webp"
+      "/images/products/prod-03/front.webp",
+      "/images/products/prod-03/back.webp",
+      "/images/products/prod-03/detail.webp",
+      "/images/products/prod-03/lifestyle.webp"
     ]
   },
   "prod-04": {
