@@ -1,0 +1,2582 @@
+[
+  {
+    "id": "prod-01",
+    "slug": "double-breasted-cashmere-coat",
+    "name": "Classic Cashmere Coat",
+    "subtitle": "Warm, soft double-sided cashmere in camel",
+    "description": "A warm and comfortable long coat made from 100% soft cashmere. Features classic wide lapels, sturdy buttons, a tie belt, and a relaxed fit that layers easily over sweaters.",
+    "category": "outerwear",
+    "collection": "atelier-autumn",
+    "gender": "women",
+    "price": 2999,
+    "compareAtPrice": 5999,
+    "images": [
+      "/images/products/prod-01/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Camel",
+        "hex": "#C19A6B"
+      },
+      {
+        "name": "Charcoal",
+        "hex": "#2A2A2A"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#E3DAC9"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v1-1",
+        "color": "Camel",
+        "size": "XS",
+        "sku": "CC-CAM-XS",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v1-2",
+        "color": "Camel",
+        "size": "S",
+        "sku": "CC-CAM-S",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v1-3",
+        "color": "Camel",
+        "size": "M",
+        "sku": "CC-CAM-M",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v1-4",
+        "color": "Camel",
+        "size": "L",
+        "sku": "CC-CAM-L",
+        "inStock": true,
+        "stockCount": 3
+      },
+      {
+        "id": "v1-5",
+        "color": "Camel",
+        "size": "XL",
+        "sku": "CC-CAM-XL",
+        "inStock": false,
+        "stockCount": 0
+      },
+      {
+        "id": "v1-6",
+        "color": "Charcoal",
+        "size": "S",
+        "sku": "CC-CHA-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v1-7",
+        "color": "Charcoal",
+        "size": "M",
+        "sku": "CC-CHA-M",
+        "inStock": true,
+        "stockCount": 7
+      },
+      {
+        "id": "v1-8",
+        "color": "Oatmeal",
+        "size": "M",
+        "sku": "CC-OAT-M",
+        "inStock": true,
+        "stockCount": 4
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Cashmere",
+      "Coat",
+      "Autumn",
+      "Winter"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Cashmere"
+      },
+      {
+        "label": "Closure",
+        "value": "Double-breasted front buttons"
+      },
+      {
+        "label": "Pockets",
+        "value": "Two deep side pockets"
+      },
+      {
+        "label": "Belt",
+        "value": "Removable matching waist tie"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only",
+      "Store on a wide hanger",
+      "Brush gently with a soft clothes brush"
+    ],
+    "composition": "100% Cashmere",
+    "fit": "Relaxed fit. Choose your regular size or one size down for a closer fit."
+  },
+  {
+    "id": "prod-02",
+    "slug": "minimalist-wool-overcoat-noir",
+    "name": "Classic Wool Overcoat",
+    "subtitle": "Warm, thick virgin wool with clean hidden buttons",
+    "description": "A clean, warm overcoat made from thick virgin wool. Features a neat hidden button front and comfortable shoulders that fit easily over suits or sweaters.",
+    "category": "outerwear",
+    "collection": "monochrome-series",
+    "gender": "men",
+    "price": 2499,
+    "compareAtPrice": 4999,
+    "images": [
+      "/images/products/prod-02/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Obsidian Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Deep Navy",
+        "hex": "#0F1A2C"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "variants": [
+      {
+        "id": "v2-1",
+        "color": "Obsidian Black",
+        "size": "S",
+        "sku": "MW-OBS-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v2-2",
+        "color": "Obsidian Black",
+        "size": "M",
+        "sku": "MW-OBS-M",
+        "inStock": true,
+        "stockCount": 9
+      },
+      {
+        "id": "v2-3",
+        "color": "Obsidian Black",
+        "size": "L",
+        "sku": "MW-OBS-L",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v2-4",
+        "color": "Obsidian Black",
+        "size": "XL",
+        "sku": "MW-OBS-XL",
+        "inStock": true,
+        "stockCount": 2
+      },
+      {
+        "id": "v2-5",
+        "color": "Deep Navy",
+        "size": "M",
+        "sku": "MW-NAV-M",
+        "inStock": true,
+        "stockCount": 6
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Virgin Wool",
+      "Coat",
+      "Warm",
+      "Classic"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Virgin Wool"
+      },
+      {
+        "label": "Lining",
+        "value": "Smooth cupro lining"
+      },
+      {
+        "label": "Pockets",
+        "value": "Two outer pockets and two inside pockets"
+      },
+      {
+        "label": "Fit Type",
+        "value": "Single-breasted front"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only",
+      "Use a cool iron with a pressing cloth"
+    ],
+    "composition": "100% Virgin Wool, 100% Cupro Lining",
+    "fit": "Regular fit made to layer comfortably over knitwear or a jacket."
+  },
+  {
+    "id": "prod-03",
+    "slug": "sculptural-shearling-aviator",
+    "name": "Warm Shearling Aviator Jacket",
+    "subtitle": "Heavyweight shearling leather with soft wool lining",
+    "description": "A classic cold-weather flight jacket made from genuine Spanish shearling leather. Features a weather-resistant leather exterior and soft, warm fleece lining inside.",
+    "category": "outerwear",
+    "collection": "atelier-autumn",
+    "gender": "unisex",
+    "price": 3499,
+    "compareAtPrice": 6999,
+    "images": [
+      "/images/products/prod-03/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Espresso Brown",
+        "hex": "#3B271E"
+      },
+      {
+        "name": "Black Cream",
+        "hex": "#1C1C1C"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v3-1",
+        "color": "Espresso Brown",
+        "size": "S",
+        "sku": "SH-ESP-S",
+        "inStock": true,
+        "stockCount": 2
+      },
+      {
+        "id": "v3-2",
+        "color": "Espresso Brown",
+        "size": "M",
+        "sku": "SH-ESP-M",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v3-3",
+        "color": "Espresso Brown",
+        "size": "L",
+        "sku": "SH-ESP-L",
+        "inStock": false,
+        "stockCount": 0
+      },
+      {
+        "id": "v3-4",
+        "color": "Black Cream",
+        "size": "M",
+        "sku": "SH-BC-M",
+        "inStock": true,
+        "stockCount": 3
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": false,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Shearling",
+      "Leather",
+      "Jacket",
+      "Winter"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Merino Shearling Leather"
+      },
+      {
+        "label": "Zippers",
+        "value": "Heavy-duty two-way front zip"
+      },
+      {
+        "label": "Collar",
+        "value": "Double buckle throat strap for wind protection"
+      }
+    ],
+    "careInstructions": [
+      "Specialist leather cleaner only"
+    ],
+    "composition": "100% Lambskin Shearling",
+    "fit": "Relaxed boxy fit that hits right at the hip."
+  },
+  {
+    "id": "prod-04",
+    "slug": "relaxed-single-breasted-blazer",
+    "name": "Lightweight Wool Blazer",
+    "subtitle": "Breathable fresco wool with a comfortable drape",
+    "description": "A versatile, everyday blazer made from lightweight high-twist wool that naturally resists wrinkles. Soft unpadded shoulders keep it easy and natural to wear all day.",
+    "category": "tailoring",
+    "collection": "minimalist-capsule",
+    "gender": "men",
+    "price": 1999,
+    "compareAtPrice": 3999,
+    "images": [
+      "/images/products/prod-04/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Heather Slate",
+        "hex": "#5C6B73"
+      },
+      {
+        "name": "Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Sandstone",
+        "hex": "#D6C7B2"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v4-1",
+        "color": "Heather Slate",
+        "size": "S",
+        "sku": "BL-SLA-S",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v4-2",
+        "color": "Heather Slate",
+        "size": "M",
+        "sku": "BL-SLA-M",
+        "inStock": true,
+        "stockCount": 11
+      },
+      {
+        "id": "v4-3",
+        "color": "Heather Slate",
+        "size": "L",
+        "sku": "BL-SLA-L",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v4-4",
+        "color": "Black",
+        "size": "M",
+        "sku": "BL-BLK-M",
+        "inStock": true,
+        "stockCount": 8
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Blazer",
+      "Suiting",
+      "Wool",
+      "Workwear"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Breathable Wool"
+      },
+      {
+        "label": "Shoulders",
+        "value": "Soft, unpadded natural shoulder"
+      },
+      {
+        "label": "Vents",
+        "value": "Two back vents for ease of movement"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only",
+      "Hang to air out after wearing"
+    ],
+    "composition": "100% Wool",
+    "fit": "Comfortable regular fit through the chest and waist."
+  },
+  {
+    "id": "prod-05",
+    "slug": "hourglass-peaked-lapel-jacket",
+    "name": "Fitted Wool Jacket",
+    "subtitle": "Flattering tailored jacket in smooth wool-silk blend",
+    "description": "A sharply tailored jacket designed with a flattering fitted waist and classic peaked lapels. Perfect for evening outings, celebrations, and formal events.",
+    "category": "tailoring",
+    "collection": "evening-luxe",
+    "gender": "women",
+    "price": 2499,
+    "compareAtPrice": 4999,
+    "images": [
+      "/images/products/prod-05/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Ivory",
+        "hex": "#FFFFF0"
+      },
+      {
+        "name": "Obsidian",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "variants": [
+      {
+        "id": "v5-1",
+        "color": "Ivory",
+        "size": "XS",
+        "sku": "HL-IVO-XS",
+        "inStock": true,
+        "stockCount": 3
+      },
+      {
+        "id": "v5-2",
+        "color": "Ivory",
+        "size": "S",
+        "sku": "HL-IVO-S",
+        "inStock": true,
+        "stockCount": 7
+      },
+      {
+        "id": "v5-3",
+        "color": "Ivory",
+        "size": "M",
+        "sku": "HL-IVO-M",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v5-4",
+        "color": "Obsidian",
+        "size": "S",
+        "sku": "HL-OBS-S",
+        "inStock": true,
+        "stockCount": 5
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": false,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Jacket",
+      "Tailored",
+      "Party",
+      "Evening"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "70% Wool, 30% Silk Crepe"
+      },
+      {
+        "label": "Fastening",
+        "value": "Hidden front snap buttons"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only"
+    ],
+    "composition": "70% Wool, 30% Silk",
+    "fit": "Fitted through the waist."
+  },
+  {
+    "id": "prod-06",
+    "slug": "ribbed-fisherman-cashmere-sweater",
+    "name": "Chunky Ribbed Cashmere Sweater",
+    "subtitle": "Warm, thick cashmere knit sweater in Chalk White",
+    "description": "A warm and cozy winter sweater knit from soft, pure cashmere. Features a comfortable mock neckline, ribbed texture, and slightly dropped shoulders for easy everyday wear.",
+    "category": "knitwear",
+    "collection": "atelier-autumn",
+    "gender": "unisex",
+    "price": 1499,
+    "compareAtPrice": 2999,
+    "images": [
+      "/images/products/prod-06/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Chalk White",
+        "hex": "#F5F5F0"
+      },
+      {
+        "name": "Warm Taupe",
+        "hex": "#8B8589"
+      },
+      {
+        "name": "Forest Green",
+        "hex": "#1E3F20"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v6-1",
+        "color": "Chalk White",
+        "size": "S",
+        "sku": "KN-CHK-S",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v6-2",
+        "color": "Chalk White",
+        "size": "M",
+        "sku": "KN-CHK-M",
+        "inStock": true,
+        "stockCount": 10
+      },
+      {
+        "id": "v6-3",
+        "color": "Chalk White",
+        "size": "L",
+        "sku": "KN-CHK-L",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v6-4",
+        "color": "Warm Taupe",
+        "size": "M",
+        "sku": "KN-TAU-M",
+        "inStock": true,
+        "stockCount": 8
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Cashmere",
+      "Sweater",
+      "Warm",
+      "Winter"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Pure Cashmere"
+      },
+      {
+        "label": "Neckline",
+        "value": "Ribbed mock neckline"
+      }
+    ],
+    "careInstructions": [
+      "Hand wash in cold water",
+      "Dry flat on a towel",
+      "Do not wring"
+    ],
+    "composition": "100% Cashmere",
+    "fit": "Relaxed, comfortable fit."
+  },
+  {
+    "id": "prod-07",
+    "slug": "fine-merino-polo-collar-knit",
+    "name": "Fine Merino Knit Polo",
+    "subtitle": "Lightweight, soft merino wool polo shirt",
+    "description": "A soft, lightweight polo shirt knit from smooth merino wool. Features a clean collar without buttons that looks great on its own or layered under a blazer.",
+    "category": "knitwear",
+    "collection": "minimalist-capsule",
+    "gender": "men",
+    "price": 999,
+    "compareAtPrice": 1999,
+    "images": [
+      "/images/products/prod-07/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Midnight Navy",
+        "hex": "#121A28"
+      },
+      {
+        "name": "Oatmeal Melange",
+        "hex": "#D8CEBE"
+      },
+      {
+        "name": "Charcoal",
+        "hex": "#333333"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "variants": [
+      {
+        "id": "v7-1",
+        "color": "Midnight Navy",
+        "size": "S",
+        "sku": "MP-MID-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v7-2",
+        "color": "Midnight Navy",
+        "size": "M",
+        "sku": "MP-MID-M",
+        "inStock": true,
+        "stockCount": 12
+      },
+      {
+        "id": "v7-3",
+        "color": "Midnight Navy",
+        "size": "L",
+        "sku": "MP-MID-L",
+        "inStock": true,
+        "stockCount": 7
+      }
+    ],
+    "isNew": false,
+    "isFeatured": false,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Merino",
+      "Polo",
+      "Everyday",
+      "Smart Casual"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Extrafine Merino Wool"
+      },
+      {
+        "label": "Collar",
+        "value": "Soft knitted open collar"
+      }
+    ],
+    "careInstructions": [
+      "Machine wash cold on gentle wool cycle",
+      "Lay flat to dry"
+    ],
+    "composition": "100% Merino Wool",
+    "fit": "Regular fit that sits comfortably under jackets."
+  },
+  {
+    "id": "prod-08",
+    "slug": "bias-cut-silk-column-gown",
+    "name": "Long Silk Evening Dress",
+    "subtitle": "Smooth, lustrous 100% mulberry silk gown",
+    "description": "An elegant full-length silk dress with a natural graceful drape. Designed with thin shoulder straps and a low scooped back for special occasions and parties.",
+    "category": "dresses",
+    "collection": "evening-luxe",
+    "gender": "women",
+    "price": 1799,
+    "compareAtPrice": 3599,
+    "images": [
+      "/images/products/prod-08/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Champagne Gold",
+        "hex": "#F7E7CE"
+      },
+      {
+        "name": "Emerald Noir",
+        "hex": "#0E281E"
+      },
+      {
+        "name": "Onyx",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "variants": [
+      {
+        "id": "v8-1",
+        "color": "Champagne Gold",
+        "size": "XS",
+        "sku": "SK-GLD-XS",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v8-2",
+        "color": "Champagne Gold",
+        "size": "S",
+        "sku": "SK-GLD-S",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v8-3",
+        "color": "Champagne Gold",
+        "size": "M",
+        "sku": "SK-GLD-M",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v8-4",
+        "color": "Emerald Noir",
+        "size": "S",
+        "sku": "SK-EME-S",
+        "inStock": true,
+        "stockCount": 3
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Silk",
+      "Dress",
+      "Party",
+      "Evening"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "100% Pure Mulberry Silk"
+      },
+      {
+        "label": "Straps",
+        "value": "Slim adjustable shoulder straps"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only",
+      "Steam on low heat"
+    ],
+    "composition": "100% Pure Mulberry Silk",
+    "fit": "Fluid fit that skims gently over hips."
+  },
+  {
+    "id": "prod-09",
+    "slug": "draped-pleated-midi-shirt-dress",
+    "name": "Pleated Cotton Midi Dress",
+    "subtitle": "Breathable organic cotton dress with neat pleats",
+    "description": "A light and airy midi dress made from crisp organic cotton. Features neat pleats and a matching waist tie that makes it easy to adjust the fit.",
+    "category": "dresses",
+    "collection": "resort-modern",
+    "gender": "women",
+    "price": 1199,
+    "compareAtPrice": 2399,
+    "images": [
+      "/images/products/prod-09/front.webp",
+      "/images/products/prod-09/back.webp"
+    ],
+    "colors": [
+      {
+        "name": "Optic White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#E2725B"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "variants": [
+      {
+        "id": "v9-1",
+        "color": "Optic White",
+        "size": "S",
+        "sku": "PL-WHT-S",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v9-2",
+        "color": "Optic White",
+        "size": "M",
+        "sku": "PL-WHT-M",
+        "inStock": true,
+        "stockCount": 9
+      }
+    ],
+    "isNew": false,
+    "isFeatured": false,
+    "isBestseller": false,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Cotton",
+      "Dress",
+      "Summer",
+      "Casual"
+    ],
+    "details": [
+      {
+        "label": "Material",
+        "value": "100% Certified Organic Cotton"
+      }
+    ],
+    "careInstructions": [
+      "Machine wash gentle at 30°C",
+      "Steam or warm iron"
+    ],
+    "composition": "100% Organic Cotton",
+    "fit": "Relaxed A-line shape with tie belt."
+  },
+  {
+    "id": "prod-10",
+    "slug": "oversized-egyptian-poplin-shirt",
+    "name": "Relaxed Cotton Poplin Shirt",
+    "subtitle": "Soft, crisp cotton shirt in Sky Blue",
+    "description": "A classic everyday button-down shirt made from soft, high-quality cotton. Designed with a comfortable relaxed fit and clean shell buttons.",
+    "category": "shirts",
+    "collection": "minimalist-capsule",
+    "gender": "unisex",
+    "price": 699,
+    "compareAtPrice": 1399,
+    "images": [
+      "/images/products/prod-10/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Sky Blue",
+        "hex": "#B0C4DE"
+      },
+      {
+        "name": "Pure White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Fine Stripe",
+        "hex": "#778899"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v10-1",
+        "color": "Sky Blue",
+        "size": "S",
+        "sku": "SH-SKY-S",
+        "inStock": true,
+        "stockCount": 14
+      },
+      {
+        "id": "v10-2",
+        "color": "Sky Blue",
+        "size": "M",
+        "sku": "SH-SKY-M",
+        "inStock": true,
+        "stockCount": 20
+      },
+      {
+        "id": "v10-3",
+        "color": "Sky Blue",
+        "size": "L",
+        "sku": "SH-SKY-L",
+        "inStock": true,
+        "stockCount": 11
+      },
+      {
+        "id": "v10-4",
+        "color": "Pure White",
+        "size": "M",
+        "sku": "SH-WHT-M",
+        "inStock": true,
+        "stockCount": 18
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Cotton",
+      "Shirt",
+      "Everyday",
+      "Unisex"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "100% Long-Staple Cotton"
+      },
+      {
+        "label": "Buttons",
+        "value": "Durable mother-of-pearl buttons"
+      }
+    ],
+    "careInstructions": [
+      "Machine wash at 30°C",
+      "Hang to dry",
+      "Warm iron"
+    ],
+    "composition": "100% Cotton",
+    "fit": "Relaxed, casual fit."
+  },
+  {
+    "id": "prod-11",
+    "slug": "wide-leg-double-pleated-trousers",
+    "name": "Wide-Leg Pleated Trousers",
+    "subtitle": "High-waisted wool trousers with front pleats",
+    "description": "Comfortable wide-leg trousers made from smooth virgin wool. Features a flattering high waist, neat front pleats, and a relaxed, straight cut that pairs well with shirts and knitwear.",
+    "category": "trousers",
+    "collection": "monochrome-series",
+    "gender": "all",
+    "price": 1099,
+    "compareAtPrice": 2199,
+    "images": [
+      "/images/products/prod-11/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Charcoal Heather",
+        "hex": "#36454F"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#0D0D0D"
+      },
+      {
+        "name": "Biscuit",
+        "hex": "#E3DAC9"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v11-1",
+        "color": "Charcoal Heather",
+        "size": "S",
+        "sku": "TR-CHA-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v11-2",
+        "color": "Charcoal Heather",
+        "size": "M",
+        "sku": "TR-CHA-M",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v11-3",
+        "color": "Charcoal Heather",
+        "size": "L",
+        "sku": "TR-CHA-L",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v11-4",
+        "color": "Jet Black",
+        "size": "M",
+        "sku": "TR-BLK-M",
+        "inStock": true,
+        "stockCount": 9
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Wool",
+      "Wide Leg",
+      "Trousers",
+      "Everyday"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "100% Virgin Wool"
+      },
+      {
+        "label": "Waistband",
+        "value": "Tailored waistband with zip fly and hook closure"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only"
+    ],
+    "composition": "100% Wool",
+    "fit": "High waist with a wide, straight leg."
+  },
+  {
+    "id": "prod-12",
+    "slug": "sculptural-calfskin-tote-bag",
+    "name": "Classic Leather Tote Bag",
+    "subtitle": "Durable smooth leather tote bag with soft lining",
+    "description": "A roomy everyday leather tote bag designed to carry your laptop, notebook, and daily essentials. Features sturdy shoulder handles and an inside zip pocket.",
+    "category": "accessories",
+    "collection": "minimalist-capsule",
+    "gender": "all",
+    "price": 1499,
+    "compareAtPrice": 2999,
+    "images": [
+      "/images/products/prod-12/front.webp",
+      "/images/products/prod-12/detail.webp"
+    ],
+    "colors": [
+      {
+        "name": "Black Box",
+        "hex": "#0B0B0B"
+      },
+      {
+        "name": "Caramel",
+        "hex": "#9E643C"
+      },
+      {
+        "name": "Bone White",
+        "hex": "#F3EDE2"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "variants": [
+      {
+        "id": "v12-1",
+        "color": "Black Box",
+        "size": "OS",
+        "sku": "AC-TT-BLK",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v12-2",
+        "color": "Caramel",
+        "size": "OS",
+        "sku": "AC-TT-CAR",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v12-3",
+        "color": "Bone White",
+        "size": "OS",
+        "sku": "AC-TT-BON",
+        "inStock": true,
+        "stockCount": 3
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Leather",
+      "Handbag",
+      "Tote",
+      "Workwear"
+    ],
+    "details": [
+      {
+        "label": "Leather",
+        "value": "100% Genuine Calfskin Leather"
+      },
+      {
+        "label": "Dimensions",
+        "value": "42cm H x 36cm W x 14cm D (Fits 16\" laptop)"
+      },
+      {
+        "label": "Interior",
+        "value": "Inner zip pocket for keys and phone"
+      }
+    ],
+    "careInstructions": [
+      "Wipe clean with a soft dry cloth",
+      "Condition with leather balm"
+    ],
+    "composition": "100% Calf Leather, Suede Lining",
+    "fit": "One size. Easily fits a laptop, water bottle, and daily items."
+  },
+  {
+    "id": "prod-13",
+    "slug": "chunky-lug-sole-leather-loafer",
+    "name": "Chunky Sole Leather Loafers",
+    "subtitle": "Polished black leather loafers with comfortable grip soles",
+    "description": "Classic penny loafers updated with thick, lightweight rubber lug soles for all-day comfort. Made from smooth polished leather that pairs with trousers or jeans.",
+    "category": "footwear",
+    "collection": "monochrome-series",
+    "gender": "all",
+    "price": 1399,
+    "compareAtPrice": 2799,
+    "images": [
+      "/images/products/prod-13/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Gloss Obsidian",
+        "hex": "#111111"
+      },
+      {
+        "name": "Oxblood Cordovan",
+        "hex": "#4A1521"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v13-1",
+        "color": "Gloss Obsidian",
+        "size": "S",
+        "sku": "LF-GLS-S",
+        "inStock": true,
+        "stockCount": 7
+      },
+      {
+        "id": "v13-2",
+        "color": "Gloss Obsidian",
+        "size": "M",
+        "sku": "LF-GLS-M",
+        "inStock": true,
+        "stockCount": 12
+      },
+      {
+        "id": "v13-3",
+        "color": "Gloss Obsidian",
+        "size": "L",
+        "sku": "LF-GLS-L",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v13-4",
+        "color": "Oxblood Cordovan",
+        "size": "M",
+        "sku": "LF-OXB-M",
+        "inStock": true,
+        "stockCount": 4
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Shoes",
+      "Loafers",
+      "Leather",
+      "Everyday"
+    ],
+    "details": [
+      {
+        "label": "Upper",
+        "value": "100% Genuine Polished Calfskin Leather"
+      },
+      {
+        "label": "Sole",
+        "value": "Lightweight non-slip rubber platform sole"
+      },
+      {
+        "label": "Stitching",
+        "value": "Reinforced stitched welt"
+      }
+    ],
+    "careInstructions": [
+      "Wipe clean with a soft cloth",
+      "Use shoe trees to keep shape"
+    ],
+    "composition": "100% Leather upper & lining, Rubber sole",
+    "fit": "Fits true to size. If between sizes, choose the smaller size."
+  },
+  {
+    "id": "prod-14",
+    "slug": "cashmere-fringed-oversized-scarf",
+    "name": "Warm Cashmere Scarf",
+    "subtitle": "Large, soft pure cashmere wrap with fringe trim",
+    "description": "A long, cozy scarf made from 100% soft cashmere. Large enough to wrap comfortably around your neck or drape over your shoulders for extra warmth.",
+    "category": "accessories",
+    "collection": "atelier-autumn",
+    "gender": "all",
+    "price": 699,
+    "compareAtPrice": 1399,
+    "images": [
+      "/images/products/prod-14/front.webp",
+      "/images/products/prod-14/detail.webp"
+    ],
+    "colors": [
+      {
+        "name": "Oatmeal Melange",
+        "hex": "#D6C7B2"
+      },
+      {
+        "name": "Raven Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Burnt Sienna",
+        "hex": "#E97451"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "variants": [
+      {
+        "id": "v14-1",
+        "color": "Oatmeal Melange",
+        "size": "OS",
+        "sku": "SC-OAT-OS",
+        "inStock": true,
+        "stockCount": 15
+      },
+      {
+        "id": "v14-2",
+        "color": "Raven Black",
+        "size": "OS",
+        "sku": "SC-BLK-OS",
+        "inStock": true,
+        "stockCount": 18
+      },
+      {
+        "id": "v14-3",
+        "color": "Burnt Sienna",
+        "size": "OS",
+        "sku": "SC-BUR-OS",
+        "inStock": true,
+        "stockCount": 7
+      }
+    ],
+    "isNew": false,
+    "isFeatured": false,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": false,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Cashmere",
+      "Scarf",
+      "Warm",
+      "Winter"
+    ],
+    "details": [
+      {
+        "label": "Dimensions",
+        "value": "220cm long x 75cm wide with fringe trim"
+      },
+      {
+        "label": "Material",
+        "value": "100% Pure Cashmere"
+      }
+    ],
+    "careInstructions": [
+      "Dry clean only"
+    ],
+    "composition": "100% Cashmere",
+    "fit": "Generous wrap-around size."
+  },
+  {
+    "id": "prod-15",
+    "name": "Classic Indigo Selvedge Jeans",
+    "slug": "classic-indigo-selvedge-jeans",
+    "subtitle": "Durable Raw Denim Jeans",
+    "description": "Sturdy 14oz raw Japanese selvedge denim woven on vintage shuttle looms. Cut in a timeless straight-leg silhouette that breaks in comfortably and develops a personalized fade over years of wear.",
+    "price": 1199,
+    "compareAtPrice": 2399,
+    "category": "trousers",
+    "collection": "minimalist-capsule",
+    "gender": "men",
+    "tags": [
+      "denim",
+      "selvedge",
+      "casual",
+      "raw",
+      "essential"
+    ],
+    "images": [
+      "/images/products/prod-15/front.webp",
+      "/images/products/prod-15/back.webp"
+    ],
+    "colors": [
+      {
+        "name": "Raw Indigo",
+        "hex": "#1A2536"
+      },
+      {
+        "name": "Washed Black",
+        "hex": "#2B2B2B"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "composition": "100% Ring-Spun Zimbabwe Cotton (14oz)",
+    "fit": "Straight Leg Regular Fit",
+    "details": [
+      {
+        "label": "Weave",
+        "value": "Custom Pink-Line Selvedge ID"
+      },
+      {
+        "label": "Hardware",
+        "value": "Solid Copper Rivets & Custom Donut Buttons"
+      },
+      {
+        "label": "Patch",
+        "value": "Debossed Vegetable-Tanned Leather"
+      },
+      {
+        "label": "Hemming",
+        "value": "Union Special 43200G Chainstitch"
+      }
+    ],
+    "careInstructions": [
+      "Wear regularly for 6 months before first soak",
+      "Hand wash inside out with cold water and gentle detergent",
+      "Hang dry naturally away from direct sunlight"
+    ],
+    "isFeatured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "variants": [
+      {
+        "id": "v15-1",
+        "color": "Raw Indigo",
+        "size": "S",
+        "sku": "DN-IND-S",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v15-2",
+        "color": "Raw Indigo",
+        "size": "M",
+        "sku": "DN-IND-M",
+        "inStock": true,
+        "stockCount": 12
+      },
+      {
+        "id": "v15-3",
+        "color": "Raw Indigo",
+        "size": "L",
+        "sku": "DN-IND-L",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v15-4",
+        "color": "Raw Indigo",
+        "size": "XL",
+        "sku": "DN-IND-XL",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v15-5",
+        "color": "Washed Black",
+        "size": "S",
+        "sku": "DN-BLK-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v15-6",
+        "color": "Washed Black",
+        "size": "M",
+        "sku": "DN-BLK-M",
+        "inStock": true,
+        "stockCount": 9
+      },
+      {
+        "id": "v15-7",
+        "color": "Washed Black",
+        "size": "L",
+        "sku": "DN-BLK-L",
+        "inStock": true,
+        "stockCount": 7
+      },
+      {
+        "id": "v15-8",
+        "color": "Washed Black",
+        "size": "XL",
+        "sku": "DN-BLK-XL",
+        "inStock": true,
+        "stockCount": 3
+      }
+    ]
+  },
+  {
+    "id": "prod-16",
+    "name": "Sculptural Silver Signet Cuff",
+    "slug": "sculptural-silver-signet-cuff",
+    "subtitle": "Minimalist Silver Wrist Bracelet",
+    "description": "Handcrafted 925 sterling silver cuff featuring a subtle brushed satin finish and gently tapered ergonomic ends. An understated daily jewelry piece that pairs with everything from tailored suits to casual wear.",
+    "price": 499,
+    "compareAtPrice": 999,
+    "category": "jewelry",
+    "collection": "fine-jewelry",
+    "gender": "unisex",
+    "tags": [
+      "jewelry",
+      "silver",
+      "minimalist",
+      "handcrafted",
+      "cuff"
+    ],
+    "images": [
+      "/images/products/prod-16/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-16/360/frame-01.webp",
+      "/images/products/prod-16/360/frame-02.webp",
+      "/images/products/prod-16/360/frame-03.webp",
+      "/images/products/prod-16/360/frame-04.webp",
+      "/images/products/prod-16/360/frame-05.webp",
+      "/images/products/prod-16/360/frame-06.webp",
+      "/images/products/prod-16/360/frame-07.webp",
+      "/images/products/prod-16/360/frame-08.webp",
+      "/images/products/prod-16/360/frame-09.webp",
+      "/images/products/prod-16/360/frame-10.webp",
+      "/images/products/prod-16/360/frame-11.webp",
+      "/images/products/prod-16/360/frame-12.webp",
+      "/images/products/prod-16/360/frame-13.webp",
+      "/images/products/prod-16/360/frame-14.webp",
+      "/images/products/prod-16/360/frame-15.webp",
+      "/images/products/prod-16/360/frame-16.webp"
+    ],
+    "colors": [
+      {
+        "name": "Sterling Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Oxidized Charcoal",
+        "hex": "#4A4A4A"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "composition": "Solid 925 Sterling Silver (32g)",
+    "fit": "Adjustable Ergonomic Open Profile",
+    "details": [
+      {
+        "label": "Purity",
+        "value": "Hallmarked 925 Solid Sterling"
+      },
+      {
+        "label": "Finish",
+        "value": "Hand-Brushed Matte Satin"
+      },
+      {
+        "label": "Origin",
+        "value": "Hand-Cast in Arezzo, Italy"
+      },
+      {
+        "label": "Packaging",
+        "value": "Comes with Suede Presentation Case"
+      }
+    ],
+    "careInstructions": [
+      "Store in provided anti-tarnish suede pouch when not wearing",
+      "Clean with soft microfiber jewelry cloth",
+      "Avoid contact with chlorinated water, perfume, and harsh soaps"
+    ],
+    "isFeatured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "variants": [
+      {
+        "id": "v16-1",
+        "color": "Sterling Silver",
+        "size": "S",
+        "sku": "CU-SLV-S",
+        "inStock": true,
+        "stockCount": 4
+      },
+      {
+        "id": "v16-2",
+        "color": "Sterling Silver",
+        "size": "M",
+        "sku": "CU-SLV-M",
+        "inStock": true,
+        "stockCount": 10
+      },
+      {
+        "id": "v16-3",
+        "color": "Sterling Silver",
+        "size": "L",
+        "sku": "CU-SLV-L",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v16-4",
+        "color": "Oxidized Charcoal",
+        "size": "S",
+        "sku": "CU-OX-S",
+        "inStock": true,
+        "stockCount": 3
+      },
+      {
+        "id": "v16-5",
+        "color": "Oxidized Charcoal",
+        "size": "M",
+        "sku": "CU-OX-M",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v16-6",
+        "color": "Oxidized Charcoal",
+        "size": "L",
+        "sku": "CU-OX-L",
+        "inStock": true,
+        "stockCount": 4
+      }
+    ]
+  },
+  {
+    "id": "prod-17",
+    "slug": "classic-oxford-cotton-shirt",
+    "name": "Classic Oxford Button-Down Shirt",
+    "subtitle": "Durable textured cotton in crisp white",
+    "description": "A timeless wardrobe essential made from breathable 100% Oxford cotton. Features an authentic button-down collar, chest pocket, and a clean tailored cut that looks sharp tucked into trousers or worn casually untucked.",
+    "category": "shirts",
+    "collection": "minimalist-capsule",
+    "gender": "men",
+    "price": 799,
+    "compareAtPrice": 1599,
+    "images": [
+      "/images/products/prod-17/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Crisp White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Pale Blue",
+        "hex": "#A7C7E7"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v17-1",
+        "color": "Crisp White",
+        "size": "S",
+        "sku": "OX-WHT-S",
+        "inStock": true,
+        "stockCount": 10
+      },
+      {
+        "id": "v17-2",
+        "color": "Crisp White",
+        "size": "M",
+        "sku": "OX-WHT-M",
+        "inStock": true,
+        "stockCount": 15
+      },
+      {
+        "id": "v17-3",
+        "color": "Crisp White",
+        "size": "L",
+        "sku": "OX-WHT-L",
+        "inStock": true,
+        "stockCount": 12
+      },
+      {
+        "id": "v17-4",
+        "color": "Crisp White",
+        "size": "XL",
+        "sku": "OX-WHT-XL",
+        "inStock": true,
+        "stockCount": 6
+      },
+      {
+        "id": "v17-5",
+        "color": "Pale Blue",
+        "size": "M",
+        "sku": "OX-BLU-M",
+        "inStock": true,
+        "stockCount": 14
+      },
+      {
+        "id": "v17-6",
+        "color": "Pale Blue",
+        "size": "L",
+        "sku": "OX-BLU-L",
+        "inStock": true,
+        "stockCount": 8
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Oxford",
+      "Shirt",
+      "Cotton",
+      "Office",
+      "Casual"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "100% Combed Oxford Cotton"
+      },
+      {
+        "label": "Collar",
+        "value": "Structured Button-Down"
+      },
+      {
+        "label": "Cuff",
+        "value": "Adjustable Double-Button Barrel"
+      }
+    ],
+    "careInstructions": [
+      "Machine wash warm with similar colors",
+      "Tumble dry low",
+      "Warm iron"
+    ],
+    "composition": "100% Oxford Cotton",
+    "fit": "Regular modern fit."
+  },
+  {
+    "id": "prod-18",
+    "slug": "resort-camp-collar-linen-shirt",
+    "name": "Camp Collar Relaxed Linen Shirt",
+    "subtitle": "Airy pure linen shirt in Olive Green",
+    "description": "Crafted from premium washed European flax linen for maximum hot-weather breathability. Features a relaxed retro camp collar, straight vented hem, and natural horn-style buttons.",
+    "category": "shirts",
+    "collection": "resort-modern",
+    "gender": "unisex",
+    "price": 899,
+    "compareAtPrice": 1799,
+    "images": [
+      "/images/products/prod-18/front.webp",
+      "/images/products/prod-18/back.webp"
+    ],
+    "colors": [
+      {
+        "name": "Olive Earth",
+        "hex": "#556B2F"
+      },
+      {
+        "name": "Sand Beige",
+        "hex": "#E1C16E"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v18-1",
+        "color": "Olive Earth",
+        "size": "S",
+        "sku": "CC-OLV-S",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v18-2",
+        "color": "Olive Earth",
+        "size": "M",
+        "sku": "CC-OLV-M",
+        "inStock": true,
+        "stockCount": 16
+      },
+      {
+        "id": "v18-3",
+        "color": "Olive Earth",
+        "size": "L",
+        "sku": "CC-OLV-L",
+        "inStock": true,
+        "stockCount": 9
+      },
+      {
+        "id": "v18-4",
+        "color": "Sand Beige",
+        "size": "M",
+        "sku": "CC-SND-M",
+        "inStock": true,
+        "stockCount": 11
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": false,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Linen",
+      "Resort",
+      "Summer",
+      "Casual"
+    ],
+    "details": [
+      {
+        "label": "Fabric",
+        "value": "100% Pre-Washed Flax Linen"
+      },
+      {
+        "label": "Collar",
+        "value": "Convertible Open Camp Collar"
+      },
+      {
+        "label": "Hem",
+        "value": "Straight cut with side vents"
+      }
+    ],
+    "careInstructions": [
+      "Machine wash cold on gentle cycle",
+      "Hang dry in shade",
+      "Steam or light iron"
+    ],
+    "composition": "100% European Flax Linen",
+    "fit": "Relaxed easy fit."
+  },
+  {
+    "id": "prod-19",
+    "slug": "minimalist-leather-court-sneakers",
+    "name": "Minimalist Leather Low-Top Sneakers",
+    "subtitle": "Clean white Italian Nappa leather trainers",
+    "description": "Handcrafted low-top sneakers made from smooth full-grain Italian Nappa leather. Fitted with an ultra-comfortable cushioned insole, breathable calfskin lining, and durable stitched rubber cupsole.",
+    "category": "footwear",
+    "collection": "monochrome-series",
+    "gender": "all",
+    "price": 1299,
+    "compareAtPrice": 2599,
+    "images": [
+      "/images/products/prod-19/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Monochrome White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Triple Black",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v19-1",
+        "color": "Monochrome White",
+        "size": "S",
+        "sku": "SNK-WHT-S",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v19-2",
+        "color": "Monochrome White",
+        "size": "M",
+        "sku": "SNK-WHT-M",
+        "inStock": true,
+        "stockCount": 15
+      },
+      {
+        "id": "v19-3",
+        "color": "Monochrome White",
+        "size": "L",
+        "sku": "SNK-WHT-L",
+        "inStock": true,
+        "stockCount": 10
+      },
+      {
+        "id": "v19-4",
+        "color": "Triple Black",
+        "size": "M",
+        "sku": "SNK-BLK-M",
+        "inStock": true,
+        "stockCount": 9
+      }
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "tags": [
+      "Sneakers",
+      "Leather",
+      "Footwear",
+      "Casual",
+      "Everyday"
+    ],
+    "details": [
+      {
+        "label": "Upper",
+        "value": "100% Full-Grain Italian Nappa Leather"
+      },
+      {
+        "label": "Sole",
+        "value": "Stitched Margom-Style Rubber Cupsole"
+      },
+      {
+        "label": "Lining",
+        "value": "Full Calfskin Soft Leather Lining"
+      }
+    ],
+    "careInstructions": [
+      "Clean with damp cloth and leather cream",
+      "Air dry naturally"
+    ],
+    "composition": "100% Nappa Leather upper, Rubber sole",
+    "fit": "Fits true to size. Take regular sneaker size."
+  },
+  {
+    "id": "prod-20",
+    "slug": "chelsea-ankle-boots-tobacco-suede",
+    "name": "Classic Suede Chelsea Ankle Boots",
+    "subtitle": "Supple water-resistant tobacco suede boots",
+    "description": "Refined Chelsea boots made with velvety European calf suede. Built with elasticated side gussets, woven pull tabs, and a Blake-stitched leather sole reinforced with protective rubber tread.",
+    "category": "footwear",
+    "collection": "atelier-autumn",
+    "gender": "all",
+    "price": 1899,
+    "compareAtPrice": 3799,
+    "images": [
+      "/images/products/prod-20/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Tobacco Brown",
+        "hex": "#704214"
+      },
+      {
+        "name": "Midnight Noir",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "id": "v20-1",
+        "color": "Tobacco Brown",
+        "size": "S",
+        "sku": "CH-TOB-S",
+        "inStock": true,
+        "stockCount": 5
+      },
+      {
+        "id": "v20-2",
+        "color": "Tobacco Brown",
+        "size": "M",
+        "sku": "CH-TOB-M",
+        "inStock": true,
+        "stockCount": 11
+      },
+      {
+        "id": "v20-3",
+        "color": "Tobacco Brown",
+        "size": "L",
+        "sku": "CH-TOB-L",
+        "inStock": true,
+        "stockCount": 7
+      },
+      {
+        "id": "v20-4",
+        "color": "Midnight Noir",
+        "size": "M",
+        "sku": "CH-NOI-M",
+        "inStock": true,
+        "stockCount": 8
+      }
+    ],
+    "isNew": false,
+    "isFeatured": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "tags": [
+      "Boots",
+      "Chelsea",
+      "Suede",
+      "Footwear",
+      "Autumn"
+    ],
+    "details": [
+      {
+        "label": "Upper",
+        "value": "Water-Treated European Calf Suede"
+      },
+      {
+        "label": "Construction",
+        "value": "Blake Stitched Soling"
+      },
+      {
+        "label": "Gusset",
+        "value": "Heavy-Duty Stretch Elastic"
+      }
+    ],
+    "careInstructions": [
+      "Protect with suede spray",
+      "Brush with brass wire suede brush"
+    ],
+    "composition": "100% Calf Suede, Leather & Rubber Sole",
+    "fit": "Fits true to size."
+  },
+  {
+    "id": "prod-21",
+    "slug": "solid-gold-vermeil-chain-necklace",
+    "name": "18K Gold Vermeil Box Chain",
+    "subtitle": "Understated 50cm curb link chain necklace",
+    "description": "Precision-crafted 18-karat gold vermeil over a solid 925 sterling silver core. Features a sleek 2.2mm box profile that lays flat against the collarbone, secured with a custom engraved lobster clasp.",
+    "price": 699,
+    "compareAtPrice": 1399,
+    "category": "jewelry",
+    "collection": "fine-jewelry",
+    "gender": "unisex",
+    "tags": [
+      "jewelry",
+      "gold",
+      "necklace",
+      "chain",
+      "fine-jewelry"
+    ],
+    "images": [
+      "/images/products/prod-21/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-21/360/frame-01.webp",
+      "/images/products/prod-21/360/frame-02.webp",
+      "/images/products/prod-21/360/frame-03.webp",
+      "/images/products/prod-21/360/frame-04.webp",
+      "/images/products/prod-21/360/frame-05.webp",
+      "/images/products/prod-21/360/frame-06.webp",
+      "/images/products/prod-21/360/frame-07.webp",
+      "/images/products/prod-21/360/frame-08.webp",
+      "/images/products/prod-21/360/frame-09.webp",
+      "/images/products/prod-21/360/frame-10.webp",
+      "/images/products/prod-21/360/frame-11.webp",
+      "/images/products/prod-21/360/frame-12.webp",
+      "/images/products/prod-21/360/frame-13.webp",
+      "/images/products/prod-21/360/frame-14.webp",
+      "/images/products/prod-21/360/frame-15.webp",
+      "/images/products/prod-21/360/frame-16.webp"
+    ],
+    "colors": [
+      {
+        "name": "18K Gold",
+        "hex": "#E5C158"
+      },
+      {
+        "name": "White Rhodium",
+        "hex": "#EAEAEA"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "composition": "18K Gold Vermeil (3.0 Microns) over 925 Sterling Silver",
+    "fit": "50cm Length / 2.2mm Gauge",
+    "details": [
+      {
+        "label": "Core",
+        "value": "Solid 925 Sterling Silver"
+      },
+      {
+        "label": "Plating",
+        "value": "Heavy 18K Yellow Gold Vermeil"
+      },
+      {
+        "label": "Clasp",
+        "value": "Precision Laser-Engraved Lobster Clasp"
+      },
+      {
+        "label": "Origin",
+        "value": "Handcrafted in Vicenza, Italy"
+      }
+    ],
+    "careInstructions": [
+      "Avoid contact with colognes, lotions, and chlorine",
+      "Store in provided velvet jewelry pouch",
+      "Polish gently with micro-fiber cloth"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "variants": [
+      {
+        "id": "v21-1",
+        "color": "18K Gold",
+        "size": "OS",
+        "sku": "JW-CHN-GLD",
+        "inStock": true,
+        "stockCount": 12
+      },
+      {
+        "id": "v21-2",
+        "color": "White Rhodium",
+        "size": "OS",
+        "sku": "JW-CHN-RHD",
+        "inStock": true,
+        "stockCount": 7
+      }
+    ]
+  },
+  {
+    "id": "prod-22",
+    "slug": "sculptural-onyx-signet-ring",
+    "name": "Brushed Silver Onyx Signet Ring",
+    "subtitle": "Natural black onyx inset in 925 silver",
+    "description": "A modern reinterpretation of the heritage signet ring. Set with a hand-cut natural black onyx gemstone within a solid bevelled sterling silver housing with brushed directional satin flanks.",
+    "price": 499,
+    "compareAtPrice": 999,
+    "category": "jewelry",
+    "collection": "fine-jewelry",
+    "gender": "all",
+    "tags": [
+      "jewelry",
+      "ring",
+      "onyx",
+      "silver",
+      "signet"
+    ],
+    "images": [
+      "/images/products/prod-22/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-22/360/frame-01.webp",
+      "/images/products/prod-22/360/frame-02.webp",
+      "/images/products/prod-22/360/frame-03.webp",
+      "/images/products/prod-22/360/frame-04.webp",
+      "/images/products/prod-22/360/frame-05.webp",
+      "/images/products/prod-22/360/frame-06.webp",
+      "/images/products/prod-22/360/frame-07.webp",
+      "/images/products/prod-22/360/frame-08.webp",
+      "/images/products/prod-22/360/frame-09.webp",
+      "/images/products/prod-22/360/frame-10.webp",
+      "/images/products/prod-22/360/frame-11.webp",
+      "/images/products/prod-22/360/frame-12.webp",
+      "/images/products/prod-22/360/frame-13.webp",
+      "/images/products/prod-22/360/frame-14.webp",
+      "/images/products/prod-22/360/frame-15.webp",
+      "/images/products/prod-22/360/frame-16.webp"
+    ],
+    "colors": [
+      {
+        "name": "Silver & Onyx",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "composition": "Solid 925 Sterling Silver & Natural Grade-A Onyx",
+    "fit": "Standard ring sizing (US 7, 9, 11)",
+    "details": [
+      {
+        "label": "Stone",
+        "value": "Natural Untreated Black Onyx"
+      },
+      {
+        "label": "Finish",
+        "value": "Hand-Brushed Matte Satin with Polished Bezel"
+      },
+      {
+        "label": "Weight",
+        "value": "14.2 grams"
+      }
+    ],
+    "careInstructions": [
+      "Remove before swimming or heavy exercise",
+      "Clean with warm water and soft brush"
+    ],
+    "isFeatured": false,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "variants": [
+      {
+        "id": "v22-1",
+        "color": "Silver & Onyx",
+        "size": "S",
+        "sku": "JW-RNG-S",
+        "inStock": true,
+        "stockCount": 8
+      },
+      {
+        "id": "v22-2",
+        "color": "Silver & Onyx",
+        "size": "M",
+        "sku": "JW-RNG-M",
+        "inStock": true,
+        "stockCount": 14
+      },
+      {
+        "id": "v22-3",
+        "color": "Silver & Onyx",
+        "size": "L",
+        "sku": "JW-RNG-L",
+        "inStock": true,
+        "stockCount": 6
+      }
+    ]
+  },
+  {
+    "id": "prod-23",
+    "slug": "santal-amber-eau-de-parfum",
+    "name": "Santal & Amber Eau de Parfum",
+    "subtitle": "50ml Artisan Botanical Unisex Fragrance",
+    "description": "A rich, smoky blend of Australian sandalwood, cardamom, warm amber, and hints of Tuscan iris. Formulated with 22% concentrated fragrance oils for a 12-hour nuanced sillage.",
+    "price": 799,
+    "compareAtPrice": 1599,
+    "category": "beauty",
+    "collection": "beauty-wellness",
+    "gender": "unisex",
+    "tags": [
+      "beauty",
+      "perfume",
+      "fragrance",
+      "santal",
+      "amber"
+    ],
+    "images": [
+      "/images/products/prod-23/front.webp"
+    ],
+    "view360": [
+      "/images/products/prod-23/360/frame-01.webp",
+      "/images/products/prod-23/360/frame-02.webp",
+      "/images/products/prod-23/360/frame-03.webp",
+      "/images/products/prod-23/360/frame-04.webp",
+      "/images/products/prod-23/360/frame-05.webp",
+      "/images/products/prod-23/360/frame-06.webp",
+      "/images/products/prod-23/360/frame-07.webp",
+      "/images/products/prod-23/360/frame-08.webp",
+      "/images/products/prod-23/360/frame-09.webp",
+      "/images/products/prod-23/360/frame-10.webp",
+      "/images/products/prod-23/360/frame-11.webp",
+      "/images/products/prod-23/360/frame-12.webp",
+      "/images/products/prod-23/360/frame-13.webp",
+      "/images/products/prod-23/360/frame-14.webp",
+      "/images/products/prod-23/360/frame-15.webp",
+      "/images/products/prod-23/360/frame-16.webp"
+    ],
+    "colors": [
+      {
+        "name": "Amber Glass",
+        "hex": "#7E5109"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "composition": "Organic Grain Alcohol, Fragrance (Parfum), Essential Botanical Oils",
+    "fit": "50ml Spray Glass Flacon",
+    "details": [
+      {
+        "label": "Top Notes",
+        "value": "Cardamom, Violet Leaf, Papyrus"
+      },
+      {
+        "label": "Heart Notes",
+        "value": "Tuscan Iris, Cedarwood, Leather"
+      },
+      {
+        "label": "Base Notes",
+        "value": "Australian Sandalwood, Amber Resin"
+      },
+      {
+        "label": "Concentration",
+        "value": "22% Eau de Parfum"
+      }
+    ],
+    "careInstructions": [
+      "Store in cool, dry place away from direct sunlight",
+      "Do not spray near open flame or eyes"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "variants": [
+      {
+        "id": "v23-1",
+        "color": "Amber Glass",
+        "size": "OS",
+        "sku": "BT-EDP-50",
+        "inStock": true,
+        "stockCount": 20
+      }
+    ]
+  },
+  {
+    "id": "prod-24",
+    "slug": "nourishing-botanical-face-oil",
+    "name": "Active Botanical Face Oil",
+    "subtitle": "30ml Cold-Pressed Antioxidant Complex",
+    "description": "An intensive restorative facial elixir formulated with 16 nutrient-dense botanical oils, including rosehip, squalane, marula, and neroli. Delivers instant hydration and a radiant dewy finish without clogging pores.",
+    "price": 499,
+    "compareAtPrice": 999,
+    "category": "beauty",
+    "collection": "beauty-wellness",
+    "gender": "all",
+    "tags": [
+      "beauty",
+      "skincare",
+      "face-oil",
+      "botanical",
+      "glow"
+    ],
+    "images": [
+      "/images/products/prod-24/front.webp",
+      "/images/products/prod-24/detail.webp"
+    ],
+    "colors": [
+      {
+        "name": "Golden Dropper",
+        "hex": "#D4AF37"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "composition": "100% Pure Plant Seed & Fruit Oils",
+    "fit": "30ml UV-Protected Glass Dropper",
+    "details": [
+      {
+        "label": "Active Extracts",
+        "value": "Rosehip, Squalane, Sea Buckthorn, Neroli"
+      },
+      {
+        "label": "Formulation",
+        "value": "100% Vegan & Cruelty Free, No Phthalates"
+      },
+      {
+        "label": "Skin Type",
+        "value": "Suitable for all skin types including sensitive"
+      }
+    ],
+    "careInstructions": [
+      "Press 3-5 drops onto cleansed face and neck morning and evening",
+      "Store below 25°C"
+    ],
+    "isFeatured": false,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "60 mins",
+    "variants": [
+      {
+        "id": "v24-1",
+        "color": "Golden Dropper",
+        "size": "OS",
+        "sku": "BT-OIL-30",
+        "inStock": true,
+        "stockCount": 25
+      }
+    ]
+  },
+  {
+    "id": "prod-25",
+    "slug": "atelier-signature-scented-candle",
+    "name": "Smoked Cedar & Fig Scented Candle",
+    "subtitle": "300g Hand-Poured Mineral & Soy Wax Candle",
+    "description": "Hand-poured in a matte ceramic vessel featuring dual lead-free cotton wicks. Releases grounding aromatic notes of black fig leaf, wild cedarwood, and crushed vetiver with up to 65 hours of clean burn time.",
+    "price": 399,
+    "compareAtPrice": 799,
+    "category": "gifts",
+    "collection": "gifts-and-living",
+    "gender": "all",
+    "tags": [
+      "gifts",
+      "candle",
+      "home",
+      "living",
+      "lifestyle"
+    ],
+    "images": [
+      "/images/products/prod-25/front.webp",
+      "/images/products/prod-25/detail.webp"
+    ],
+    "view360": [
+      "/images/products/prod-25/360/frame-01.webp",
+      "/images/products/prod-25/360/frame-02.webp",
+      "/images/products/prod-25/360/frame-03.webp",
+      "/images/products/prod-25/360/frame-04.webp",
+      "/images/products/prod-25/360/frame-05.webp",
+      "/images/products/prod-25/360/frame-06.webp",
+      "/images/products/prod-25/360/frame-07.webp",
+      "/images/products/prod-25/360/frame-08.webp",
+      "/images/products/prod-25/360/frame-09.webp",
+      "/images/products/prod-25/360/frame-10.webp",
+      "/images/products/prod-25/360/frame-11.webp",
+      "/images/products/prod-25/360/frame-12.webp",
+      "/images/products/prod-25/360/frame-13.webp",
+      "/images/products/prod-25/360/frame-14.webp",
+      "/images/products/prod-25/360/frame-15.webp",
+      "/images/products/prod-25/360/frame-16.webp"
+    ],
+    "colors": [
+      {
+        "name": "Matte Charcoal",
+        "hex": "#222222"
+      },
+      {
+        "name": "Cream Ceramic",
+        "hex": "#F5F2EB"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "composition": "100% Biodegradable Soy & Coconut Wax Blend",
+    "fit": "300g / 65h Burn Time",
+    "details": [
+      {
+        "label": "Wicks",
+        "value": "Double Pure Organic Cotton Wicks"
+      },
+      {
+        "label": "Vessel",
+        "value": "Reusable Matte Ceramic Jar with Dust Lid"
+      },
+      {
+        "label": "Scent Notes",
+        "value": "Black Fig, Cedarwood, Vetiver, Smoked Pine"
+      }
+    ],
+    "careInstructions": [
+      "Trim wicks to 5mm before every burn",
+      "Do not burn for more than 4 consecutive hours"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "variants": [
+      {
+        "id": "v25-1",
+        "color": "Matte Charcoal",
+        "size": "OS",
+        "sku": "GFT-CND-CHR",
+        "inStock": true,
+        "stockCount": 18
+      },
+      {
+        "id": "v25-2",
+        "color": "Cream Ceramic",
+        "size": "OS",
+        "sku": "GFT-CND-CRM",
+        "inStock": true,
+        "stockCount": 15
+      }
+    ]
+  },
+  {
+    "id": "prod-26",
+    "slug": "curated-luxury-gift-hamper",
+    "name": "Curated Silk & Fragrance Gift Set",
+    "subtitle": "Presented in a Rigid Magnetic Gift Box",
+    "description": "The definitive presentation gift box containing a 100% mulberry silk sleep mask, travel Santal & Amber fragrance (15ml), and a pure brass wick trimmer set. Wrapped with an embossed golden ribbon.",
+    "price": 899,
+    "compareAtPrice": 1799,
+    "category": "gifts",
+    "collection": "gifts-and-living",
+    "gender": "all",
+    "tags": [
+      "gifts",
+      "gift-set",
+      "luxury",
+      "silk",
+      "hamper"
+    ],
+    "images": [
+      "/images/products/prod-26/front.webp"
+    ],
+    "colors": [
+      {
+        "name": "Obsidian & Gold",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "sizes": [
+      "OS"
+    ],
+    "composition": "Mulberry Silk, Brass, Fine Fragrance",
+    "fit": "Deluxe Gift Box Presentation",
+    "details": [
+      {
+        "label": "Contents",
+        "value": "Silk Eye Mask + 15ml Travel EDP + Brass Trimmer"
+      },
+      {
+        "label": "Packaging",
+        "value": "Rigid debossed gift box with gold foil bellyband"
+      },
+      {
+        "label": "Complimentary",
+        "value": "Handwritten personalized gift card included"
+      }
+    ],
+    "careInstructions": [
+      "Keep away from direct heat",
+      "Store silk mask inside suede protective sleeve"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "isBestseller": true,
+    "isAvailable": true,
+    "isFastDeliveryEligible": true,
+    "estimatedDeliveryTime": "45 mins",
+    "variants": [
+      {
+        "id": "v26-1",
+        "color": "Obsidian & Gold",
+        "size": "OS",
+        "sku": "GFT-SET-DLX",
+        "inStock": true,
+        "stockCount": 10
+      }
+    ]
+  }
+]

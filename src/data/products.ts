@@ -1,27 +1,7 @@
 import { Product } from "@/types";
-import { OUTERWEAR_PRODUCTS } from "./catalog/outerwear";
-import { TAILORING_KNITWEAR_PRODUCTS } from "./catalog/tailoringKnitwear";
-import { DRESSES_SHIRTS_TROUSERS_PRODUCTS } from "./catalog/dressesShirtsTrousers";
-import { ACCESSORIES_FOOTWEAR_PRODUCTS } from "./catalog/accessoriesFootwear";
-import { DENIM_JEWELRY_PRODUCTS } from "./catalog/denimJewelry";
-import { SHIRTS_EXPANSION_PRODUCTS } from "./catalog/shirtsExpansion";
-import { FOOTWEAR_EXPANSION_PRODUCTS } from "./catalog/footwearExpansion";
-import { JEWELRY_PRODUCTS } from "./catalog/jewelry";
-import { BEAUTY_PRODUCTS } from "./catalog/beauty";
-import { GIFTS_PRODUCTS } from "./catalog/gifts";
+import rawProducts from "./products.json";
 
-export const PRODUCTS: Product[] = [
-  ...OUTERWEAR_PRODUCTS,
-  ...TAILORING_KNITWEAR_PRODUCTS,
-  ...DRESSES_SHIRTS_TROUSERS_PRODUCTS,
-  ...ACCESSORIES_FOOTWEAR_PRODUCTS,
-  ...DENIM_JEWELRY_PRODUCTS,
-  ...SHIRTS_EXPANSION_PRODUCTS,
-  ...FOOTWEAR_EXPANSION_PRODUCTS,
-  ...JEWELRY_PRODUCTS,
-  ...BEAUTY_PRODUCTS,
-  ...GIFTS_PRODUCTS,
-];
+export const PRODUCTS: Product[] = rawProducts as Product[];
 
 export function getProductBySlug(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);
