@@ -12,24 +12,24 @@ interface CampaignSlide {
 
 const CAMPAIGN_SLIDES: CampaignSlide[] = [
   {
-    image: "https://slikk-dev-assets-public.s3.ap-south-1.amazonaws.com/product/e944a1dec0bb41238770522169c4f08e_frame_2085666117.webp",
-    href: "/collections/atelier-autumn",
-    alt: "Super Duper Sale Festive Picks Editorial Campaign",
-  },
-  {
     image: "/nexkart_festive_hero.jpg",
-    href: "/collections/atelier-autumn",
+    href: "/products",
     alt: "Autumn Atelier & Festive Collection Editorial Campaign",
   },
   {
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=88",
-    href: "/collections/women",
+    image: "/images/products/outerwear/prod-01-3.webp",
+    href: "/products?namex=Tokyo%20Talkies",
     alt: "Contemporary Editorial Womenswear Campaign",
   },
   {
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=88",
-    href: "/collections/men",
+    image: "/images/products/outerwear/prod-02-1.webp",
+    href: "/products?namex=Bewakoof",
     alt: "Modern Tailoring & Menswear Campaign",
+  },
+  {
+    image: "/images/products/dresses/prod-08-2.webp",
+    href: "/products?namex=Aadvi%20Fashion",
+    alt: "Evening Luxe & Festive Picks Editorial Campaign",
   },
 ];
 
