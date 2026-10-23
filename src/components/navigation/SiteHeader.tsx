@@ -136,7 +136,7 @@ export function SiteHeader() {
               aria-label="Wishlist"
             >
               <Heart className="h-4 w-4" />
-              <span className="hidden md:inline ml-1">Saved</span>
+              <span className="hidden md:inline ml-1">Wishlist</span>
               {mounted && wishlistCount > 0 && (
                 <span className="absolute 0 top-0.5 right-0.5 flex h-3.5 w-3.5 sm:h-4 sm:w-4 items-center justify-center rounded-full bg-[#FFD629] text-[8px] sm:text-[9px] font-black text-[#171717]">
                   {wishlistCount}

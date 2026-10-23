@@ -3,7 +3,7 @@ import { ArrowUpRight, ShieldCheck, Zap, RotateCcw, Clock } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 border-t border-[#EAEAEA] bg-[#171717] pb-12 pt-16 text-white">
+    <footer className="mt-8 border-t border-[#EAEAEA] bg-[#171717] pb-12 pt-10 text-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Quick Commerce Value Propositions */}
         <div className="grid grid-cols-1 gap-8 border-b border-neutral-800 pb-14 text-xs md:grid-cols-4">
@@ -219,8 +219,69 @@ export function SiteFooter() {
           </div>
         </div>
 
+        {/* Social Media & Trust Bar */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-neutral-800 py-6 sm:flex-row">
+          <div className="flex items-center gap-2 text-xs font-semibold text-neutral-300">
+            <span>Show us some <span className="text-red-500">❤️</span> on our social media:</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* Instagram */}
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-[#FFD629] hover:bg-[#FFD629] hover:text-black transition-colors"
+            >
+              <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </Link>
+
+            {/* Facebook */}
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-[#FFD629] hover:bg-[#FFD629] hover:text-black transition-colors"
+            >
+              <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </Link>
+
+            {/* Twitter / X */}
+            <Link
+              href="https://x.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Twitter X"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-[#FFD629] hover:bg-[#FFD629] hover:text-black transition-colors"
+            >
+              <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </Link>
+
+            {/* YouTube */}
+            <Link
+              href="https://youtube.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-[#FFD629] hover:bg-[#FFD629] hover:text-black transition-colors"
+            >
+              <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-neutral-800 pt-8 text-[11px] text-neutral-400 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-neutral-800 pt-6 text-[11px] text-neutral-400 sm:flex-row">
           <p>© {new Date().getFullYear()} NEXKART COMMERCE TECHNOLOGIES. ALL RIGHTS RESERVED.</p>
           <div className="flex flex-wrap items-center gap-5">
             <span>TERMS &amp; PRIVACY</span>

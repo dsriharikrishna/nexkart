@@ -2,12 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Heart, Eye } from "lucide-react";
+import { Heart, Eye, ShoppingBag, Check } from "lucide-react";
 import { Product } from "@/types";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
-import { fadeUpVariants } from "@/components/ui/motion";
 import { ProductImage } from "./ProductImage";
 
 interface ProductCardProps {
@@ -47,11 +45,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   };
 
   return (
-    <motion.div
-      variants={fadeUpVariants}
-      whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-150/80 bg-white transition-all duration-300 hover:border-neutral-900 hover:shadow-lg"
-    >
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xs">
       {/* Editorial Fashion Product Image (4:5 Portrait Ratio) with Dynamic Price Overlay */}
       <Link
         href={`/products/${product.slug}`}
@@ -64,11 +58,11 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           price={product.price}
           compareAtPrice={product.compareAtPrice}
           priority={priority}
-          imageClassName="group-hover:scale-105"
+          imageClassName=""
         />
 
         {/* Eye Quick View Icon on top right (Slikk style) */}
-        <div className="absolute right-2.5 top-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs transition-transform hover:scale-110">
+        <div className="absolute right-2.5 top-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs">
           <Eye className="h-3.5 w-3.5" />
         </div>
 
@@ -106,19 +100,34 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         </Link>
 
         {/* Quick Add To Bag Strip */}
-        <div className="mt-2 flex items-center justify-between border-t border-neutral-100 pt-1.5 text-[10px]">
+        <div className="mt-2.5 flex items-center justify-between border-t border-neutral-100 pt-2 text-[10px]">
           <span className="text-emerald-700 font-semibold flex items-center gap-1">
-            ⚡ <span>{product.estimatedDeliveryTime || "60 Min Delivery"}</span>
+            ⚡ <span>{product.estimatedDeliveryTime || "60 Min"}</span>
           </span>
           <button
             onClick={handleQuickAdd}
-            className="font-bold uppercase tracking-wider text-[#171717] hover:text-[#FFB800] active:scale-95"
+            className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-black uppercase tracking-wider text-[#171717] shadow-xs cursor-pointer transition-all duration-150 hover:scale-105 active:scale-95 select-none ${
+              addedNotice
+                ? "bg-emerald-500 text-white hover:bg-emerald-600"
+                : "bg-gradient-to-r from-[#FFE566] via-[#FFD629] to-[#FFC400] hover:from-[#FFD629] hover:to-[#FFAE00] border border-[#F0BE00]/50 hover:shadow-sm"
+            }`}
+            aria-label={`Add ${product.name} to cart`}
           >
-            {addedNotice ? "Added" : "+ Add"}
+            {addedNotice ? (
+              <>
+                <Check className="h-3 w-3 stroke-[2.5]" />
+                <span>Added</span>
+              </>
+            ) : (
+              <>
+                <ShoppingBag className="h-3 w-3 stroke-[2.5] fill-[#171717]/10" />
+                <span>Add</span>
+              </>
+            )}
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

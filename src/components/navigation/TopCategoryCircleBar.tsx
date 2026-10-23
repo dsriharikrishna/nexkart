@@ -61,7 +61,7 @@ const CATEGORY_ICONS: CategoryIconItem[] = [
 
 export function TopCategoryCircleBar() {
   return (
-    <div className="w-full border-b border-neutral-100 bg-white py-2 shadow-2xs">
+    <div className="w-full bg-white py-2 shadow-2xs">
       <div className="flex w-full items-center justify-between gap-2 overflow-x-auto px-4 sm:px-6 lg:px-8 scrollbar-none overscroll-x-contain snap-x snap-proximity">
         {CATEGORY_ICONS.map((item) => (
           <Link

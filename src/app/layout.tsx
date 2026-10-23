@@ -45,7 +45,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { TopCategoryCircleBar } from "@/components/navigation/TopCategoryCircleBar";
 import { MobileBottomBar } from "@/components/navigation/MobileBottomBar";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -55,7 +54,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <AnnouncementBar />
           <SiteHeader />
-          <TopCategoryCircleBar />
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <MobileBottomBar />
