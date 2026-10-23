@@ -27,7 +27,7 @@ export function ProductOffersSection() {
 
   return (
     <>
-      <div className="my-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xs">
+      <div className="mt-2 mb-4 rounded-2xl border border-neutral-200/90 bg-white p-4 shadow-xs">
         {/* Top Header */}
         <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
           <div className="flex items-center gap-2">
@@ -51,15 +51,15 @@ export function ProductOffersSection() {
         {/* 2 Featured Amazon/Flipkart Clean Offer Strips */}
         <div className="mt-3 space-y-2.5">
           {/* Offer 1: Bank Card Instant Discount */}
-          <div className="flex items-start justify-between gap-3 rounded-xl bg-neutral-50 p-3 border border-neutral-150">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 rounded-xl bg-neutral-50 p-3 border border-neutral-200/80">
             <div className="flex items-start gap-2.5 min-w-0">
               <CreditCard className="h-4 w-4 shrink-0 text-blue-700 mt-0.5" />
               <div className="flex flex-col min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-blue-800 bg-blue-100/70 rounded px-1.5 py-0.2">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-blue-800 bg-blue-100/70 rounded px-1.5 py-0.5">
                     {primaryOffer.badge}
                   </span>
-                  <span className="text-xs font-bold text-neutral-900 truncate">
+                  <span className="text-xs font-bold text-neutral-900">
                     {primaryOffer.title}
                   </span>
                 </div>
@@ -71,23 +71,23 @@ export function ProductOffersSection() {
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="shrink-0 text-[11px] font-bold text-neutral-500 hover:text-black underline pt-0.5"
+              className="self-end sm:self-center shrink-0 text-[11px] font-bold text-neutral-600 hover:text-black underline active:text-neutral-900"
             >
-              T&amp;C
+              View T&amp;C
             </button>
           </div>
 
           {/* Offer 2: Direct 1-Click Coupon Code */}
           {couponOffer && (
-            <div className="flex items-start justify-between gap-3 rounded-xl bg-[#FFF9D6]/60 p-3 border border-[#FFD629]/60">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 rounded-xl bg-[#FFF9D6]/60 p-3 border border-[#FFD629]/70">
               <div className="flex items-start gap-2.5 min-w-0">
                 <Tag className="h-4 w-4 shrink-0 text-[#B8860B] mt-0.5" />
                 <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-[#171717] bg-[#FFD629] rounded px-1.5 py-0.2">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-[#171717] bg-[#FFD629] rounded px-1.5 py-0.5">
                       Coupon
                     </span>
-                    <span className="text-xs font-bold text-neutral-900 truncate">
+                    <span className="text-xs font-bold text-neutral-900">
                       {couponOffer.title}
                     </span>
                   </div>
@@ -98,36 +98,39 @@ export function ProductOffersSection() {
               </div>
 
               {couponOffer.code && (
-                <button
-                  onClick={() => handleCopyCode(couponOffer.code!)}
-                  className={`shrink-0 inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-mono font-bold transition-all active:scale-95 ${
-                    copiedCode === couponOffer.code
-                      ? "bg-emerald-600 text-white"
-                      : "bg-[#171717] text-[#FFD629] hover:bg-black"
-                  }`}
-                >
-                  {copiedCode === couponOffer.code ? (
-                    <>
-                      <Check className="h-3 w-3 stroke-[3]" />
-                      <span>Copied</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-3 w-3" />
-                      <span>{couponOffer.code}</span>
-                    </>
-                  )}
-                </button>
+                <div className="flex items-center justify-between sm:justify-end gap-2 pt-1 sm:pt-0 border-t sm:border-t-0 border-[#FFD629]/30">
+                  <span className="text-[10px] text-neutral-500 sm:hidden">Tap code to copy:</span>
+                  <button
+                    onClick={() => handleCopyCode(couponOffer.code!)}
+                    className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-mono font-bold transition-all active:scale-95 ${
+                      copiedCode === couponOffer.code
+                        ? "bg-emerald-600 text-white"
+                        : "bg-[#171717] text-[#FFD629] hover:bg-black"
+                    }`}
+                  >
+                    {copiedCode === couponOffer.code ? (
+                      <>
+                        <Check className="h-3 w-3 stroke-[3]" />
+                        <span>Copied</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3 w-3" />
+                        <span>{couponOffer.code}</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               )}
             </div>
           )}
         </div>
       </div>
 
-      {/* Modal: View All Offers & Coupons (Amazon / Flipkart Style Bottom/Center Sheet) */}
+      {/* Modal / Bottom Sheet: View All Offers & Coupons */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
-          <div className="relative w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl max-h-[85vh] flex flex-col">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="relative w-full max-w-lg rounded-t-3xl sm:rounded-3xl bg-white p-5 sm:p-6 shadow-2xl max-h-[85vh] flex flex-col animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 duration-300">
             {/* Modal Header */}
             <div className="flex items-center justify-between pb-4 border-b border-neutral-100">
               <div className="flex items-center gap-2">

@@ -32,9 +32,9 @@ export function ProductGallery({
   const has360 = Boolean(view360 && view360.length >= 8);
 
   return (
-    <div className="flex flex-col-reverse gap-4 md:flex-row lg:col-span-7">
+    <div className="flex flex-col-reverse gap-3 sm:gap-4 md:flex-row lg:sticky lg:top-28">
       {/* Left Thumbnail Column */}
-      <div className="flex shrink-0 gap-3 overflow-x-auto md:w-20 md:flex-col md:overflow-y-auto">
+      <div className="flex shrink-0 gap-2.5 overflow-x-auto md:w-16 md:flex-col md:overflow-y-auto max-h-[520px] scrollbar-thin">
         {images.map((img, idx) => (
           <button
             key={idx}
@@ -42,10 +42,10 @@ export function ProductGallery({
               setActiveTab("gallery");
               onSelectImage(idx);
             }}
-            className={`relative aspect-[4/5] w-16 overflow-hidden rounded-lg border transition-all md:w-full ${
+            className={`relative aspect-[3/4] w-14 shrink-0 overflow-hidden rounded-lg border transition-all md:w-full ${
               activeTab === "gallery" && selectedImageIndex === idx
-                ? "border-neutral-950 ring-2 ring-neutral-950 opacity-100"
-                : "border-neutral-200 opacity-60 hover:opacity-100"
+                ? "border-neutral-950 ring-2 ring-neutral-950 opacity-100 shadow-xs"
+                : "border-neutral-200 opacity-65 hover:opacity-100"
             }`}
           >
             <img
@@ -60,21 +60,21 @@ export function ProductGallery({
         {has360 && (
           <button
             onClick={() => setActiveTab("360")}
-            className={`relative flex aspect-[4/5] w-16 flex-col items-center justify-center rounded-lg border bg-neutral-900 text-white transition-all md:w-full ${
+            className={`relative flex aspect-[3/4] w-14 shrink-0 flex-col items-center justify-center rounded-lg border bg-neutral-900 text-white transition-all md:w-full ${
               activeTab === "360"
                 ? "border-neutral-950 ring-2 ring-[#FFD629] text-[#FFD629]"
                 : "border-neutral-300 opacity-80 hover:opacity-100"
             }`}
             title="Interactive 360° View"
           >
-            <RotateCw className="h-5 w-5 mb-1 animate-spin-slow" />
+            <RotateCw className="h-4 w-4 mb-1 animate-spin-slow" />
             <span className="text-[9px] font-bold uppercase tracking-wider">360°</span>
           </button>
         )}
       </div>
 
-      {/* Main Display Area */}
-      <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-sm">
+      {/* Main Display Area (Compact & Proportional) */}
+      <div className="relative aspect-[3/4] sm:aspect-[4/5] max-h-[520px] flex-1 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-xs">
         {/* Gallery / 360 Tab Toggle Pills */}
         {has360 && (
           <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 rounded-full bg-white/90 p-1 shadow-sm backdrop-blur-md">

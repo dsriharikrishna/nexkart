@@ -97,51 +97,64 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
         <span className="truncate font-medium text-neutral-900">{product.name}</span>
       </nav>
 
-      {/* Main Product Layout: Gallery & Details */}
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
-        {/* Left: Gallery */}
-        <ProductGallery
-          images={product.images}
-          view360={product.view360}
-          productName={product.name}
-          price={product.price}
-          compareAtPrice={product.compareAtPrice}
-          selectedImageIndex={selectedImageIndex}
-          discountBadge={discountBadge}
-          isNew={product.isNew}
-          onSelectImage={setSelectedImageIndex}
-        />
+      {/* Main Product Layout: Gallery & Details (Balanced compact image sizing) */}
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-start">
+        {/* Left: Gallery (Compact & proportional) */}
+        <div className="lg:col-span-6 xl:col-span-5 max-w-md mx-auto w-full lg:max-w-none">
+          <ProductGallery
+            images={product.images}
+            view360={product.view360}
+            productName={product.name}
+            price={product.price}
+            compareAtPrice={product.compareAtPrice}
+            selectedImageIndex={selectedImageIndex}
+            discountBadge={discountBadge}
+            isNew={product.isNew}
+            onSelectImage={setSelectedImageIndex}
+          />
+        </div>
 
         {/* Right: Product Specification & Actions */}
-        <div className="flex flex-col justify-between lg:col-span-5">
+        <div className="flex flex-col justify-between lg:col-span-6 xl:col-span-7">
           <div>
-            <div className="mb-6 border-b border-neutral-200 pb-6">
-              <span className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A059]">
-                NEXKART • {product.composition}
-              </span>
-              <h1 className="mb-2 font-heading text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
+            {/* Main Product Info Header */}
+            <div className="mb-5 rounded-2xl border border-neutral-200/80 bg-white p-5 sm:p-6 shadow-xs">
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF9D6] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#171717] border border-[#FFD629]/50">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#B8860B]" />
+                  Nexkart Exclusive • {product.composition}
+                </span>
+
+                <span className="flex items-center gap-1 text-[11px] font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                  ★ 4.8 <span className="text-neutral-400 font-normal">(128)</span>
+                </span>
+              </div>
+
+              <h1 className="font-heading text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-neutral-950">
                 {product.name}
               </h1>
-              <p className="mb-4 text-xs font-light text-neutral-500">{product.subtitle}</p>
+              <p className="mt-1 text-xs text-neutral-500 leading-relaxed">{product.subtitle}</p>
 
-              {/* Price */}
-              <div className="flex items-baseline gap-3">
-                <span className="text-xl font-bold text-neutral-950">
+              {/* Price Strip */}
+              <div className="mt-4 flex flex-wrap items-baseline gap-2.5 pt-3 border-t border-neutral-100">
+                <span className="text-2xl sm:text-3xl font-black text-neutral-950">
                   {formatCurrency(product.price)}
                 </span>
                 {product.compareAtPrice && product.compareAtPrice > product.price && (
-                  <span className="text-sm text-neutral-400 line-through">
-                    {formatCurrency(product.compareAtPrice)}
-                  </span>
+                  <>
+                    <span className="text-sm font-medium text-neutral-400 line-through">
+                      {formatCurrency(product.compareAtPrice)}
+                    </span>
+                    <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-black text-[#147924]">
+                      {Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)}% OFF
+                    </span>
+                  </>
                 )}
-                <span className="ml-2 bg-emerald-50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-emerald-800">
-                  Free Fast Delivery
+                <span className="ml-auto inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50/80 px-2 py-0.5 rounded-full">
+                  ⚡ Express In Stock
                 </span>
               </div>
             </div>
-
-            {/* Flipkart & Amazon Style Bank Offers, Coupons & Discounts */}
-            <ProductOffersSection />
 
             {/* Action Selectors */}
             <ProductActions
@@ -163,13 +176,13 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
               onCheckPincode={handleCheckPincode}
             />
 
-            {/* Action Buttons: Add to Bag & Wishlist & Checkout */}
-            <div className="mb-6 flex flex-col gap-3 sm:flex-row">
+            {/* Primary Action Buttons */}
+            <div className="mb-5 flex flex-col gap-3 sm:flex-row">
               {isInCart ? (
-                <div className="flex flex-1 flex-col gap-2 sm:flex-row">
+                <div className="flex flex-1 flex-col gap-2.5 sm:flex-row">
                   <Link
                     href="/checkout"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#171717] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#FFD629] shadow-md transition-all hover:bg-black active:scale-[0.98]"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#171717] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-[#FFD629] shadow-md transition-all hover:bg-black active:scale-[0.98]"
                   >
                     <span>Proceed To Checkout</span>
                     <ArrowRight className="h-4 w-4" />
@@ -177,7 +190,7 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
 
                   <button
                     onClick={handleAddToCart}
-                    className="flex items-center justify-center gap-1.5 rounded-full border border-neutral-300 bg-white px-5 py-4 text-xs font-bold uppercase tracking-wider text-neutral-800 transition-colors hover:bg-neutral-50 active:scale-[0.98]"
+                    className="flex items-center justify-center gap-1.5 rounded-xl border border-neutral-300 bg-white px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-800 transition-colors hover:bg-neutral-50 active:scale-[0.98]"
                   >
                     <ShoppingBag className="h-4 w-4" />
                     <span>{addedNotice ? "Added" : "+ Add More"}</span>
@@ -186,15 +199,15 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
               ) : (
                 <button
                   onClick={handleAddToCart}
-                  className={`flex flex-1 items-center justify-center gap-2 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
                     addedNotice
                       ? "bg-[#171717] text-[#FFD629]"
-                      : "bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] text-[#171717] hover:brightness-105"
+                      : "bg-[#171717] text-[#FFD629] hover:bg-black"
                   }`}
                 >
                   {addedNotice ? (
                     <>
-                      <Check className="h-4 w-4" /> Added to Cart
+                      <Check className="h-4 w-4 stroke-[3]" /> Added to Cart
                     </>
                   ) : (
                     <>
@@ -206,35 +219,41 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
 
               <button
                 onClick={() => toggleWishlist(product)}
-                className={`flex items-center justify-center gap-2 rounded-full border px-6 py-4 transition-colors ${
+                className={`flex items-center justify-center gap-2 rounded-xl border px-5 py-3.5 transition-colors ${
                   isInWishlist
                     ? "border-[#171717] bg-[#FFF9D6] text-[#171717]"
-                    : "border-neutral-300 text-neutral-800 hover:border-black hover:bg-neutral-50"
+                    : "border-neutral-200 bg-white text-neutral-700 hover:border-black hover:bg-neutral-50"
                 }`}
                 aria-label="Save item"
               >
-                <Heart className={`h-4 w-4 ${isInWishlist ? "fill-[#171717]" : ""}`} />
-                <span className="hidden text-xs font-medium uppercase tracking-wider sm:inline">
+                <Heart className={`h-4 w-4 ${isInWishlist ? "fill-[#171717] text-[#171717]" : ""}`} />
+                <span className="text-xs font-bold uppercase tracking-wider">
                   {isInWishlist ? "Saved" : "Save"}
                 </span>
               </button>
             </div>
 
-            {/* Delivery & Security Badges */}
-            <div className="space-y-3.5 border-t border-[#EAEAEA] pt-6 text-xs text-[#707070]">
-              <div className="flex items-center gap-3">
-                <Truck className="h-4 w-4 shrink-0 text-[#171717]" />
-                <span>Free delivery on orders over ₹2,500</span>
+            {/* Delivery & Security Trust Strip */}
+            <div className="grid grid-cols-3 gap-2 rounded-xl border border-neutral-200 bg-neutral-50/60 p-3 text-center mb-5">
+              <div className="flex flex-col items-center gap-1">
+                <Truck className="h-4 w-4 text-[#171717]" />
+                <span className="text-[10px] font-bold text-neutral-800">Free Delivery</span>
+                <span className="text-[9px] text-neutral-500">Orders above ₹2,500</span>
               </div>
-              <div className="flex items-center gap-3">
-                <RotateCcw className="h-4 w-4 shrink-0 text-[#171717]" />
-                <span>Easy doorstep size exchange and quick returns</span>
+              <div className="flex flex-col items-center gap-1 border-x border-neutral-200 px-1">
+                <RotateCcw className="h-4 w-4 text-[#171717]" />
+                <span className="text-[10px] font-bold text-neutral-800">Easy Returns</span>
+                <span className="text-[9px] text-neutral-500">Doorstep swap eligible</span>
               </div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-[#171717]" />
-                <span>100% Genuine, verified brand quality</span>
+              <div className="flex flex-col items-center gap-1">
+                <ShieldCheck className="h-4 w-4 text-[#171717]" />
+                <span className="text-[10px] font-bold text-neutral-800">100% Genuine</span>
+                <span className="text-[9px] text-neutral-500">Direct from brand hub</span>
               </div>
             </div>
+
+            {/* Flipkart & Amazon Style Bank Offers, Coupons & Discounts (Positioned downside) */}
+            <ProductOffersSection />
           </div>
         </div>
       </div>
