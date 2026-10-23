@@ -46,6 +46,7 @@ export const metadata: Metadata = {
 };
 
 import { MobileBottomBar } from "@/components/navigation/MobileBottomBar";
+import { ToastContainer } from "@/components/ui/ToastContainer";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileBottomBar />
           <CartDrawer />
           <SearchModal />
+          <ToastContainer />
         </Providers>
       </body>
     </html>

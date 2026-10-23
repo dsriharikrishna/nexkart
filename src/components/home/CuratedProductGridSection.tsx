@@ -39,7 +39,7 @@ export function CuratedProductGridSection({ products }: CuratedProductGridSectio
       default:
         return p.isFeatured || p.isBestseller;
     }
-  }).slice(0, 8);
+  }).slice(0, 10);
 
   return (
     <section className="w-full bg-white py-3 sm:py-4" aria-label="Curated Products">
@@ -71,11 +71,15 @@ export function CuratedProductGridSection({ products }: CuratedProductGridSectio
           </div>
         </div>
 
-        {/* Static Product Cards Grid without animation */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        {/* 5-Column Product Cards Grid with reduced card height */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
           {displayedProducts.map((product, index) => (
             <div key={product.id}>
-              <ProductCard product={product} priority={index < 4} />
+              <ProductCard
+                product={product}
+                priority={index < 5}
+                aspectRatio="aspect-[3/4]"
+              />
             </div>
           ))}
         </div>

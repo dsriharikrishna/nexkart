@@ -47,7 +47,7 @@ export const useCartStore = create<CartStore>()(
               image: liveImage,
               quantity: newQty,
             };
-            return { items: updatedItems, isOpen: true };
+            return { items: updatedItems };
           } else {
             const newItem: CartItem = {
               id: itemId,
@@ -61,7 +61,7 @@ export const useCartStore = create<CartStore>()(
               quantity: Math.min(quantity, maxStock),
               maxStock,
             };
-            return { items: [...state.items, newItem], isOpen: true };
+            return { items: [...state.items, newItem] };
           }
         });
       },

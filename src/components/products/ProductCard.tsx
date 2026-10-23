@@ -2,18 +2,24 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Heart, Eye, ShoppingBag, Check } from "lucide-react";
+import { Heart, Eye, ShoppingBag, Check, ArrowRight } from "lucide-react";
 import { Product } from "@/types";
 import { useWishlistStore } from "@/stores/wishlistStore";
 import { useCartStore } from "@/stores/cartStore";
+import { useToastStore } from "@/stores/toastStore";
 import { ProductImage } from "./ProductImage";
 
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  aspectRatio?: string;
 }
 
-export function ProductCard({ product, priority = false }: ProductCardProps) {
+export function ProductCard({
+  product,
+  priority = false,
+  aspectRatio = "aspect-[4/5]",
+}: ProductCardProps) {
   const [mounted, setMounted] = useState(false);
   const [addedNotice, setAddedNotice] = useState(false);
 
@@ -25,6 +31,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   const isInWishlist = useWishlistStore((state) => state.isInWishlist(product.id));
   const isSaved = mounted && isInWishlist;
   const addItem = useCartStore((state) => state.addItem);
+  const cartItems = useCartStore((state) => state.items);
+  const isInCart = mounted && cartItems.some((item) => item.productId === product.id);
+  const showToast = useToastStore((state) => state.showToast);
 
   const defaultVariant = product.variants.find((v) => v.inStock) || product.variants[0];
 
@@ -34,6 +43,12 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
     if (defaultVariant) {
       addItem(product, defaultVariant.color, defaultVariant.size, 1);
       setAddedNotice(true);
+      showToast({
+        title: "Added to Cart!",
+        description: product.name,
+        actionLabel: "Checkout",
+        actionHref: "/checkout",
+      });
       setTimeout(() => setAddedNotice(false), 1800);
     }
   };
@@ -46,10 +61,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xs">
-      {/* Editorial Fashion Product Image (4:5 Portrait Ratio) with Dynamic Price Overlay */}
+      {/* Editorial Fashion Product Image with Dynamic Price Overlay */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[4/5] overflow-hidden bg-neutral-100"
+        className={`relative block ${aspectRatio} overflow-hidden bg-neutral-100`}
         aria-label={product.name}
       >
         <ProductImage
@@ -65,12 +80,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         <div className="absolute right-2.5 top-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-white/90 backdrop-blur-xs">
           <Eye className="h-3.5 w-3.5" />
         </div>
-
-        {/* Try & Buy Black Sticker Pill at bottom left of image (Slikk style)
-        <div className="absolute bottom-2.5 left-2.5 z-10 rounded-md bg-black px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-xs">
-          Try &amp; Buy
-        </div> */}
-
+        
         {/* Heart Wishlist Icon at bottom right of image (Slikk style) */}
         <button
           onClick={handleWishlistToggle}
@@ -104,27 +114,38 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           <span className="text-emerald-700 font-semibold flex items-center gap-1">
             ⚡ <span>{product.estimatedDeliveryTime || "60 Min"}</span>
           </span>
-          <button
-            onClick={handleQuickAdd}
-            className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-black uppercase tracking-wider text-[#171717] shadow-xs cursor-pointer transition-all duration-150 hover:scale-105 active:scale-95 select-none ${
-              addedNotice
-                ? "bg-emerald-500 text-white hover:bg-emerald-600"
-                : "bg-gradient-to-r from-[#FFE566] via-[#FFD629] to-[#FFC400] hover:from-[#FFD629] hover:to-[#FFAE00] border border-[#F0BE00]/50 hover:shadow-sm"
-            }`}
-            aria-label={`Add ${product.name} to cart`}
-          >
-            {addedNotice ? (
-              <>
-                <Check className="h-3 w-3 stroke-[2.5]" />
-                <span>Added</span>
-              </>
-            ) : (
-              <>
-                <ShoppingBag className="h-3 w-3 stroke-[2.5] fill-[#171717]/10" />
-                <span>Add</span>
-              </>
-            )}
-          </button>
+          {isInCart ? (
+            <Link
+              href="/checkout"
+              className="inline-flex items-center gap-1 rounded-lg bg-[#171717] px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-[#FFD629] shadow-xs cursor-pointer transition-all duration-150 hover:bg-black active:scale-95 select-none"
+              aria-label={`Checkout ${product.name}`}
+            >
+              <span>Checkout</span>
+              <ArrowRight className="h-3 w-3 stroke-[2.5]" />
+            </Link>
+          ) : (
+            <button
+              onClick={handleQuickAdd}
+              className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-black uppercase tracking-wider text-[#171717] shadow-xs cursor-pointer transition-all duration-150 hover:scale-105 active:scale-95 select-none ${
+                addedNotice
+                  ? "bg-emerald-500 text-white hover:bg-emerald-600"
+                  : "bg-gradient-to-r from-[#FFE566] via-[#FFD629] to-[#FFC400] hover:from-[#FFD629] hover:to-[#FFAE00] border border-[#F0BE00]/50 hover:shadow-sm"
+              }`}
+              aria-label={`Add ${product.name} to cart`}
+            >
+              {addedNotice ? (
+                <>
+                  <Check className="h-3 w-3 stroke-[2.5]" />
+                  <span>Added</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingBag className="h-3 w-3 stroke-[2.5] fill-[#171717]/10" />
+                  <span>Add</span>
+                </>
+              )}
+            </button>
+          )}
         </div>
       </div>
     </div>

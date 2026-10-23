@@ -10,17 +10,20 @@ import {
   RotateCcw,
   Check,
   ChevronRight,
+  ArrowRight,
 } from "lucide-react";
 import { Product, ProductSize } from "@/types";
 import { formatCurrency, formatDiscount } from "@/lib/utils";
 import { useCartStore } from "@/stores/cartStore";
 import { useWishlistStore } from "@/stores/wishlistStore";
+import { useToastStore } from "@/stores/toastStore";
 import { checkPincodeServiceability, PincodeServiceability } from "@/data/pincodes";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { motion } from "framer-motion";
 import { luxuryTransition } from "@/components/ui/motion";
 import { ProductGallery } from "./detail/ProductGallery";
 import { ProductActions } from "./detail/ProductActions";
+import { ProductOffersSection } from "./detail/ProductOffersSection";
 import { ProductSizeGuideModal } from "./detail/ProductSizeGuideModal";
 
 interface ProductDetailClientProps {
@@ -40,8 +43,11 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
   const [pincodeResult, setPincodeResult] = useState<PincodeServiceability | null>(null);
 
   const addItem = useCartStore((state) => state.addItem);
+  const cartItems = useCartStore((state) => state.items);
+  const isInCart = cartItems.some((item) => item.productId === product.id);
   const toggleWishlist = useWishlistStore((state) => state.toggleWishlist);
   const isInWishlist = useWishlistStore((state) => state.isInWishlist(product.id));
+  const showToast = useToastStore((state) => state.showToast);
 
   const handleCheckPincode = () => {
     if (!pincodeInput || pincodeInput.length < 6) return;
@@ -59,6 +65,12 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
     setSizeError(false);
     addItem(product, selectedColor, selectedSize, quantity);
     setAddedNotice(true);
+    showToast({
+      title: "Added to Cart!",
+      description: `${product.name} (${selectedSize})`,
+      actionLabel: "Checkout",
+      actionHref: "/checkout",
+    });
     setTimeout(() => setAddedNotice(false), 2500);
   };
 
@@ -128,6 +140,9 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
               </div>
             </div>
 
+            {/* Flipkart & Amazon Style Bank Offers, Coupons & Discounts */}
+            <ProductOffersSection />
+
             {/* Action Selectors */}
             <ProductActions
               product={product}
@@ -148,26 +163,46 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
               onCheckPincode={handleCheckPincode}
             />
 
-            {/* Action Buttons: Add to Bag & Wishlist */}
+            {/* Action Buttons: Add to Bag & Wishlist & Checkout */}
             <div className="mb-6 flex flex-col gap-3 sm:flex-row">
-              <button
-                onClick={handleAddToCart}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
-                  addedNotice
-                    ? "bg-[#171717] text-[#FFD629]"
-                    : "bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] text-[#171717] hover:brightness-105"
-                }`}
-              >
-                {addedNotice ? (
-                  <>
-                    <Check className="h-4 w-4" /> Added to Cart
-                  </>
-                ) : (
-                  <>
-                    <ShoppingBag className="h-4 w-4" /> Add to Cart
-                  </>
-                )}
-              </button>
+              {isInCart ? (
+                <div className="flex flex-1 flex-col gap-2 sm:flex-row">
+                  <Link
+                    href="/checkout"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#171717] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#FFD629] shadow-md transition-all hover:bg-black active:scale-[0.98]"
+                  >
+                    <span>Proceed To Checkout</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+
+                  <button
+                    onClick={handleAddToCart}
+                    className="flex items-center justify-center gap-1.5 rounded-full border border-neutral-300 bg-white px-5 py-4 text-xs font-bold uppercase tracking-wider text-neutral-800 transition-colors hover:bg-neutral-50 active:scale-[0.98]"
+                  >
+                    <ShoppingBag className="h-4 w-4" />
+                    <span>{addedNotice ? "Added" : "+ Add More"}</span>
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={handleAddToCart}
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] shadow-md transition-all active:scale-[0.98] ${
+                    addedNotice
+                      ? "bg-[#171717] text-[#FFD629]"
+                      : "bg-gradient-to-r from-[#FFD629] via-[#FFC400] to-[#FFB800] text-[#171717] hover:brightness-105"
+                  }`}
+                >
+                  {addedNotice ? (
+                    <>
+                      <Check className="h-4 w-4" /> Added to Cart
+                    </>
+                  ) : (
+                    <>
+                      <ShoppingBag className="h-4 w-4" /> Add to Cart
+                    </>
+                  )}
+                </button>
+              )}
 
               <button
                 onClick={() => toggleWishlist(product)}

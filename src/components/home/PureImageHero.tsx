@@ -105,7 +105,7 @@ export function PureImageHero() {
     >
       <div className="w-full px-0 sm:px-6 lg:px-8">
         {/* Full-bleed edge-to-edge campaign display with human editorial vignette */}
-        <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9] w-full max-h-[75vh] overflow-hidden rounded-none sm:rounded-3xl shadow-xs bg-neutral-950">
+        <div className="relative aspect-[4/5] sm:aspect-[16/9] w-full overflow-hidden rounded-none sm:rounded-3xl shadow-xs bg-neutral-950">
           {CAMPAIGN_SLIDES.map((slide, index) => {
             const isActive = index === currentIndex;
             return (
@@ -121,7 +121,7 @@ export function PureImageHero() {
                 <img
                   src={slide.image}
                   alt={slide.alt}
-                  className="h-full w-full object-cover object-center transform scale-100 transition-transform duration-10000 ease-out hover:scale-105"
+                  className="h-full w-full object-cover object-[center_20%] sm:object-center transform scale-100 transition-transform duration-10000 ease-out hover:scale-105"
                   loading={index === 0 ? "eager" : "lazy"}
                 />
 
