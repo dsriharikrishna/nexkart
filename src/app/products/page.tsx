@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
@@ -11,19 +11,33 @@ function SlikkProductListingContent() {
   const searchParams = useSearchParams();
   const rawCategory = searchParams.get("category") || "all";
   const rawGender = searchParams.get("gender") || "all";
-  const bannerName =
-    searchParams.get("namex") ||
-    searchParams.get("q") ||
-    (rawCategory !== "all" ? rawCategory.toUpperCase() : "All Products");
+  const rawBrand = searchParams.get("namex") || "all";
+  const searchQuery = searchParams.get("q") || "";
+
+  // Dynamic Page Title
+  const pageTitle = useMemo(() => {
+    if (searchQuery) return `Search: "${searchQuery}"`;
+    if (rawBrand !== "all") return rawBrand;
+    if (rawCategory !== "all") return rawCategory;
+    if (rawGender !== "all") return `${rawGender}'s Collection`;
+    return "All Products";
+  }, [searchQuery, rawBrand, rawCategory, rawGender]);
 
   // Filters State
   const [selectedCategory, setSelectedCategory] = useState<string>(rawCategory);
   const [selectedGender, setSelectedGender] = useState<string>(rawGender);
-  const [selectedBrand, setSelectedBrand] = useState<string>("all");
+  const [selectedBrand, setSelectedBrand] = useState<string>(rawBrand);
   const [selectedPriceMax, setSelectedPriceMax] = useState<number>(100000);
   const [sortBy, setSortBy] = useState<
     "featured" | "price-asc" | "price-desc" | "newest"
   >("featured");
+
+  // Keep state perfectly synchronized whenever the URL query params change (e.g. clicking category circles or banners)
+  useEffect(() => {
+    setSelectedCategory(searchParams.get("category") || "all");
+    setSelectedGender(searchParams.get("gender") || "all");
+    setSelectedBrand(searchParams.get("namex") || "all");
+  }, [searchParams]);
 
   // Accordion Expand States
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -52,22 +66,26 @@ function SlikkProductListingContent() {
   const filteredProducts = useMemo(() => {
     let list = [...PRODUCTS];
 
-    if (bannerName && bannerName !== "All Products" && !searchParams.get("category")) {
-      const q = bannerName.toLowerCase();
-      const match = list.filter(
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter(
         (p) =>
           p.name.toLowerCase().includes(q) ||
           p.category.toLowerCase().includes(q) ||
-          p.tags.some((t) => t.toLowerCase().includes(q)) ||
+          p.description.toLowerCase().includes(q) ||
+          (p.tags && p.tags.some((t) => t.toLowerCase().includes(q))) ||
           (p.brand && p.brand.toLowerCase().includes(q))
       );
-      if (match.length > 0) list = match;
     }
 
     if (selectedCategory !== "all") {
-      list = list.filter(
-        (p) => p.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+      const targetCat = selectedCategory.toLowerCase().trim();
+      list = list.filter((p) => {
+        const pCat = p.category.toLowerCase();
+        if (pCat === targetCat) return true;
+        if (p.tags && p.tags.some((t) => t.toLowerCase() === targetCat)) return true;
+        return false;
+      });
     }
 
     if (selectedGender !== "all") {
@@ -80,10 +98,13 @@ function SlikkProductListingContent() {
     }
 
     if (selectedBrand !== "all") {
+      const b = selectedBrand.toLowerCase().trim();
       list = list.filter(
         (p) =>
-          (p.brand && p.brand.toLowerCase() === selectedBrand.toLowerCase()) ||
-          p.category.toLowerCase().includes(selectedBrand.toLowerCase())
+          (p.brand && p.brand.toLowerCase().includes(b)) ||
+          p.name.toLowerCase().includes(b) ||
+          (p.tags && p.tags.some((t) => t.toLowerCase().includes(b))) ||
+          p.category.toLowerCase().includes(b)
       );
     }
 
@@ -104,7 +125,7 @@ function SlikkProductListingContent() {
     }
 
     return list;
-  }, [bannerName, searchParams, selectedCategory, selectedGender, selectedBrand, selectedPriceMax, sortBy]);
+  }, [searchQuery, selectedCategory, selectedGender, selectedBrand, selectedPriceMax, sortBy]);
 
   return (
     <div className="w-full min-h-screen bg-white text-[#171717]">
@@ -147,7 +168,7 @@ function SlikkProductListingContent() {
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-neutral-100 pb-4">
               <div>
                 <h1 className="font-heading text-xl sm:text-2xl font-black text-[#171717] tracking-tight capitalize">
-                  {selectedCategory !== "all" ? selectedCategory : bannerName}
+                  {selectedCategory !== "all" ? selectedCategory : pageTitle}
                 </h1>
                 <p className="mt-0.5 text-xs text-neutral-500 font-medium">
                   {filteredProducts.length} items

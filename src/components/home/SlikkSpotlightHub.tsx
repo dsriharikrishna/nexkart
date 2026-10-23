@@ -98,27 +98,24 @@ export function SlikkSpotlightHub() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <motion.div variants={fadeUpVariants} whileHover={{ y: -4, transition: { duration: 0.25 } }}>
             <Link
-              href="/products?namex=Bewakoof"
-              className="group relative flex h-44 sm:h-52 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
+              href="/products?namex=The%20Souled%20Store"
+              className="group relative flex h-48 sm:h-56 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
             >
               <img
-                src="/images/products/prod-10/front.webp"
-                alt="Bewakoof Official Store"
-                className="absolute right-0 top-0 h-full w-3/5 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                src="/images/brand_spotlight_1.jpg"
+                alt="Pop Culture Graphic Tees & Streetwear"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-              <div className="relative z-10 flex flex-col justify-between h-full">
-                <div>
-                  <span className="rounded-full bg-[#FFD629] px-2.5 py-0.5 text-[10px] font-black uppercase text-[#171717]">
-                    Up to 70% Off
-                  </span>
-                  <h3 className="mt-3 font-heading text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-                    Bewakoof
-                  </h3>
-                  <p className="mt-1 text-xs text-neutral-300">Everyday casuals, graphic tees &amp; denim</p>
-                </div>
-                <span className="text-xs font-bold text-[#FFD629] group-hover:underline flex items-center gap-1">
-                  Shop Collection <ArrowRight className="h-3.5 w-3.5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="relative z-10 flex flex-col justify-end h-full">
+                <span className="w-fit rounded-full bg-[#FFD629] px-2.5 py-0.5 text-[10px] font-black uppercase text-[#171717]">
+                  Up to 70% Off • Pop Drops
+                </span>
+                <h3 className="mt-2 font-heading text-xl sm:text-2xl font-black uppercase tracking-tight">
+                  The Souled Store
+                </h3>
+                <span className="mt-1 text-xs font-bold text-[#FFD629] group-hover:underline flex items-center gap-1">
+                  Shop Drip <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
             </Link>
@@ -126,27 +123,24 @@ export function SlikkSpotlightHub() {
 
           <motion.div variants={fadeUpVariants} whileHover={{ y: -4, transition: { duration: 0.25 } }}>
             <Link
-              href="/products?namex=TIGC"
-              className="group relative flex h-44 sm:h-52 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
+              href="/products?namex=Snitch"
+              className="group relative flex h-48 sm:h-56 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white shadow-xs transition-all hover:border-[#FFD629] hover:shadow-lg block"
             >
               <img
-                src="/images/products/prod-02/front.webp"
-                alt="The Indian Garage Co Store"
-                className="absolute right-0 top-0 h-full w-3/5 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                src="/images/brand_spotlight_2.jpg"
+                alt="Snitch Streetwear Brand Spotlight"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-              <div className="relative z-10 flex flex-col justify-between h-full">
-                <div>
-                  <span className="rounded-full bg-white px-2.5 py-0.5 text-[10px] font-black uppercase text-[#171717]">
-                    Min 60% Off
-                  </span>
-                  <h3 className="mt-3 font-heading text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-                    The Indian Garage Co
-                  </h3>
-                  <p className="mt-1 text-xs text-neutral-300">Layering jackets, rugged shirts &amp; trousers</p>
-                </div>
-                <span className="text-xs font-bold text-[#FFD629] group-hover:underline flex items-center gap-1">
-                  Shop Collection <ArrowRight className="h-3.5 w-3.5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="relative z-10 flex flex-col justify-end h-full">
+                <span className="w-fit rounded-full bg-white px-2.5 py-0.5 text-[10px] font-black uppercase text-[#171717]">
+                  Min 60% Off • Urban Fits
+                </span>
+                <h3 className="mt-2 font-heading text-xl sm:text-2xl font-black uppercase tracking-tight">
+                  Snitch Official
+                </h3>
+                <span className="mt-1 text-xs font-bold text-[#FFD629] group-hover:underline flex items-center gap-1">
+                  Shop Streetwear <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
             </Link>

@@ -368,7 +368,9 @@
     "price": 1999,
     "compareAtPrice": 3999,
     "images": [
-      "/images/products/prod-04/front.webp"
+      "/images/products/prod-04/front.webp",
+      "/images/products/prod-04/back.webp",
+      "/images/products/prod-04/lifestyle.webp"
     ],
     "colors": [
       {
@@ -469,7 +471,9 @@
     "price": 2499,
     "compareAtPrice": 4999,
     "images": [
-      "/images/products/prod-05/front.webp"
+      "/images/products/prod-05/front.webp",
+      "/images/products/prod-05/back.webp",
+      "/images/products/prod-05/lifestyle.webp"
     ],
     "colors": [
       {
@@ -561,7 +565,9 @@
     "price": 1499,
     "compareAtPrice": 2999,
     "images": [
-      "/images/products/prod-06/front.webp"
+      "/images/products/prod-06/front.webp",
+      "/images/products/prod-06/back.webp",
+      "/images/products/prod-06/lifestyle.webp"
     ],
     "colors": [
       {
@@ -660,7 +666,9 @@
     "price": 999,
     "compareAtPrice": 1999,
     "images": [
-      "/images/products/prod-07/front.webp"
+      "/images/products/prod-07/front.webp",
+      "/images/products/prod-07/back.webp",
+      "/images/products/prod-07/lifestyle.webp"
     ],
     "colors": [
       {
@@ -750,7 +758,9 @@
     "price": 1799,
     "compareAtPrice": 3599,
     "images": [
-      "/images/products/prod-08/front.webp"
+      "/images/products/prod-08/front.webp",
+      "/images/products/prod-08/back.webp",
+      "/images/products/prod-08/detail.webp"
     ],
     "colors": [
       {
@@ -848,7 +858,8 @@
     "compareAtPrice": 2399,
     "images": [
       "/images/products/prod-09/front.webp",
-      "/images/products/prod-09/back.webp"
+      "/images/products/prod-09/back.webp",
+      "/images/products/prod-09/lifestyle.webp"
     ],
     "colors": [
       {
@@ -921,7 +932,9 @@
     "price": 699,
     "compareAtPrice": 1399,
     "images": [
-      "/images/products/prod-10/front.webp"
+      "/images/products/prod-10/front.webp",
+      "/images/products/prod-10/back.webp",
+      "/images/products/prod-10/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1020,7 +1033,9 @@
     "price": 1099,
     "compareAtPrice": 2199,
     "images": [
-      "/images/products/prod-11/front.webp"
+      "/images/products/prod-11/front.webp",
+      "/images/products/prod-11/back.webp",
+      "/images/products/prod-11/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1118,7 +1133,8 @@
     "compareAtPrice": 2999,
     "images": [
       "/images/products/prod-12/front.webp",
-      "/images/products/prod-12/detail.webp"
+      "/images/products/prod-12/detail.webp",
+      "/images/products/prod-12/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1208,7 +1224,9 @@
     "price": 1399,
     "compareAtPrice": 2799,
     "images": [
-      "/images/products/prod-13/front.webp"
+      "/images/products/prod-13/front.webp",
+      "/images/products/prod-13/back.webp",
+      "/images/products/prod-13/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1307,7 +1325,8 @@
     "compareAtPrice": 1399,
     "images": [
       "/images/products/prod-14/front.webp",
-      "/images/products/prod-14/detail.webp"
+      "/images/products/prod-14/detail.webp",
+      "/images/products/prod-14/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1400,7 +1419,8 @@
     ],
     "images": [
       "/images/products/prod-15/front.webp",
-      "/images/products/prod-15/back.webp"
+      "/images/products/prod-15/back.webp",
+      "/images/products/prod-15/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1535,7 +1555,9 @@
       "cuff"
     ],
     "images": [
-      "/images/products/prod-16/front.webp"
+      "/images/products/prod-16/front.webp",
+      "/images/products/prod-16/detail.webp",
+      "/images/products/prod-16/lifestyle.webp"
     ],
     "view360": [
       "/images/products/prod-16/360/frame-01.webp",
@@ -1664,7 +1686,9 @@
     "price": 799,
     "compareAtPrice": 1599,
     "images": [
-      "/images/products/prod-17/front.webp"
+      "/images/products/prod-17/front.webp",
+      "/images/products/prod-17/back.webp",
+      "/images/products/prod-17/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1780,7 +1804,8 @@
     "compareAtPrice": 1799,
     "images": [
       "/images/products/prod-18/front.webp",
-      "/images/products/prod-18/back.webp"
+      "/images/products/prod-18/back.webp",
+      "/images/products/prod-18/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1879,7 +1904,9 @@
     "price": 1299,
     "compareAtPrice": 2599,
     "images": [
-      "/images/products/prod-19/front.webp"
+      "/images/products/prod-19/front.webp",
+      "/images/products/prod-19/back.webp",
+      "/images/products/prod-19/lifestyle.webp"
     ],
     "colors": [
       {
@@ -1977,7 +2004,9 @@
     "price": 1899,
     "compareAtPrice": 3799,
     "images": [
-      "/images/products/prod-20/front.webp"
+      "/images/products/prod-20/front.webp",
+      "/images/products/prod-20/back.webp",
+      "/images/products/prod-20/lifestyle.webp"
     ],
     "colors": [
       {
@@ -2082,7 +2111,9 @@
       "fine-jewelry"
     ],
     "images": [
-      "/images/products/prod-21/front.webp"
+      "/images/products/prod-21/front.webp",
+      "/images/products/prod-21/detail.webp",
+      "/images/products/prod-21/lifestyle.webp"
     ],
     "view360": [
       "/images/products/prod-21/360/frame-01.webp",
@@ -2184,7 +2215,9 @@
       "signet"
     ],
     "images": [
-      "/images/products/prod-22/front.webp"
+      "/images/products/prod-22/front.webp",
+      "/images/products/prod-22/detail.webp",
+      "/images/products/prod-22/lifestyle.webp"
     ],
     "view360": [
       "/images/products/prod-22/360/frame-01.webp",
@@ -2287,7 +2320,9 @@
       "amber"
     ],
     "images": [
-      "/images/products/prod-23/front.webp"
+      "/images/products/prod-23/front.webp",
+      "/images/products/prod-23/detail.webp",
+      "/images/products/prod-23/lifestyle.webp"
     ],
     "view360": [
       "/images/products/prod-23/360/frame-01.webp",
@@ -2377,7 +2412,8 @@
     ],
     "images": [
       "/images/products/prod-24/front.webp",
-      "/images/products/prod-24/detail.webp"
+      "/images/products/prod-24/detail.webp",
+      "/images/products/prod-24/lifestyle.webp"
     ],
     "colors": [
       {
@@ -2445,7 +2481,8 @@
     ],
     "images": [
       "/images/products/prod-25/front.webp",
-      "/images/products/prod-25/detail.webp"
+      "/images/products/prod-25/detail.webp",
+      "/images/products/prod-25/lifestyle.webp"
     ],
     "view360": [
       "/images/products/prod-25/360/frame-01.webp",
@@ -2542,7 +2579,9 @@
       "hamper"
     ],
     "images": [
-      "/images/products/prod-26/front.webp"
+      "/images/products/prod-26/front.webp",
+      "/images/products/prod-26/back.webp",
+      "/images/products/prod-26/lifestyle.webp"
     ],
     "colors": [
       {
