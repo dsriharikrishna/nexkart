@@ -22,13 +22,13 @@ export function MobileBottomBar() {
     { label: "Home", href: "/", icon: Home },
     { label: "Categories", href: "/categories", icon: Grid },
     { label: "Discover", href: "/products", icon: Compass },
-    { label: "Saved", href: "/wishlist", icon: Heart, count: mounted ? wishlistCount : 0 },
+    { label: "Wishlist", href: "/wishlist", icon: Heart, count: mounted ? wishlistCount : 0 },
   ];
 
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-neutral-200/80 bg-white/95 px-2 backdrop-blur-md transition-all lg:hidden"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-neutral-200 bg-white px-2 shadow-lg transition-all lg:hidden"
       style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom))" }}
     >
       <div className="mx-auto flex h-14 max-w-md items-center justify-around">

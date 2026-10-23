@@ -6,8 +6,8 @@ export function HyderabadBrandBanner() {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Section Heading: Left-aligned and capitalized without description */}
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#171717]">
-            HYDERABAD&apos;S FASTEST DELIVERY
+          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#171717]">
+            Hyderabad&apos;s Fastest Delivery
           </h2>
         </div>
 

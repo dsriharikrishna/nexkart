@@ -102,8 +102,8 @@ export function SuperhitsOnSaleSection() {
       {/* Editorial Header */}
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#171717]">
-            SUPERHITS ON SALE
+          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#171717]">
+            Superhits On Sale
           </h2>
           <span className="hidden sm:inline-block rounded-full bg-red-100 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-red-700">
             Top Brands

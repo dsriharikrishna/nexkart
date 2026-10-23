@@ -1,9 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Tag } from "lucide-react";
-import { motion } from "framer-motion";
-import { fadeUpVariants, staggerContainerVariants } from "@/components/ui/motion";
 
 export interface BudgetTile {
   title: string;
@@ -60,8 +56,8 @@ export function BudgetCardSection() {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Clean Left-Aligned Header */}
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="font-heading text-xl sm:text-2xl font-black uppercase tracking-tight text-[#171717]">
-            POCKET-FRIENDLY STEALS
+          <h2 className="font-heading text-xl sm:text-2xl font-black tracking-tight text-[#171717]">
+            Pocket-Friendly Steals
           </h2>
 
           <Link

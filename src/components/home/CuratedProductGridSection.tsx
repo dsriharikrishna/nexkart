@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { fadeUpVariants, staggerContainerVariants } from "@/components/ui/motion";
+import { ArrowRight } from "lucide-react";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Product } from "@/types";
 
@@ -48,8 +46,8 @@ export function CuratedProductGridSection({ products }: CuratedProductGridSectio
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Clean Left-Aligned Header */}
         <div className="mb-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <h2 className="font-heading text-xl sm:text-2xl font-black uppercase tracking-tight text-[#171717]">
-            HOTTEST DROPS ON NEXKART
+          <h2 className="font-heading text-xl sm:text-2xl font-black tracking-tight text-[#171717]">
+            Hottest Drops On Nexkart
           </h2>
 
           {/* Interactive Segment Tabs */}

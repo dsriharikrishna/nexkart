@@ -1,8 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeUpVariants, staggerContainerVariants } from "@/components/ui/motion";
 import { ArrowRight } from "lucide-react";
 
 export interface OccasionItem {
@@ -63,8 +59,8 @@ export function OccasionsSection() {
     <section className="w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3" aria-label="Occasions Beyond Festivals">
       {/* Clean Left-Aligned Header */}
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="font-heading text-xl sm:text-2xl font-black uppercase tracking-tight text-[#171717]">
-          OCCASIONS BEYOND FESTIVALS
+        <h2 className="font-heading text-xl sm:text-2xl font-black tracking-tight text-[#171717]">
+          Occasions Beyond Festivals
         </h2>
         <Link
           href="/products"
