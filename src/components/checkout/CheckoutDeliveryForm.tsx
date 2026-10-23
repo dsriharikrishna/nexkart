@@ -9,7 +9,7 @@ interface CheckoutDeliveryFormProps {
 export function CheckoutDeliveryForm({ register, errors }: CheckoutDeliveryFormProps) {
   return (
     <div>
-      <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+      <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-xs font-bold tracking-tight text-neutral-900">
         1. Delivery &amp; Contact Details
       </h2>
       <div className="space-y-3">

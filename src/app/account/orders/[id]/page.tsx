@@ -35,7 +35,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Package className="mx-auto mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
-        <h1 className="mb-2 font-heading text-xl font-bold uppercase tracking-wider text-neutral-900">
+        <h1 className="mb-2 font-heading text-xl font-bold tracking-tight text-neutral-900">
           Order Not Found
         </h1>
         <p className="mb-8 text-xs text-neutral-500">
@@ -99,7 +99,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
 
       {/* Shipment Tracking Progress Bar */}
       <div className="mb-8 rounded-3xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-xs">
-        <h2 className="mb-6 flex items-center justify-between font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+        <h2 className="mb-6 flex items-center justify-between font-heading text-xs font-bold tracking-tight text-neutral-900">
           <span>Order Status</span>
           <span className="font-normal text-neutral-500">Fast Delivery by Courier</span>
         </h2>
@@ -170,7 +170,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         {/* Ordered Pieces */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8 lg:col-span-8">
-          <h2 className="mb-6 border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+          <h2 className="mb-6 border-b border-neutral-100 pb-2 font-heading text-xs font-bold tracking-tight text-neutral-900">
             Items in This Order ({order.items.reduce((acc, i) => acc + i.quantity, 0)})
           </h2>
 

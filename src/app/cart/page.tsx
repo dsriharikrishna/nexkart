@@ -46,8 +46,8 @@ export default function CartPage() {
       {items.length === 0 ? (
         <div className="mx-auto max-w-lg rounded-2xl border border-neutral-200 bg-white p-8 py-24 text-center">
           <ShoppingBag className="mx-auto mb-4 h-12 w-12 stroke-[1.2] text-neutral-300" />
-          <h2 className="mb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-900">
-            Your cart is empty
+          <h2 className="mb-2 font-heading text-base font-bold tracking-tight text-neutral-900">
+            Your Cart Is Empty
           </h2>
           <p className="mx-auto mb-8 max-w-sm text-xs leading-relaxed text-neutral-500">
             Find something you like and add it to your cart.
@@ -134,7 +134,7 @@ export default function CartPage() {
           {/* Order Summary Card */}
           <div className="lg:col-span-4">
             <div className="sticky top-28 space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs">
-              <h2 className="border-b border-neutral-200 pb-3 font-heading text-sm font-bold uppercase tracking-wider text-neutral-950">
+              <h2 className="border-b border-neutral-200 pb-3 font-heading text-sm font-bold tracking-tight text-neutral-950">
                 Order Summary
               </h2>
 

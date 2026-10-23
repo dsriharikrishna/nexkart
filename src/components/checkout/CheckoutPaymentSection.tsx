@@ -12,7 +12,7 @@ export function CheckoutPaymentSection({
 }: CheckoutPaymentSectionProps) {
   return (
     <div>
-      <h2 className="mb-4 flex items-center justify-between border-b border-neutral-100 pb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+      <h2 className="mb-4 flex items-center justify-between border-b border-neutral-100 pb-2 font-heading text-xs font-bold tracking-tight text-neutral-900">
         <span>2. Payment Method</span>
         <span className="bg-[#FFF9D6] border border-[#FFD629] px-2 py-0.5 text-[10px] font-bold text-[#171717]">
           Demo Test Mode

@@ -12,7 +12,7 @@ export function SiteFooter() {
               <Clock className="h-4 w-4" />
             </div>
             <div>
-              <p className="mb-1 font-bold uppercase tracking-wider text-white">
+              <p className="mb-1 font-bold tracking-tight text-white">
                 45-60 Min Delivery
               </p>
               <p className="leading-relaxed text-[#707070]">
@@ -26,7 +26,7 @@ export function SiteFooter() {
               <RotateCcw className="h-4 w-4" />
             </div>
             <div>
-              <p className="mb-1 font-bold uppercase tracking-wider text-white">
+              <p className="mb-1 font-bold tracking-tight text-white">
                 Doorstep Size Exchange
               </p>
               <p className="leading-relaxed text-[#707070]">
@@ -40,7 +40,7 @@ export function SiteFooter() {
               <ShieldCheck className="h-4 w-4" />
             </div>
             <div>
-              <p className="mb-1 font-bold uppercase tracking-wider text-white">
+              <p className="mb-1 font-bold tracking-tight text-white">
                 100% Genuine Quality
               </p>
               <p className="leading-relaxed text-[#707070]">
@@ -54,7 +54,7 @@ export function SiteFooter() {
               <Zap className="h-4 w-4 fill-[#171717]" />
             </div>
             <div>
-              <p className="mb-1 font-bold uppercase tracking-wider text-white">
+              <p className="mb-1 font-bold tracking-tight text-white">
                 Easy Payment Options
               </p>
               <p className="leading-relaxed text-[#707070]">
@@ -118,8 +118,8 @@ export function SiteFooter() {
 
           {/* Col 1: Shop */}
           <div>
-            <h4 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFD629]">
-              SHOP FAST
+            <h4 className="mb-4 text-xs font-bold tracking-tight text-[#FFD629]">
+              Shop Fast
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
@@ -157,8 +157,8 @@ export function SiteFooter() {
 
           {/* Col 2: Customer Care */}
           <div>
-            <h4 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFD629]">
-              HELP &amp; SUPPORT
+            <h4 className="mb-4 text-xs font-bold tracking-tight text-[#FFD629]">
+              Help &amp; Support
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
@@ -191,8 +191,8 @@ export function SiteFooter() {
 
           {/* Col 3: Company */}
           <div>
-            <h4 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFD629]">
-              COMPANY
+            <h4 className="mb-4 text-xs font-bold tracking-tight text-[#FFD629]">
+              Company
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>

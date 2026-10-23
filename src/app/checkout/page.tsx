@@ -59,8 +59,8 @@ export default function CheckoutPage() {
   if (items.length === 0 && !orderComplete) {
     return (
       <div className="mx-auto max-w-md px-4 py-24 text-center">
-        <h2 className="mb-2 font-heading text-lg font-bold uppercase tracking-wider">
-          Your Cart is Empty
+        <h2 className="mb-2 font-heading text-lg font-bold tracking-tight text-neutral-900">
+          Your Cart Is Empty
         </h2>
         <p className="mb-6 text-xs text-neutral-500">
           Your cart is empty. Find something you like and add it to your cart.

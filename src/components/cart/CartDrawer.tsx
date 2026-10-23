@@ -41,7 +41,7 @@ export function CartDrawer() {
           <div className="flex items-center justify-between border-b border-neutral-200 p-6">
             <div className="flex items-center gap-2">
               <ShoppingBag className="h-4 w-4 text-neutral-900" />
-              <h2 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-neutral-950">
+              <h2 className="font-heading text-sm font-bold tracking-tight text-neutral-950">
                 Your Cart ({items.reduce((acc, i) => acc + i.quantity, 0)})
               </h2>
             </div>

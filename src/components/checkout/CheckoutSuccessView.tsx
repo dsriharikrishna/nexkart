@@ -17,8 +17,8 @@ export function CheckoutSuccessView({ order }: CheckoutSuccessViewProps) {
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#8A6A3B]">
           Demo Order Confirmed
         </span>
-        <h1 className="mt-2 font-heading text-3xl font-extrabold uppercase tracking-tight text-neutral-900 sm:text-4xl">
-          Your demo order is confirmed
+        <h1 className="mt-2 font-heading text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+          Your Demo Order Is Confirmed
         </h1>
         <p className="mt-3 text-sm text-neutral-600">
           Order Reference: <strong className="font-bold text-neutral-900">{order.orderNumber}</strong>. We have sent a confirmation email to you.

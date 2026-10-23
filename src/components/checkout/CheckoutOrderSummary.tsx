@@ -18,7 +18,7 @@ export function CheckoutOrderSummary({
 
   return (
     <div className="space-y-6 border border-neutral-200 bg-white p-6">
-      <h2 className="border-b border-neutral-100 pb-3 font-heading text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+      <h2 className="border-b border-neutral-100 pb-3 font-heading text-xs font-bold tracking-tight text-neutral-900">
         Order Summary ({totalItemCount} Items)
       </h2>
 

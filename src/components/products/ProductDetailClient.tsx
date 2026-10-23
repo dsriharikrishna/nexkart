@@ -67,10 +67,10 @@ export function ProductDetailClient({ product, relatedProducts }: ProductDetailC
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={luxuryTransition}
-      className="w-full px-4 py-8 sm:px-6 md:py-12 lg:px-8"
+      className="w-full px-4 pt-2 pb-6 sm:px-6 md:pt-3 md:pb-8 lg:px-8"
     >
       {/* Breadcrumb Navigation */}
-      <nav className="mb-8 flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-500">
+      <nav className="mb-2.5 flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-500">
         <Link href="/" className="transition-colors hover:text-black">
           Home
         </Link>

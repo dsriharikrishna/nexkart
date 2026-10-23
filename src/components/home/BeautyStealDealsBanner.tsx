@@ -32,7 +32,7 @@ export function BeautyStealDealsBanner() {
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E52D27] px-3 py-0.5 text-[10px] font-black uppercase tracking-wider text-white">
               <Sparkles className="h-3 w-3" /> Flash Drop
             </span>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-white">
               Steal Deals • Beauty Essentials
             </h2>
             <p className="mt-1 text-xs sm:text-sm text-neutral-300">

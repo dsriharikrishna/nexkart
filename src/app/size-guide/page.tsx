@@ -22,7 +22,7 @@ export default function SizeGuidePage() {
       <div className="space-y-12">
         {/* Menswear */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8">
-          <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-950">
+          <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold tracking-tight text-neutral-950">
             Men&apos;s Clothing (CM)
           </h2>
           <div className="overflow-x-auto">
@@ -85,7 +85,7 @@ export default function SizeGuidePage() {
 
         {/* Womenswear */}
         <div className="border border-neutral-200 bg-white p-6 sm:p-8">
-          <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold uppercase tracking-wider text-neutral-950">
+          <h2 className="mb-4 border-b border-neutral-100 pb-2 font-heading text-base font-bold tracking-tight text-neutral-950">
             Women&apos;s Clothing &amp; Dresses (CM)
           </h2>
           <div className="overflow-x-auto">
