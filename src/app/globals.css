@@ -1,11 +1,13 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300,1,2&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --font-heading: "Sora", sans-serif;
-    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: "Satoshi", "Sora", sans-serif;
+    --font-sans: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* === BRAND THEME: ELECTRIC YELLOW GRADIENT === */
     --background: #ffffff; /* Pure White crisp fashion canvas */

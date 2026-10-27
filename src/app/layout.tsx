@@ -51,6 +51,13 @@ import { ToastContainer } from "@/components/ui/ToastContainer";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300,1,2&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="flex min-h-screen flex-col bg-white text-[#171717] antialiased pb-16 lg:pb-0">
         <Providers>
           <AnnouncementBar />

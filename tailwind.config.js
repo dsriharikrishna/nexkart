@@ -78,8 +78,8 @@ module.exports = {
         */
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "sans-serif"],
-        heading: ["var(--font-heading)", "Sora", "sans-serif"],
+        sans: ["var(--font-sans)", "Satoshi", "Inter", "sans-serif"],
+        heading: ["var(--font-heading)", "Satoshi", "Sora", "sans-serif"],
       },
     },
   },
